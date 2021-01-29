@@ -9,8 +9,13 @@ using namespace std;
 
 class parser{
 public:
+    parser(string address);
+    void print();
     
 
 private:
+    string address;
+    string author;
+    string type;
 
 };
