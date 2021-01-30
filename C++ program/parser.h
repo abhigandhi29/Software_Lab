@@ -24,6 +24,7 @@ protected:
     string author="";
     string type;
     string name="";
+    string language= "";
     ifstream file;
     ofstream out;
 };

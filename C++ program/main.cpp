@@ -23,7 +23,7 @@ void create_reader(string loc){
         
         // Process only regular files, all other file types are ignored
         for(auto it : status){
-            if(!it.first.find(".txt")){
+            if(it.first.find(".txt") == string::npos){
                 cout<<it.first<<" is not a txt file"<<endl;
                 continue;
             }
@@ -31,7 +31,15 @@ void create_reader(string loc){
             switch(it.second) {
                 case FileStatus::created:
                     std::cout << "New Book detected: " << it.first << endl;
-                    
+                    cout<<"Type '0' for novel"<<endl<<"type 1 for play"<<endl;
+                    int type;
+                    cin>>type;
+                    if(type==0){
+                        add.push_back(novel_parser(it.first,"novel"));
+                    }
+                    else{
+                        add.push_back(play_parser(it.first,"play"));
+                    }
                     break;
                 case FileStatus::modified:
                     std::cout << "File modified: " << it.first << endl;

@@ -13,41 +13,49 @@ using namespace std;
 parser::parser(string address) : address{address}{
     file.open(address.c_str());
     out.open("index.txt");
+    if(file.is_open()){
+        basic_info();
+    }
+    else{
+        cout<<"error_opening the file"<<endl;
+    }
+    save_file();
 }
 void parser::basic_info(){
     string mytext;
     while(getline (file,mytext)){
         istringstream iss(mytext);
-        while(iss){
-           string s;
-           iss >> s;
-           if(s.compare("Title:")){
-               while(iss){
-                   iss>>s;
-                   name.append(s);
-                   name.append(" ");
-               }
-           } 
-           if(s.compare("Author:")){
-               while(iss){
-                   iss>>s;
-                   name.append(s);
-                   name.append(" ");
-               }
+        
+        string s;
+        iss >> s;
+        if(s.compare("Title:")){
+           while(iss){
+               iss>>s;
+                name.append(s);
+               name.append(" ");
            }
-           if(s.compare("Title:")){
-               while(iss){
-                   iss>>s;
-                   name.append(s);
-                   name.append(" ");
-               }
-           }
+       } 
+       if(s.compare("Author:")){
+            while(iss){
+               iss>>s;
+               author.append(s);
+               author.append(" ");
+            }
         }
+        if(s.compare("Language:")){
+            while(iss){
+               iss>>s;
+               language.append(s);
+               language.append(" ");
+            }
+        }
+        
     }
 }
 
 void parser::save_file(){
-    
+    cout << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
+    out << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
 }
 
 void parser::print(){
