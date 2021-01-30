@@ -8,6 +8,10 @@
 #include<vector>
 using namespace std;
 #include "file_watcher.h"
+#include "parser.h"
+#include "play_parser.h"
+#include "novel_parser.h"
+
 
 vector<string> add;
 
