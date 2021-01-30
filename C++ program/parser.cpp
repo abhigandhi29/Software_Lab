@@ -10,7 +10,7 @@ using namespace std;
 #include<fstream>
 #include<sstream>
 
-parser::parser(string address,string type) : address{address},type{type}{
+parser::parser(string address,string type1) : address{address},type{type1}{
     file.open(address.c_str());
     out.open("index.txt",fstream::app);
     if(file.is_open()){
@@ -21,6 +21,17 @@ parser::parser(string address,string type) : address{address},type{type}{
     }
     save_file();
 }
+
+parser::parser(const parser &p){
+    address=p.address;
+    name=p.name;
+    author=p.author;
+    type=p.type;
+    language=p.language;
+    file.open(address.c_str());
+    out.open("index.txt",fstream::app);
+}
+
 void parser::basic_info(){
     string mytext;
     while(getline (file,mytext)){
@@ -48,14 +59,17 @@ void parser::basic_info(){
                language.append(s);
                language.append(" ");
             }
-        }
-        
+        }   
     }
 }
 
 void parser::save_file(){
-    cout << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
+   
     out << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
+}
+
+void parser::print_as_list(){
+    cout << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
 }
 
 void parser::print(){

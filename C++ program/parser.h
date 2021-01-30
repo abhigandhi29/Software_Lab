@@ -14,16 +14,18 @@ using namespace std;
 
 class parser{
 public:
-    parser(string address,string type);
+    parser(string address,string type1);
+    parser(const parser &p);
     void print();
     void save_file();
     void basic_info();
-
-protected:
-    string address;
+    void print_as_list();
     string author="";
     string type;
     string name="";
+
+protected:
+    string address;
     string language= "";
     ifstream file;
     fstream out;

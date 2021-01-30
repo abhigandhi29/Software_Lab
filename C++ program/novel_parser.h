@@ -15,6 +15,9 @@ using namespace std;
 class novel_parser : public parser{
 public:
     novel_parser(string address,string type);
+    novel_parser(const novel_parser &v);
+    void word_serch_chapter(string w);
+    void word_serch_paragraph(string w);
 };
 
 #endif

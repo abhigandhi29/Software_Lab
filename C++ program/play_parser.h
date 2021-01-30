@@ -14,7 +14,9 @@ using namespace std;
 
 class play_parser : public parser{
 public:
-    play_parser(string address,string type);
+    play_parser(string address,string type1);
+    play_parser(const play_parser &v);
+    void word_serch(string w);
 };
 
 #endif
