@@ -63,6 +63,25 @@ void create_reader(string loc){
 int main() {
     string loc="./";
     thread reader(create_reader,loc);
-    reader.join();
-    
+    printinstructions();
+    int c;
+    while(true){
+        cin>>c; 
+        if(c==1){
+            for(auto it : add){
+                it.print();
+            }
+        }
+        else if(c==2){
+            for(auto it : add){
+
+            }
+        }
+    }
+    reader.join();  
+}
+
+
+void printinstructions(){
+
 }
