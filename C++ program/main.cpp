@@ -35,10 +35,13 @@ void create_reader(string loc){
                     int type;
                     cin>>type;
                     if(type==0){
-                        add.push_back(novel_parser(it.first,"novel"));
+                        add.push_back(novel_parser(it.first,"novel "));
+                    }
+                    else if(type==1){
+                        add.push_back(play_parser(it.first,"play "));
                     }
                     else{
-                        add.push_back(play_parser(it.first,"play"));
+                        cout<<"invalid_type"<<endl;
                     }
                     break;
                 case FileStatus::modified:

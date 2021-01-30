@@ -8,6 +8,5 @@
 using namespace std;
 #include "novel_parser.h"
 
-novel_parser::novel_parser(string address,string type) : parser(address){
-    this->type=type;
+novel_parser::novel_parser(string address,string type) : parser(address,type){
 }

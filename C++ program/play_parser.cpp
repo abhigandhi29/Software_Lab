@@ -8,6 +8,5 @@
 using namespace std;
 #include "play_parser.h"
 
-play_parser::play_parser(string address,string type) : parser(address){
-    this->type=type;
+play_parser::play_parser(string address,string type) : parser(address,type){
 }

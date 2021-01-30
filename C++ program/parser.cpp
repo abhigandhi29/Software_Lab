@@ -10,9 +10,9 @@ using namespace std;
 #include<fstream>
 #include<sstream>
 
-parser::parser(string address) : address{address}{
+parser::parser(string address,string type) : address{address},type{type}{
     file.open(address.c_str());
-    out.open("index.txt");
+    out.open("index.txt",fstream::app);
     if(file.is_open()){
         basic_info();
     }
@@ -28,21 +28,21 @@ void parser::basic_info(){
         
         string s;
         iss >> s;
-        if(s.compare("Title:")){
+        if(s.compare("Title:")==0){
            while(iss){
                iss>>s;
                 name.append(s);
                name.append(" ");
            }
        } 
-       if(s.compare("Author:")){
+       if(s.compare("Author:")==0){
             while(iss){
                iss>>s;
                author.append(s);
                author.append(" ");
             }
         }
-        if(s.compare("Language:")){
+        if(s.compare("Language:")==0){
             while(iss){
                iss>>s;
                language.append(s);

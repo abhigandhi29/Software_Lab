@@ -14,7 +14,7 @@ using namespace std;
 
 class parser{
 public:
-    parser(string address);
+    parser(string address,string type);
     void print();
     void save_file();
     void basic_info();
@@ -26,7 +26,7 @@ protected:
     string name="";
     string language= "";
     ifstream file;
-    ofstream out;
+    fstream out;
 };
 
 #endif
