@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "thread": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "*.tcc": "cpp",
+        "random": "cpp"
+    }
+}

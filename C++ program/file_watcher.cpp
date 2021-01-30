@@ -7,6 +7,7 @@
 #include<functional>
 using namespace std;
 #include "file_watcher.h"
+#include<vector>
 
  // Define available file changes
 
@@ -40,7 +41,7 @@ using namespace std;
                 if(!contains(file.path().string())) {
                     files[file.path().string()] = current_file_last_write_time;
                     status.push_back(make_pair(file.path().string(),FileStatus::created));
-                    cout<<"here"<<endl;
+                    //cout<<"here"<<endl;
                  // File modification
                 } else {
                     if(files[file.path().string()] != current_file_last_write_time) {
