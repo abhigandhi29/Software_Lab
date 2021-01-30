@@ -22,7 +22,7 @@ public:
 protected:
     string address;
     string author="";
-    string type="";
+    string type;
     string name="";
     ifstream file;
     ofstream out;

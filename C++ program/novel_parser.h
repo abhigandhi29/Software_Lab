@@ -14,7 +14,7 @@ using namespace std;
 
 class novel_parser : public parser{
 public:
-    novel_parser(string address);
+    novel_parser(string address,string type);
 };
 
 #endif

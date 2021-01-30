@@ -13,7 +13,7 @@ using namespace std;
 #include "novel_parser.h"
 
 
-vector<string> add;
+vector<parser> add;
 
 void create_reader(string loc){
     vector<pair<string,FileStatus>> status; 
@@ -31,7 +31,7 @@ void create_reader(string loc){
             switch(it.second) {
                 case FileStatus::created:
                     std::cout << "New Book detected: " << it.first << endl;
-                    add.push_back(it.first);
+                    
                     break;
                 case FileStatus::modified:
                     std::cout << "File modified: " << it.first << endl;

@@ -14,7 +14,7 @@ using namespace std;
 
 class play_parser : public parser{
 public:
-    play_parser(string address);
+    play_parser(string address,string type);
 };
 
 #endif
