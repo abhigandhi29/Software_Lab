@@ -16,6 +16,7 @@ class parser{
 public:
     parser(string address,string type1);
     parser(const parser &p);
+    parser(string address,string name,string author,string type,string language);
     void print();
     void save_file();
     void basic_info();

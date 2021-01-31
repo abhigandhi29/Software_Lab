@@ -5,25 +5,33 @@
 #include<unordered_map>
 #include<string>
 #include<functional>
-using namespace std;
 #include "play_parser.h"
 #include<fstream>
 #include<sstream>
 #include<set>
+using namespace std;
 
 play_parser::play_parser(string address,string type1) : parser(address,type1){
+    cout<<address<<endl;
+    //file.open(address.c_str());
 }
-play_parser::play_parser(const play_parser &s) : parser(s){
+play_parser::play_parser(const play_parser &p) : parser(p.address,p.name,p.author,p.type,p.language){
 }
 
 void play_parser::word_serch(string w){
     string mytext;
     set<string> final;
+    file.clear();
+    //cout<<parser::address<<name;
+    //file.open(address.c_str());
+    file.seekg(0, ios::beg);
+    cout<<"hereee"<<endl;
     while(getline (file,mytext)){
         istringstream iss(mytext);
         bool start=false;
         string s;
         iss >> s;
+        //std::cout<<s<<endl;
         if(s.compare("ACT")==0){
             start=true;
         }
@@ -31,18 +39,32 @@ void play_parser::word_serch(string w){
             int c=0;
             set<string> names;
             while(getline (file,mytext)){
+                istringstream iss(mytext);
                 iss>>s;
+                //cout<<s<<endl;
                 if(s.compare("ACT")==0){
+                    //cout<<"here"<<endl;
                     if(names.count(w)==1){
                         for(auto it:names){
                             final.insert(it);
+                            //cout<<it<<endl;
                         }
                     }
+                    names.clear();
                 }
-                if(s[-1]=='.'){
+                //cout<<s<<" "<<s.length()<<endl;
+                if(s.back()=='.'){
+                    //cout<<s<<endl;
                     s.pop_back();
-                    names.insert(s);
+                    if(std::all_of( s.begin(), s.end(), &::isupper ))
+                        names.insert(s);
                 }    
+            }
+            if(names.count(w)==1){
+                for(auto it:names){
+                    final.insert(it);
+                    //cout<<it<<endl;
+                }
             }
         }  
 

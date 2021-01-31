@@ -10,16 +10,25 @@ using namespace std;
 #include<fstream>
 #include<sstream>
 #include<vector>
+#include <algorithm> 
+
 
 novel_parser::novel_parser(string address,string type) : parser(address,type){
 }
-novel_parser::novel_parser(const novel_parser &v) : parser(v){
+novel_parser::novel_parser(const novel_parser &p) : parser(p.address,p.name,p.author,p.type,p.language){
 }
 
-
+bool compareInterval(pair<int,string> i1, pair<int,string> i2)
+{
+    return (i1.first > i2.first);
+}
 
 void novel_parser::word_serch_chapter(string w){
     string mytext;
+    file.clear();
+    //cout<<parser::address<<name;
+    //file.open(address.c_str());
+    file.seekg(0, ios::beg);
     vector<pair<int,pair<string,string>>> count;
     while(getline (file,mytext)){
         istringstream iss(mytext);
@@ -55,7 +64,7 @@ void novel_parser::word_serch_chapter(string w){
                         }
                         c=0;
                     }
-                    if(s.compare(w)){
+                    if(s.find(w)!=string::npos){
                         c++;
                     }
                     
@@ -66,18 +75,18 @@ void novel_parser::word_serch_chapter(string w){
             
         }
     }
-    sort(count.begin(), count.end());
+    sort(count.begin(), count.end(),greater<pair<int,pair<string,string>>>());
     int n=5;
     if(count.size()<5){
         n=count.size();
     }
     for(int i=0;i<n;i++){
         if(count[i].first==0){
-            cout<<"only"<<i+1<<"paragraphs contain word "<<w;
+            cout<<"only "<<i+1<<" paragraphs contain word "<<w<<endl;
             return;
         }
         istringstream iss(count[i].second.second);
-        cout<<count[i].second.first<<endl<<endl;
+        cout<<count[i].second.first<<": "<<count[i].first<<endl<<endl;
         string s;
         int a=0;
         while(iss){
@@ -102,20 +111,20 @@ void novel_parser::word_serch_paragraph(string w){
         int c=0;
         while(iss){
             iss >> s;
-            if(w.compare(s)==0){
+            if(s.find(w)!=string::npos){
                 c++;
             }
         }
         count.push_back(make_pair(c,mytext));
     }
-    sort(count.begin(), count.end());
+    sort(count.begin(), count.end(),greater<pair<int,string>>());
     int n=5;
     if(count.size()<5){
         n=count.size();
     }
     for(int i=0;i<n;i++){
         if(count[i].first==0){
-            cout<<"only"<<i+1<<"paragraphs contain word "<<w;
+            cout<<"only "<<i+1<<" paragraphs contain word "<<w<<endl;
             return;
         }
         istringstream iss(count[i].second);

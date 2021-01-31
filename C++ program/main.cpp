@@ -14,7 +14,8 @@ using namespace std;
 #include<set>
 #include<variant>
 
-vector<parser*> add;
+vector<play_parser> play;
+vector<novel_parser> novel;
 bool scan_for_cmd=false;
 
 void create_reader(string loc){
@@ -43,15 +44,11 @@ void create_reader(string loc){
                     //cin.sync();
                     cin>>type;
                     if(type==0){
-                        novel_parser *temp;
-                        temp=new novel_parser(it.first,"novel ");
-                        add.push_back(temp);
+                        novel.push_back(novel_parser(it.first,"novel "));
                 
                     }
                     else if(type==1){
-                        play_parser *temp;
-                        temp=new play_parser(it.first,"play ");
-                        add.push_back(temp);
+                        play.push_back(play_parser(it.first,"play "));
                     }
                     else{
                         cout<<"invalid_type"<<endl;
@@ -86,10 +83,18 @@ set<int> serch_and_print(){
         string name;
         cin>>name;
         int i=0;
-        for(auto& it : add){
-            if(it->name.find(name) != string::npos){
+        for(auto& it : play){
+            if(it.name.find(name) != string::npos){
                 cout<<"ID: "<<i<<", ";
-                it->print_as_list();
+                it.print_as_list();
+                serch_results.insert(i);
+            }
+            i++;
+        }
+        for(auto& it : novel){
+            if(it.name.find(name) != string::npos){
+                cout<<"ID: "<<i<<", ";
+                it.print_as_list();
                 serch_results.insert(i);
             }
             i++;
@@ -100,15 +105,24 @@ set<int> serch_and_print(){
         string name;
         cin>>name;
         int i=0;
-        for(auto& it : add){
+        for(auto& it : play){
             //cout<<it->name<<endl;
-            if(it->author.find(name) != string::npos){
+            if(it.author.find(name) != string::npos){
                 cout<<"ID: "<<i<<", ";
-                it->print_as_list();
+                it.print_as_list();
                 serch_results.insert(i);
             }
             i++;
-        }                
+        }     
+        for(auto& it : novel){
+            //cout<<it->name<<endl;
+            if(it.author.find(name) != string::npos){
+                cout<<"ID: "<<i<<", ";
+                it.print_as_list();
+                serch_results.insert(i);
+            }
+            i++;
+        }           
     }
     return serch_results;
 }
@@ -129,31 +143,35 @@ void word_serch(){
     cout<<endl;
     int id;
     cin>>id;
-    auto parser = *add[id];
-    if(parser.type.compare("novel ")){
-        cout<<"Enter 1 for serching in paragraphs"<<endl;
-        cout<<"Enter 2 for serching in chapter"<<endl;
-        int c;
-        cin>>c;
-        string w;
-        cout<<"Enter the word to serch:";
-        cin>>w;
-        if(c==1){
-            novel_parser parser=parser;
-            parser.word_serch_paragraph(w);
-        }
-        else if(c==2){
-            novel_parser parser=parser;
-            parser.word_serch_chapter(w);
-        }
+    if(id>=play.size()){
+        auto parser = novel[id-play.size()];
+        if(parser.type.compare("novel ")==0){
+            cout<<"Enter 1 for serching in paragraphs"<<endl;
+            cout<<"Enter 2 for serching in chapter"<<endl;
+            int c;
+            cin>>c;
+            string w;
+            cout<<"Enter the word to serch:";
+            cin>>w;
+            if(c==1){
+                parser.word_serch_paragraph(w);
+            }
+            else if(c==2){
+                parser.word_serch_chapter(w);
+            }
 
+        }
     }
-    else if(parser.type.compare("play ")){
-        cout<<"Enter the character to serch:";
-        string w;
-        cin>>w;
-        play_parser parser=parser;
-        parser.word_serch(w);
+    else{
+        auto parser = play[id];    
+        if(parser.type.compare("play ")==0){
+            cout<<parser.type;
+            cout<<"Enter the character to serch:";
+            string w;
+            cin>>w;
+            //play_parser parser=parser;
+            parser.word_serch(w);
+        }
     }
 }
 
@@ -167,9 +185,14 @@ int main() {
             printinstructions();
             cin>>c; 
             if(c==3){
-                for(auto& it : add){
+                for(auto& it : novel){
                     cout<<endl;
-                    it->print();
+                    it.print();
+                    cout<<endl;
+                }
+                for(auto& it : play){
+                    cout<<endl;
+                    it.print();
                     cout<<endl;
                 }
             }

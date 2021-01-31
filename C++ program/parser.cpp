@@ -32,6 +32,16 @@ parser::parser(const parser &p){
     out.open("index.txt",fstream::app);
 }
 
+parser::parser(string address,string name,string author,string type,string language){
+    this->address=address;
+    this->name=name;
+    this->author=author;
+    this->type=type;
+    this->language=language;
+    file.open(address.c_str());
+    out.open("index.txt",fstream::app);    
+}
+
 void parser::basic_info(){
     string mytext;
     while(getline (file,mytext)){
