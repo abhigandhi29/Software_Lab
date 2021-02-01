@@ -31,15 +31,21 @@ void create_reader(string loc){
         }
         // Process only regular files, all other file types are ignored
         for(auto it : status){
-            if(it.first.find(".txt") == string::npos){
-                cout<<it.first<<" is not a txt file"<<endl;
+            if(it.first.find("/build/") != string::npos){
                 continue;
             }
+            if(it.first.find(".txt") == string::npos){
+                cout<<it.first<<" is not a txt file"<<endl;
+                continue;            
+            }
+            
             //cout<<it.first<<endl;
             switch(it.second) {
                 case FileStatus::created:
+                    cout<<endl;
                     std::cout << "New Book detected: " << it.first << endl;
                     cout<<"Type '0' for novel"<<endl<<"type 1 for play"<<endl;
+                    cout<<"Enter 2 for Invalid .txt file"<<endl<<"If Nothing is printed Enter Twice"<<endl;
                     int type;
                     //cin.sync();
                     cin>>type;
@@ -82,9 +88,12 @@ set<int> serch_and_print(){
         cout<<"Enter Book Name: ";
         string name;
         cin>>name;
+        transform(name.begin(), name.end(), name.begin(), ::toupper);
         int i=0;
         for(auto& it : play){
-            if(it.name.find(name) != string::npos){
+            string temp=it.name;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if(temp.find(name) != string::npos){
                 cout<<"ID: "<<i<<", ";
                 it.print_as_list();
                 serch_results.insert(i);
@@ -92,7 +101,9 @@ set<int> serch_and_print(){
             i++;
         }
         for(auto& it : novel){
-            if(it.name.find(name) != string::npos){
+            string temp=it.name;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if(temp.find(name) != string::npos){
                 cout<<"ID: "<<i<<", ";
                 it.print_as_list();
                 serch_results.insert(i);
@@ -104,10 +115,13 @@ set<int> serch_and_print(){
         cout<<"Enter author name: ";
         string name;
         cin>>name;
+        transform(name.begin(), name.end(), name.begin(), ::toupper);
         int i=0;
         for(auto& it : play){
             //cout<<it->name<<endl;
-            if(it.author.find(name) != string::npos){
+            string temp=it.author;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if(temp.find(name) != string::npos){
                 cout<<"ID: "<<i<<", ";
                 it.print_as_list();
                 serch_results.insert(i);
@@ -116,8 +130,10 @@ set<int> serch_and_print(){
         }     
         for(auto& it : novel){
             //cout<<it->name<<endl;
-            if(it.author.find(name) != string::npos){
-                cout<<"ID: "<<i<<", ";
+            string temp=it.author;
+            transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
+            if(temp.find(name) != string::npos){
+                cout<<"ID: "<<i;
                 it.print_as_list();
                 serch_results.insert(i);
             }
@@ -138,11 +154,18 @@ void word_serch(){
     cout<<"Enter ID of Book to select: "<<endl;
     cout<<"possible options are:";
     for(int x:serch_result){
-        cout<<x<<", ";
+        if(x!=*serch_result.cbegin())
+            cout<<x<<", ";
+        else
+            cout<<x<<".";
     }
     cout<<endl;
     int id;
     cin>>id;
+    if(id>=play.size()+novel.size() || id<0 || serch_result.count(id)==0){
+        cout<<"Invalid ID"<<endl;
+        return;
+    }
     if(id>=play.size()){
         auto parser = novel[id-play.size()];
         if(parser.type.compare("novel ")==0){
@@ -165,7 +188,7 @@ void word_serch(){
     else{
         auto parser = play[id];    
         if(parser.type.compare("play ")==0){
-            cout<<parser.type;
+            //cout<<parser.type;
             cout<<"Enter the character to serch:";
             string w;
             cin>>w;
@@ -177,6 +200,8 @@ void word_serch(){
 
 int main() {
     string loc="./";
+    cout<<"Enter Path to track relative to current location: './ for same location': ";
+    cin>>loc;
     thread reader(create_reader,loc);
     int c;
     while(true){

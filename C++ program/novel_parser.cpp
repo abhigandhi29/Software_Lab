@@ -42,23 +42,23 @@ void novel_parser::word_serch_chapter(string w){
             int c=0;
             string chapter_name="";
             string text="";
-            while(iss){
-                iss>>s;
+            while(iss>>s){
+                //iss>>s;
                 chapter_name.append(s);
                 chapter_name.append(" ");
             }
             while(getline (file,mytext)){
                 istringstream iss(mytext);
                 string s;
-                while(iss){
-                    iss >> s;
-                    if(s.compare("CHAPTER")){
+                while(iss>>s){
+                    //iss >> s;
+                    if(s.compare("CHAPTER")==0){
                         count.push_back(make_pair(c,make_pair(chapter_name,text)));
                         iss>>s;
                         chapter_name="";
                         text="";
-                        while(iss){
-                            iss>>s;
+                        while(iss>>s){
+                            //iss>>s;
                             chapter_name.append(s);
                             chapter_name.append(" ");
                         }
@@ -82,21 +82,25 @@ void novel_parser::word_serch_chapter(string w){
     }
     for(int i=0;i<n;i++){
         if(count[i].first==0){
-            cout<<"only "<<i+1<<" paragraphs contain word "<<w<<endl;
+            if(i>0)
+                cout<<"only "<<i<<" paragraphs contain word "<<w<<endl;
+            else
+                cout<<"No paragraph contain word "<<w<<endl;
             return;
         }
         istringstream iss(count[i].second.second);
         cout<<count[i].second.first<<": "<<count[i].first<<endl<<endl;
         string s;
         int a=0;
-        while(iss){
+        while(iss>>s){
             a++;
-            iss>>s;
+            //iss>>s;
             cout<<s<<" ";
             if(a%20==0){
                 cin.get();
             }
         }
+        cout<<endl;
     }
     
 }
@@ -104,18 +108,27 @@ void novel_parser::word_serch_chapter(string w){
 
 void novel_parser::word_serch_paragraph(string w){
     string mytext;
+    
     vector<pair<int,string>> count;
     while(getline (file,mytext)){
-        istringstream iss(mytext);
+        stringstream ss;
+        ss << mytext;
+        ss << " ";
+         while(mytext != "" ){
+            std::getline( file , mytext );
+            ss << mytext;
+            ss << " ";
+        }
+        istringstream iss(ss.str());
         string s;
         int c=0;
-        while(iss){
-            iss >> s;
+        while(iss>>s){
+            //iss >> s;
             if(s.find(w)!=string::npos){
                 c++;
             }
         }
-        count.push_back(make_pair(c,mytext));
+        count.push_back(make_pair(c,ss.str()));
     }
     sort(count.begin(), count.end(),greater<pair<int,string>>());
     int n=5;
@@ -129,17 +142,18 @@ void novel_parser::word_serch_paragraph(string w){
         }
         istringstream iss(count[i].second);
         //cout<<count[i].second.first<<endl<<endl;
+        cout<<endl<<"Count: "<<count[i].first<<endl;
         string s;
         int a=0;
-        while(iss){
+        while(iss>>s){
             a++;
-            iss>>s;
+            //iss>>s;
             cout<<s<<" ";
             if(a%20==0){
                 cin.get();
             }
         }
-        cout<<endl<<count[i].first<<endl;
+        
     }
     
 }

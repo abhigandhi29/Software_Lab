@@ -21,6 +21,7 @@ public:
     void save_file();
     void basic_info();
     void print_as_list();
+    void print_book();
     string author="";
     string type;
     string name="";

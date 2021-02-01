@@ -1,0 +1,110 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+vector
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/main.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+vector
+-
+file_watcher.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+play_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.h
+novel_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.h
+set
+-
+variant
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+fstream
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+

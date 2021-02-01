@@ -5,6 +5,7 @@
 #include<unordered_map>
 #include<string>
 #include<functional>
+#include<vector>
 using namespace std;
 
 #ifndef FileWatcher_H

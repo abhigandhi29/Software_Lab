@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+file_watcher.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+vector
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+vector
+-
+

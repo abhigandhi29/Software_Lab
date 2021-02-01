@@ -9,29 +9,30 @@
 #include<fstream>
 #include<sstream>
 #include<set>
+#include <algorithm>
 using namespace std;
 
 play_parser::play_parser(string address,string type1) : parser(address,type1){
-    cout<<address<<endl;
+    //cout<<address<<endl;
     //file.open(address.c_str());
 }
 play_parser::play_parser(const play_parser &p) : parser(p.address,p.name,p.author,p.type,p.language){
 }
 
 void play_parser::word_serch(string w){
+    transform(w.begin(), w.end(), w.begin(), ::toupper);
     string mytext;
     set<string> final;
     file.clear();
-    //cout<<parser::address<<name;
-    //file.open(address.c_str());
     file.seekg(0, ios::beg);
-    cout<<"hereee"<<endl;
+    //cout<<"hereee"<<endl;
     while(getline (file,mytext)){
         istringstream iss(mytext);
         bool start=false;
         string s;
         iss >> s;
         //std::cout<<s<<endl;
+        transform(s.begin(), s.end(), s.begin(), ::toupper);
         if(s.compare("ACT")==0){
             start=true;
         }
@@ -71,7 +72,10 @@ void play_parser::word_serch(string w){
     }
     cout<<"Character in same Act as "<<w<<" are ";
     for(auto it:final){
-        cout<<it<<", ";
+        if(it != *final.crbegin())
+            cout<<it<<", ";
+        else
+            cout<<it<<"."<<endl;
     }
     cout<<endl;
 }
