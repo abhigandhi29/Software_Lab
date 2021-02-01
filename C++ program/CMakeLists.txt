@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(LSTM_system)
+project(LSM_system)
 
 set (CMAKE_CXX_FLAGS "-std=c++17")
 set(CMAKE_CXX_STANDARD 17)  
@@ -13,6 +13,6 @@ set(src
     main.cpp
 )
 
-add_executable(LSTM
+add_executable(LSM
 ${src}
 )

@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named LSTM
+# Target rules for targets named LSM
 
 # Build rule for target.
-LSTM: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LSTM
-.PHONY : LSTM
+LSM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LSM
+.PHONY : LSM
 
 # fast build rule for target.
-LSTM/fast:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/build
-.PHONY : LSTM/fast
+LSM/fast:
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/build
+.PHONY : LSM/fast
 
 file_watcher.o: file_watcher.cpp.o
 
@@ -129,7 +129,7 @@ file_watcher.o: file_watcher.cpp.o
 
 # target to build an object file
 file_watcher.cpp.o:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/file_watcher.cpp.o
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/file_watcher.cpp.o
 .PHONY : file_watcher.cpp.o
 
 file_watcher.i: file_watcher.cpp.i
@@ -138,7 +138,7 @@ file_watcher.i: file_watcher.cpp.i
 
 # target to preprocess a source file
 file_watcher.cpp.i:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/file_watcher.cpp.i
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/file_watcher.cpp.i
 .PHONY : file_watcher.cpp.i
 
 file_watcher.s: file_watcher.cpp.s
@@ -147,7 +147,7 @@ file_watcher.s: file_watcher.cpp.s
 
 # target to generate assembly for a file
 file_watcher.cpp.s:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/file_watcher.cpp.s
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/file_watcher.cpp.s
 .PHONY : file_watcher.cpp.s
 
 main.o: main.cpp.o
@@ -156,7 +156,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -165,7 +165,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -174,7 +174,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 novel_parser.o: novel_parser.cpp.o
@@ -183,7 +183,7 @@ novel_parser.o: novel_parser.cpp.o
 
 # target to build an object file
 novel_parser.cpp.o:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/novel_parser.cpp.o
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/novel_parser.cpp.o
 .PHONY : novel_parser.cpp.o
 
 novel_parser.i: novel_parser.cpp.i
@@ -192,7 +192,7 @@ novel_parser.i: novel_parser.cpp.i
 
 # target to preprocess a source file
 novel_parser.cpp.i:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/novel_parser.cpp.i
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/novel_parser.cpp.i
 .PHONY : novel_parser.cpp.i
 
 novel_parser.s: novel_parser.cpp.s
@@ -201,7 +201,7 @@ novel_parser.s: novel_parser.cpp.s
 
 # target to generate assembly for a file
 novel_parser.cpp.s:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/novel_parser.cpp.s
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/novel_parser.cpp.s
 .PHONY : novel_parser.cpp.s
 
 parser.o: parser.cpp.o
@@ -210,7 +210,7 @@ parser.o: parser.cpp.o
 
 # target to build an object file
 parser.cpp.o:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/parser.cpp.o
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/parser.cpp.o
 .PHONY : parser.cpp.o
 
 parser.i: parser.cpp.i
@@ -219,7 +219,7 @@ parser.i: parser.cpp.i
 
 # target to preprocess a source file
 parser.cpp.i:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/parser.cpp.i
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/parser.cpp.i
 .PHONY : parser.cpp.i
 
 parser.s: parser.cpp.s
@@ -228,7 +228,7 @@ parser.s: parser.cpp.s
 
 # target to generate assembly for a file
 parser.cpp.s:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/parser.cpp.s
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/parser.cpp.s
 .PHONY : parser.cpp.s
 
 play_parser.o: play_parser.cpp.o
@@ -237,7 +237,7 @@ play_parser.o: play_parser.cpp.o
 
 # target to build an object file
 play_parser.cpp.o:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/play_parser.cpp.o
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/play_parser.cpp.o
 .PHONY : play_parser.cpp.o
 
 play_parser.i: play_parser.cpp.i
@@ -246,7 +246,7 @@ play_parser.i: play_parser.cpp.i
 
 # target to preprocess a source file
 play_parser.cpp.i:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/play_parser.cpp.i
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/play_parser.cpp.i
 .PHONY : play_parser.cpp.i
 
 play_parser.s: play_parser.cpp.s
@@ -255,7 +255,7 @@ play_parser.s: play_parser.cpp.s
 
 # target to generate assembly for a file
 play_parser.cpp.s:
-	$(MAKE) -f CMakeFiles/LSTM.dir/build.make CMakeFiles/LSTM.dir/play_parser.cpp.s
+	$(MAKE) -f CMakeFiles/LSM.dir/build.make CMakeFiles/LSM.dir/play_parser.cpp.s
 .PHONY : play_parser.cpp.s
 
 # Help Target
@@ -266,7 +266,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... LSTM"
+	@echo "... LSM"
 	@echo "... file_watcher.o"
 	@echo "... file_watcher.i"
 	@echo "... file_watcher.s"

@@ -87,7 +87,7 @@ void parser::print_as_list(){
 
 void parser::print(){
     cout<<"Book is of type "<<type<<endl;
-    cout<<"Author if the book is "<<author<<endl;
+    cout<<"Author of the book is "<<author<<endl;
     cout<<"Name of the book is "<<name<<endl;
     cout<<"Language of the book is "<<language<<endl;
     cout<<"Book is available at "<<address<<endl;

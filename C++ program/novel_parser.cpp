@@ -25,9 +25,9 @@ bool compareInterval(pair<int,string> i1, pair<int,string> i2)
 
 void novel_parser::word_serch_chapter(string w){
     string mytext;
+    transform(w.begin(), w.end(), w.begin(), ::toupper);
+
     file.clear();
-    //cout<<parser::address<<name;
-    //file.open(address.c_str());
     file.seekg(0, ios::beg);
     vector<pair<int,pair<string,string>>> count;
     while(getline (file,mytext)){
@@ -64,6 +64,7 @@ void novel_parser::word_serch_chapter(string w){
                         }
                         c=0;
                     }
+                    transform(s.begin(), s.end(), s.begin(), ::toupper);
                     if(s.find(w)!=string::npos){
                         c++;
                     }
@@ -96,7 +97,7 @@ void novel_parser::word_serch_chapter(string w){
             a++;
             //iss>>s;
             cout<<s<<" ";
-            if(a%20==0){
+            if(a%55==0){
                 cin.get();
             }
         }
@@ -108,6 +109,7 @@ void novel_parser::word_serch_chapter(string w){
 
 void novel_parser::word_serch_paragraph(string w){
     string mytext;
+    transform(w.begin(), w.end(), w.begin(), ::toupper);
     
     vector<pair<int,string>> count;
     while(getline (file,mytext)){
@@ -124,6 +126,7 @@ void novel_parser::word_serch_paragraph(string w){
         int c=0;
         while(iss>>s){
             //iss >> s;
+            transform(s.begin(), s.end(), s.begin(), ::toupper);
             if(s.find(w)!=string::npos){
                 c++;
             }
@@ -137,7 +140,10 @@ void novel_parser::word_serch_paragraph(string w){
     }
     for(int i=0;i<n;i++){
         if(count[i].first==0){
-            cout<<"only "<<i+1<<" paragraphs contain word "<<w<<endl;
+            if(i>0)
+                cout<<"only "<<i<<" paragraphs contain word "<<w<<endl;
+            else   
+                cout<<"No paragraph contain word "<<w<<endl;
             return;
         }
         istringstream iss(count[i].second);
@@ -149,7 +155,7 @@ void novel_parser::word_serch_paragraph(string w){
             a++;
             //iss>>s;
             cout<<s<<" ";
-            if(a%20==0){
+            if(a%55==0){
                 cin.get();
             }
         }

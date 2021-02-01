@@ -1,0 +1,70 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+novel_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.h
+fstream
+-
+sstream
+-
+vector
+-
+algorithm
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+fstream
+-
+

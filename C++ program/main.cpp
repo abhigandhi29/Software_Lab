@@ -35,7 +35,7 @@ void create_reader(string loc){
                 continue;
             }
             if(it.first.find(".txt") == string::npos){
-                cout<<it.first<<" is not a txt file"<<endl;
+                cout<<it.first<<" is not a '.txt' file"<<endl;
                 continue;            
             }
             
@@ -45,7 +45,7 @@ void create_reader(string loc){
                     cout<<endl;
                     std::cout << "New Book detected: " << it.first << endl;
                     cout<<"Type '0' for novel"<<endl<<"type 1 for play"<<endl;
-                    cout<<"Enter 2 for Invalid .txt file"<<endl<<"If Nothing is printed Enter Twice"<<endl;
+                    cout<<"Enter 2 for Invalid '.txt' file"<<endl<<"If Nothing is printed enter number Twice"<<endl;
                     int type;
                     //cin.sync();
                     cin>>type;
@@ -74,8 +74,8 @@ void create_reader(string loc){
 }
 
 void printinstructionsforserch(){
-    cout<<"Enter 1 for serching by Book name"<<endl;
-    cout<<"Enter 2 for serching by Author name"<<endl;
+    cout<<"Enter 1 for searching by Book name"<<endl;
+    cout<<"Enter 2 for searching by Author name"<<endl;
 }
 
 
@@ -94,7 +94,7 @@ set<int> serch_and_print(){
             string temp=it.name;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if(temp.find(name) != string::npos){
-                cout<<"ID: "<<i<<", ";
+                cout<<"ID: "<<i;
                 it.print_as_list();
                 serch_results.insert(i);
             }
@@ -104,7 +104,7 @@ set<int> serch_and_print(){
             string temp=it.name;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if(temp.find(name) != string::npos){
-                cout<<"ID: "<<i<<", ";
+                cout<<"ID: "<<i;
                 it.print_as_list();
                 serch_results.insert(i);
             }
@@ -122,7 +122,7 @@ set<int> serch_and_print(){
             string temp=it.author;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if(temp.find(name) != string::npos){
-                cout<<"ID: "<<i<<", ";
+                cout<<"ID: "<<i;
                 it.print_as_list();
                 serch_results.insert(i);
             }
@@ -145,8 +145,8 @@ set<int> serch_and_print(){
 
 void printinstructions(){
     cout<<"Enter 3 for printing all books"<<endl;
-    cout<<"Enter 4 for serching for a book"<<endl;
-    cout<<"Enter 5 for word serch"<<endl;
+    cout<<"Enter 4 for searching a book"<<endl;
+    cout<<"Enter 5 for word search"<<endl;
 }
 
 void word_serch(){
@@ -222,7 +222,22 @@ int main() {
                 }
             }
             else if(c==4){
-                serch_and_print();
+                set<int> s=serch_and_print();
+                cout<<"Enter ID of book to print or else enter -1: ";
+                int x;
+                cin>>x;
+                if(x!=-1){
+                    if(x>=novel.size()+play.size() || x<0 || s.count(x)==0){
+                        cout<<"Invalid ID"<<endl;
+                        continue;
+                    }
+                    if(x>=play.size()){
+                        novel[x-play.size()].print_book();
+                    }
+                    else{
+                        play[x].print_book();
+                    }
+                }
             }
             else if(c==5){
                 word_serch();   

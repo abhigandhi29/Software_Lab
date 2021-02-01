@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread   CMakeFiles/LSM.dir/parser.cpp.o CMakeFiles/LSM.dir/novel_parser.cpp.o CMakeFiles/LSM.dir/play_parser.cpp.o CMakeFiles/LSM.dir/file_watcher.cpp.o CMakeFiles/LSM.dir/main.cpp.o  -o LSM 
