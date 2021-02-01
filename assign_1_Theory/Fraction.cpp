@@ -81,11 +81,9 @@ Fraction& Fraction::operator=(const Fraction &f){
     }
     return *this;
 }
-// Unary + and - operators are defined as inline functions in Function.hpp
+// Unary + and - operators are defined as inline functions in .h file
 
 //URINARY ARETHMETIC PREFIX OPERATORS, here *this has been returned as the fraction is to be returned AFTER the arithmetic operation has been performed
-
-
 Fraction Fraction::operator++(){
     p+=q;
     return *this;
@@ -95,7 +93,8 @@ Fraction Fraction::operator--(){
     return *this;
 }
 
-//UNARY ARITHMETIC POSTFIX OPERATOR, here a new fraction value is returned as the change is made on the input fraction but it's previous value is to be used first.
+//UNARY ARITHMETIC POSTFIX OPERATOR, 
+//here a new fraction value is returned as the change is made on the input fraction but we have to return uts previous values.
 Fraction Fraction::operator++(int){
     p+=q;
     return Fraction(p-q,q);
@@ -119,8 +118,8 @@ Fraction operator* (const Fraction &a,const Fraction &b){
 //Try catch has been used to make sure division by 0 never takes place. Exit(1) is used afterwards.
 Fraction operator/ (const Fraction &a,const Fraction &b){
     try{
-        if(b.getNum()==0)
-        throw(b.getNum());
+        if(b.p==0)
+        throw(b.p);
         else
         {
             return Fraction(a.p*b.q,a.q*b.p);
@@ -135,16 +134,16 @@ Fraction operator/ (const Fraction &a,const Fraction &b){
 }
 Fraction operator% (const Fraction &a,const Fraction &b){
     try{
-        if(b.getNum()==0)
-        throw(b.getNum());
+        if(b.p==0)
+        throw(b.p);
         else{
-            Fraction x((a.getNum()*b.getDenum()),(a.getDenum()*b.getNum()));
-            if(x.getDenum()<0){
-                x.setNum(a.getNum()*-1);
-                x.setDenum(a.getDenum()*-1);
+            Fraction x((a.p*b.q),(a.q*b.p));
+            if(x.q<0){
+                x.setNum(a.p*-1);
+                x.setDenum(a.q*-1);
             }
-            x.setNum(x.getNum()%x.getDenum());
-            if(x.getNum()==0)
+            x.setNum(x.p%x.q);
+            if(x.p==0)
             x.setDenum(1);
             return x*b;
         }
@@ -157,7 +156,7 @@ Fraction operator% (const Fraction &a,const Fraction &b){
 }
 
 //BINARY RELATIONAL OPERATORS
-//If both numbers are 0 then denominator comparision is not needed, hence the return value as mentioned in the function
+//They are defined as an inline function in .h file
 
 
 // SPECIAL OPERATOR (NEGATION)
@@ -196,7 +195,7 @@ ostream & operator << (ostream &out, const Fraction &a)
 { 
     out << a.p;
     if(a.q!=1 || a.p==0)
-        out << "/" << a.getDenum();
+        out << "/" << a.q;
     return out;
 }
 istream & operator >> (istream &in,Fraction &a) 
@@ -208,13 +207,14 @@ istream & operator >> (istream &in,Fraction &a)
     cout << "Enter Denominator "; 
     in >> m;
     a.setDenum(m);
-    int x=Fraction::gcd(a.getNum(),a.getDenum());
-    a.setNum(a.getNum()/x);
-    a.setDenum(a.getDenum()/x);
-    if(a.getDenum()<0){
-        a.setNum(a.getNum()*(-1));a.setDenum(a.getDenum()*(-1));
+    int x=Fraction::gcd(a.p,a.q);
+    a.setNum(a.p/x);
+    a.setDenum(a.q/x);
+    if(a.q<0){
+        a.setNum(a.p*(-1));
+        a.setDenum(a.q*(-1));
     }
-    if(a.getNum()==0){
+    if(a.p==0){
         a.setDenum(1);
     }
     return in; 
