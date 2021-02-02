@@ -1,8 +1,4 @@
 #include<iostream>
-#include<filesystem>
-#include<chrono>
-#include<thread>
-#include<unordered_map>
 #include<string>
 #include<functional>
 #include "play_parser.h"
@@ -12,13 +8,16 @@
 #include <algorithm>
 using namespace std;
 
+//calls parser constructor
 play_parser::play_parser(string address,string type1) : parser(address,type1){
-    //cout<<address<<endl;
-    //file.open(address.c_str());
 }
+
+//copy constructor
 play_parser::play_parser(const play_parser &p) : parser(p.address,p.name,p.author,p.type,p.language){
 }
 
+
+//special feature function of play_type_class
 void play_parser::word_serch(string w){
     transform(w.begin(), w.end(), w.begin(), ::toupper);
     string mytext;
@@ -53,9 +52,7 @@ void play_parser::word_serch(string w){
                     }
                     names.clear();
                 }
-                //cout<<s<<" "<<s.length()<<endl;
                 if(s.back()=='.'){
-                    //cout<<s<<endl;
                     s.pop_back();
                     if(std::all_of( s.begin(), s.end(), &::isupper ))
                         names.insert(s);
@@ -70,6 +67,7 @@ void play_parser::word_serch(string w){
         }  
 
     }
+    //prints all character stored in set final
     cout<<"Character in same Act as "<<w<<" are ";
     for(auto it:final){
         if(it != *final.crbegin())

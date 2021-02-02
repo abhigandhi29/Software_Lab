@@ -10,6 +10,8 @@ using namespace std;
 #include<fstream>
 #include<sstream>
 
+
+//Constructors for parserclass including copy constructor
 parser::parser(string address,string type1) : address{address},type{type1}{
     file.open(address.c_str());
     out.open("index.txt",fstream::app);
@@ -42,6 +44,9 @@ parser::parser(string address,string name,string author,string type,string langu
     out.open("index.txt",fstream::app);    
 }
 
+
+//called by constructor 
+//Capture basic infirmation of a file
 void parser::basic_info(){
     file.clear();
     file.seekg(0, ios::beg);
@@ -76,15 +81,18 @@ void parser::basic_info(){
     }
 }
 
+//Saves basic info colected by above function in index.txt
 void parser::save_file(){
    
     out << "Type: "<<type<<"Author: "<<author<<"Name: "<<name<<endl;
 }
 
+//Basic_printing
 void parser::print_as_list(){
     cout << ", Type: "<<type<<", Author: "<<author<<", Name: "<<name<<endl;
 }
 
+//Few more details are printed
 void parser::print(){
     cout<<"Book is of type "<<type<<endl;
     cout<<"Author of the book is "<<author<<endl;
@@ -93,7 +101,7 @@ void parser::print(){
     cout<<"Book is available at "<<address<<endl;
 }
 
-
+//prints entire book
 void parser::print_book(){
     file.clear();
     file.seekg(0, ios::beg);

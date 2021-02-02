@@ -1,8 +1,4 @@
 #include<iostream>
-#include<filesystem>
-#include<chrono>
-#include<thread>
-#include<unordered_map>
 #include<string>
 #include<functional>
 using namespace std;
@@ -12,17 +8,15 @@ using namespace std;
 #include<vector>
 #include <algorithm> 
 
-
+//constructor: calls constructor of parser, parent class.
 novel_parser::novel_parser(string address,string type) : parser(address,type){
 }
+
+//copy constructor
 novel_parser::novel_parser(const novel_parser &p) : parser(p.address,p.name,p.author,p.type,p.language){
 }
 
-bool compareInterval(pair<int,string> i1, pair<int,string> i2)
-{
-    return (i1.first > i2.first);
-}
-
+//serches for word chapter wise
 void novel_parser::word_serch_chapter(string w){
     string mytext;
     transform(w.begin(), w.end(), w.begin(), ::toupper);
@@ -51,7 +45,6 @@ void novel_parser::word_serch_chapter(string w){
                 istringstream iss(mytext);
                 string s;
                 while(iss>>s){
-                    //iss >> s;
                     if(s.compare("CHAPTER")==0){
                         count.push_back(make_pair(c,make_pair(chapter_name,text)));
                         iss>>s;
@@ -106,7 +99,7 @@ void novel_parser::word_serch_chapter(string w){
     
 }
 
-
+//serches for word paragraph wise
 void novel_parser::word_serch_paragraph(string w){
     string mytext;
     transform(w.begin(), w.end(), w.begin(), ::toupper);
@@ -147,13 +140,11 @@ void novel_parser::word_serch_paragraph(string w){
             return;
         }
         istringstream iss(count[i].second);
-        //cout<<count[i].second.first<<endl<<endl;
         cout<<endl<<"Count: "<<count[i].first<<endl;
         string s;
         int a=0;
         while(iss>>s){
             a++;
-            //iss>>s;
             cout<<s<<" ";
             if(a%55==0){
                 cin.get();

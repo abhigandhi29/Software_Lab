@@ -59,7 +59,7 @@ public:
 
     //Binary Operator, Due to small defination defied as a Inline
     //return type bool as instructed.
-    //Function parameter is taken as constant to make sure no edits are made in the input fractions hence making the program less prone to errors
+    //Function parameter is taken as constant to make sure no edits are made in the input fractions to reduce errors
     inline bool operator==(const Fraction &b){return(p==b.p&&q==b.q);}
     inline bool operator!=(const Fraction &b){return !(p==b.p&&q==b.q);}
     //comparisions have been made after Cross Multiplication so as to not introduce any errors because of division of two int values.

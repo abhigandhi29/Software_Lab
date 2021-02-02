@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.cpp
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+unordered_map
+-
+string
+-
+functional
+-
+file_watcher.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+vector
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
 iostream
 -
 filesystem
@@ -16,6 +34,44 @@ chrono
 thread
 -
 unordered_map
+-
+string
+-
+functional
+-
+vector
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/main.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+string
+-
+functional
+-
+vector
+-
+file_watcher.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/file_watcher.h
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+play_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.h
+novel_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.h
+set
+-
+variant
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/novel_parser.cpp
+iostream
 -
 string
 -
@@ -50,6 +106,28 @@ functional
 parser.h
 /mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
 
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.cpp
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
+fstream
+-
+sstream
+-
+
 /mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
 iostream
 -
@@ -67,4 +145,40 @@ functional
 -
 fstream
 -
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.cpp
+iostream
+-
+string
+-
+functional
+-
+play_parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.h
+fstream
+-
+sstream
+-
+set
+-
+algorithm
+-
+
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/play_parser.h
+iostream
+-
+filesystem
+-
+chrono
+-
+thread
+-
+unordered_map
+-
+string
+-
+functional
+-
+parser.h
+/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/C++ program/parser.h
 

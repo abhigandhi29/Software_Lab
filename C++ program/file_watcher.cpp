@@ -1,7 +1,6 @@
 #include<iostream>
 #include<filesystem>
 #include<chrono>
-#include<thread>
 #include<unordered_map>
 #include<string>
 #include<functional>
@@ -13,13 +12,11 @@ using namespace std;
 
 
 
-
+    //constructor for filewatcher class
     FileWatcher::FileWatcher(std::string path_to_watch, std::chrono::duration<int, std::milli> delay) : path_to_watch{path_to_watch}, delay{delay} {
-        //for(auto &file : std::filesystem::recursive_directory_iterator(path_to_watch)) {
-        //    paths_[file.path().string()] = std::filesystem::last_write_time(file);
-        //}
     }
  
+    //Checks fornewfiles in every 5 second. This functionis caleed in main in an another thread.
     void FileWatcher::start(vector<pair<string,FileStatus>> &status) {
         //while(running_) {
             // Wait for "delay" milliseconds

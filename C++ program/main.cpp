@@ -2,7 +2,6 @@
 #include<filesystem>
 #include<chrono>
 #include<thread>
-#include<unordered_map>
 #include<string>
 #include<functional>
 #include<vector>
@@ -18,6 +17,9 @@ vector<play_parser> play;
 vector<novel_parser> novel;
 bool scan_for_cmd=false;
 
+
+//This function is called in seprate tread.
+//It continuously calls start function in filewatcher which checks for any new file
 void create_reader(string loc){
     vector<pair<string,FileStatus>> status; 
     FileWatcher fw{loc};
@@ -39,7 +41,7 @@ void create_reader(string loc){
                 continue;            
             }
             
-            //cout<<it.first<<endl;
+
             switch(it.second) {
                 case FileStatus::created:
                     cout<<endl;
@@ -47,7 +49,6 @@ void create_reader(string loc){
                     cout<<"Type '0' for novel"<<endl<<"type 1 for play"<<endl;
                     cout<<"Enter 2 for Invalid '.txt' file"<<endl<<"If Nothing is printed enter number Twice"<<endl;
                     int type;
-                    //cin.sync();
                     cin>>type;
                     if(type==0){
                         novel.push_back(novel_parser(it.first,"novel "));
@@ -73,12 +74,13 @@ void create_reader(string loc){
     }
 }
 
+//prints basic information for serch
 void printinstructionsforserch(){
     cout<<"Enter 1 for searching by Book name"<<endl;
     cout<<"Enter 2 for searching by Author name"<<endl;
 }
 
-
+//serch for books based on author or book name and returns a set of id containing all books matching serch word
 set<int> serch_and_print(){
     set<int> serch_results;
     printinstructionsforserch();
@@ -118,7 +120,6 @@ set<int> serch_and_print(){
         transform(name.begin(), name.end(), name.begin(), ::toupper);
         int i=0;
         for(auto& it : play){
-            //cout<<it->name<<endl;
             string temp=it.author;
             transform(temp.begin(), temp.end(), temp.begin(), ::toupper);
             if(temp.find(name) != string::npos){
@@ -143,12 +144,16 @@ set<int> serch_and_print(){
     return serch_results;
 }
 
+//prints main instructions i.e instructions for cin call in main
 void printinstructions(){
     cout<<"Enter 3 for printing all books"<<endl;
     cout<<"Enter 4 for searching a book"<<endl;
     cout<<"Enter 5 for word search"<<endl;
 }
 
+//calls serch and print for geeting the set of all possible book
+//perform special function on one of the chossen book
+//Depending on the type of book
 void word_serch(){
     set<int> serch_result=serch_and_print();
     cout<<"Enter ID of Book to select: "<<endl;
@@ -202,6 +207,7 @@ int main() {
     string loc="./";
     cout<<"Enter Path to track relative to current location: './ for same location': ";
     cin>>loc;
+    //creating new thread
     thread reader(create_reader,loc);
     int c;
     while(true){
@@ -223,6 +229,7 @@ int main() {
             }
             else if(c==4){
                 set<int> s=serch_and_print();
+                //prints whole book if user wants to print it in  a set of 30 lines.
                 cout<<"Enter ID of book to print or else enter -1: ";
                 int x;
                 cin>>x;
