@@ -15,6 +15,7 @@ class Fraction {
 public:
     //Constructors and copy-constructors
     Fraction(int m=1,int n=1);         //Regular Constructor when both numerator and denominator are mentioned.
+                                    //overloaded for value of p=1 and q=1
     Fraction(double d);            //Constructor when a decimal number is to be converted into a fraction.
     Fraction(const Fraction &a);   //Copy Constructor.
     
@@ -41,13 +42,7 @@ public:
     Fraction operator++(int);
     Fraction operator--(int);
 
-    //As the members p and q are declared private, therefore these functions were needed to be able to use these numbers outside the class.
-    //Makes sure that nothing is edited in such a way that it might bring an error afterwards and hence makees it easier and more error free to use and edit the members p and q.
-    inline int getNum() const {return p;}         //Returns p
-    inline int getDenum() const {return q;}       //Returns q
-    void setNum(int a);         //To edit p
-    void setDenum(int a);       //To edit q
-
+    //Input fraction is taken as const to makes sure that nothing is edited in such a way that it might bring an error 
     //I/O operators, defined as friend operators as the private members, p and q were needed for easy implementation.
     // Call by reference is used to make changes directly in the fraction used in cin and cout
     friend ostream & operator << (ostream &out,const Fraction &a); 
@@ -81,6 +76,10 @@ public:
     int precision() const;          //const is used to make be able to access the element prec even though it is declared as static constant.
     static int gcd(int a,int b);    //return Greatest Common Divisor
     static int lcm(int a,int b);    //return Least Common Multiple
+
+    //utility function to make edit of p and q easy 
+    void setNum(int a);         //To edit p
+    void setDenum(int a);       //To edit q
 
 private: 
     int p;

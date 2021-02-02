@@ -76,8 +76,8 @@ void Fraction::setDenum(int a){
 //The fraction that is being copied is taken as a const fraction to ensure that no edits are made on that fraction.
 Fraction& Fraction::operator=(const Fraction &f){
     if(this!=&f){
-        p=f.getNum();
-        q=f.getDenum();
+        p=f.p;
+        q=f.q;
     }
     return *this;
 }
