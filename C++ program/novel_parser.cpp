@@ -47,7 +47,7 @@ void novel_parser::word_serch_chapter(string w){
                 while(iss>>s){
                     if(s.compare("CHAPTER")==0){
                         count.push_back(make_pair(c,make_pair(chapter_name,text)));
-                        iss>>s;
+                        //iss>>s;
                         chapter_name="";
                         text="";
                         while(iss>>s){
@@ -83,14 +83,14 @@ void novel_parser::word_serch_chapter(string w){
             return;
         }
         istringstream iss(count[i].second.second);
-        cout<<count[i].second.first<<": "<<count[i].first<<endl<<endl;
+        cout<<endl<<count[i].second.first<<": "<<count[i].first<<endl<<endl;
         string s;
         int a=0;
         while(iss>>s){
             a++;
             //iss>>s;
             cout<<s<<" ";
-            if(a%55==0){
+            if(a%50==0){
                 cin.get();
             }
         }
@@ -140,13 +140,13 @@ void novel_parser::word_serch_paragraph(string w){
             return;
         }
         istringstream iss(count[i].second);
-        cout<<endl<<"Count: "<<count[i].first<<endl;
+        cout<<endl<<endl<<"Count: "<<count[i].first<<endl;
         string s;
         int a=0;
         while(iss>>s){
             a++;
             cout<<s<<" ";
-            if(a%55==0){
+            if(a%50==0){
                 cin.get();
             }
         }

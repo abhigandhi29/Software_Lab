@@ -52,10 +52,26 @@ void play_parser::word_serch(string w){
                     }
                     names.clear();
                 }
+                while(std::all_of( s.begin(), s.end(), &::isupper ) && s.back()!='.'){
+                    string temp;
+                    iss>>temp;
+                    s.append(" ");
+                    s.append(temp);
+                    //cout<<s<<std::all_of( s.begin(), s.end(), &::isupper )<<endl;
+                }
                 if(s.back()=='.'){
                     s.pop_back();
-                    if(std::all_of( s.begin(), s.end(), &::isupper ))
+                    string temp;
+                    bool check=true;
+                    istringstream it(s);
+                    while(it>>temp){
+                        if(!std::all_of( temp.begin(), temp.end(), &::isupper ))
+                            check=false;
+                
+                    }
+                    if(check){
                         names.insert(s);
+                    }
                 }    
             }
             if(names.count(w)==1){
