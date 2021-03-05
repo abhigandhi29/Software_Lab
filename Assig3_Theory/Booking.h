@@ -11,15 +11,15 @@ using namespace std;
 
 class Booking{
     private:
-        Station &fromStation_,&toStation_;
-        Date &data_;
+        Station fromStation_,toStation_;
+        Date data_;
         BookingClasses *bookinClass_;
         bool bookingStatus =  true;
         string bookingMessage_ = "BOOKING SUCCEEDED";
         Passenger *passenger_;
         int fairComputed_,pnr_;
 
-        
+        Booking(const Booking &b);
         static double sBaseFairPerKM;
         static double sACSurpass;
         static double sLuxuryTaxPercent;

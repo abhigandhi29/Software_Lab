@@ -10,11 +10,13 @@ BookingClasses &BookingClasses::operator=(const BookingClasses &a){
 }
 ostream &operator<<(ostream &out, const BookingClasses &B){
     out<<"Travel Class: "<<B.name_<<endl;
+    out<<"\t-Load Factor: "<<B.LoadFactor()<<endl;
     out<<"\t-Confort: "<<(B.IsAC() ? "AC" : "Non-AC")<<endl;
     out<<"\t-Mode: "<<(B.IsSitting() ? "Sitting" : "Sleeping")<<endl;
-    out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No")<<endl;
-    out<<"\t-Tiers: "<<B.GetNumberOfTires()<<endl;
-    out<<"\t-Load Factor: "<<B.LoadFactor();
+    out<<"\t-Bunks: "<<B.GetNumberOfTires()<<endl;
+    out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No");
+    
+    
     return out;
 }
 
@@ -97,7 +99,7 @@ bool FirstClass::sisLuxury = true;
 FirstClass *FirstClass::sFirstClass=NULL;
 FirstClass *FirstClass::Type(){
     if(!sFirstClass)
-        sFirstClass = new FirstClass("FirstClass",true);
+        sFirstClass = new FirstClass("FirstClass",false);
     return sFirstClass;
 }
 

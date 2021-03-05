@@ -18,7 +18,10 @@ int Booking::sPNRNumber = 0;
 void Booking::ComputeFair() const{
     int dist = Railway::GetDistance(fromStation_,toStation_);
     float price = sBaseFairPerKM*dist;
-    price = price*(bookinClass_->LoadFactor())+sACSurpass;
+    price = price*(bookinClass_->LoadFactor());
+    if(bookinClass_->IsAC()){
+        price+=sACSurpass;
+    }
     if(bookinClass_->IsLuxury()){
         price = price*(1+sLuxuryTaxPercent/100);
     }
@@ -33,6 +36,6 @@ ostream &operator<<(ostream &out, const Booking &b){
     out<<"To Station = "<<b.toStation_<<endl;
     out<<"Travel Date = "<<b.data_<<endl;
     out<<*(b.bookinClass_)<<endl;
-    out<<b.fairComputed_;
+    out<<"fair = "<<b.fairComputed_;
     return out;
 }

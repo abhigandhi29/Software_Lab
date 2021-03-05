@@ -6,10 +6,11 @@ using namespace std;
 
 class BookingClasses{
     private:
-        const string &name_;
-        const bool &isAC_;
-        BookingClasses &operator=(const BookingClasses &);
+        const string name_;
+        const bool isAC_;
+        
     protected:
+        BookingClasses &operator=(const BookingClasses &);
         BookingClasses(const string &,const bool &);
         BookingClasses(const BookingClasses &);
         virtual ~BookingClasses();
