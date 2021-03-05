@@ -14,6 +14,7 @@ class Station{
         }
         int GetDistance(string other) const;
         friend ostream &operator<<(ostream &, const Station &);
+        friend bool operator==(const Station &, const Station &);
 
 };
 

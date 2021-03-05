@@ -11,7 +11,7 @@ ostream &operator<<(ostream &out, const Passenger &p){
     out<<"DOB: "<<p.dob_;
     out<<"Category: "<<p.category_<<endl;
     if(!p.number_.empty()){
-        out<<"Phone Number: "<<p.number_<<endl;
+        out<<"Phone Number: "<<p.number_;
        
     }
     return out;

@@ -9,12 +9,12 @@ BookingClasses &BookingClasses::operator=(const BookingClasses &a){
     return *this;
 }
 ostream &operator<<(ostream &out, const BookingClasses &B){
-    out<<"Booking Class: "<<B.name_<<endl;
-    out<<"\t-Is AC: "<<(B.IsAC() ? "Yes" : "No")<<endl;
-    out<<"\t-Is Sitting: "<<(B.IsSitting() ? "Yes" : "No")<<endl;
+    out<<"Travel Class: "<<B.name_<<endl;
+    out<<"\t-Confort: "<<(B.IsAC() ? "AC" : "Non-AC")<<endl;
+    out<<"\t-Mode: "<<(B.IsSitting() ? "Sitting" : "Sleeping")<<endl;
     out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No")<<endl;
     out<<"\t-Tiers: "<<B.GetNumberOfTires()<<endl;
-    out<<"\t-Load Factor: "<<B.LoadFactor()<<endl;
+    out<<"\t-Load Factor: "<<B.LoadFactor();
     return out;
 }
 
@@ -109,9 +109,4 @@ const bool &ACChairCar::sisLuxury = false;
 const ACChairCar &ACChairCar::Type(){
     static const ACChairCar sACChairCar("ACChairCar",true);
     return sACChairCar;
-}
-
-
-int main(){
-    return 1;
 }
