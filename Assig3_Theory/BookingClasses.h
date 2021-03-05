@@ -88,13 +88,14 @@ class Tire1 : public BerthClass{
 
 class Sleeper : public Tire3{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static Sleeper *sSleeper;
+    protected:
         Sleeper(const string &, const bool &);
         ~Sleeper();
     public:
-        static const Sleeper &Type();
+        static Sleeper *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -105,15 +106,16 @@ class Sleeper : public Tire3{
 };
 
 
-class AC3Tire : public Tire3{
+class AC3Tier : public Tire3{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
-        AC3Tire(const string &, const bool &);
-        ~AC3Tire();
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static AC3Tier *sAC3Tier;
+    protected:
+        AC3Tier(const string &, const bool &);
+        ~AC3Tier();
     public:
-        static const AC3Tire &Type();
+        static AC3Tier *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -123,15 +125,16 @@ class AC3Tire : public Tire3{
 };
 
 
-class AC2Tire : public Tire2{
+class AC2Tier : public Tire2{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
-        AC2Tire(const string &, const bool &);
-        ~AC2Tire();
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static AC2Tier *sAC2Tier;
+    protected:
+        AC2Tier(const string &, const bool &);
+        ~AC2Tier();
     public:
-        static const AC2Tire &Type();
+        static AC2Tier *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -143,13 +146,14 @@ class AC2Tire : public Tire2{
 
 class ACFirstClass : public Tire1{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static ACFirstClass *sACfirstClass;
+    protected:
         ACFirstClass(const string &, const bool &);
         ~ACFirstClass();
     public:
-        static const ACFirstClass &Type();
+        static  ACFirstClass *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -160,13 +164,14 @@ class ACFirstClass : public Tire1{
 
 class FirstClass : public Tire2{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static FirstClass *sFirstClass;
+    protected:
         FirstClass(const string &, const bool &);
         ~FirstClass();
     public:
-        static const FirstClass &Type();
+        static FirstClass *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -178,13 +183,14 @@ class FirstClass : public Tire2{
 
 class SecondSitting : public SittingClass{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static SecondSitting *sSecondSitting;
+    protected:
         SecondSitting(const string &, const bool &);
         ~SecondSitting();
     public:
-        static const SecondSitting &Type();
+        static SecondSitting *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }
@@ -196,13 +202,14 @@ class SecondSitting : public SittingClass{
 
 class ACChairCar : public SittingClass{
     private:
-        static const double &sLoadfactor;
-        static const bool &sisLuxury;
-    private:
+        static double sLoadfactor;
+        static bool sisLuxury;
+        static ACChairCar *sACChairCar;
+    protected:
         ACChairCar(const string &, const bool &);
         ~ACChairCar();
     public:
-        static const ACChairCar &Type();
+        static ACChairCar *Type();
         inline bool IsLuxury() const{
             return sisLuxury;
         }

@@ -1,8 +1,8 @@
 #include "Date.h"
 
-const vector<string> Date::sMonthNames{"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+vector<string> Date::sMonthNames{"Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-const vector<string> Date::sDayNames{"Monday", "Tuesday", "Wednesday", "Thursday",
+vector<string> Date::sDayNames{"Monday", "Tuesday", "Wednesday", "Thursday",
                                      "Friday", "Saturday", "Sunday"};
 
 Date::Date(uint32_t d, uint32_t m, uint32_t y) : date_(d), month_(m), year_(y) {}

@@ -6,13 +6,14 @@ using namespace std;
 
 class Station{
     private:
-        const string name_;
+        string name_;
     public:
         Station(string name);
+        Station(const Station &s);
         inline string GetName() const{
             return name_;
         }
-        int GetDistance(string other) const;
+        int GetDistance(Station other) const;
         friend ostream &operator<<(ostream &, const Station &);
         friend bool operator==(const Station &, const Station &);
 

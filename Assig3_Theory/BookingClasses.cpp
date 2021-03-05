@@ -41,52 +41,63 @@ Tire1::~Tire1(){}
 Sleeper::Sleeper(const string &name,const bool &isAc):Tire3(name,isAc){
 }
 Sleeper::~Sleeper(){}
-const double &Sleeper::sLoadfactor = 1;
-const bool &Sleeper::sisLuxury = false; 
-const Sleeper &Sleeper::Type(){
-    static const Sleeper sSleeper("Sleeper",false);
+double Sleeper::sLoadfactor = 1;
+bool Sleeper::sisLuxury = false; 
+Sleeper *Sleeper::sSleeper=NULL;
+Sleeper *Sleeper::Type(){
+    if(!sSleeper)
+        sSleeper = new Sleeper("Sleeper",false);
     return sSleeper;
 }
 
-AC3Tire::AC3Tire(const string &name,const bool &isAc):Tire3(name,isAc){
+AC3Tier::AC3Tier(const string &name,const bool &isAc):Tire3(name,isAc){
 }
-AC3Tire::~AC3Tire(){}
-const double &AC3Tire::sLoadfactor = 1.75;
-const bool &AC3Tire::sisLuxury = false; 
-const AC3Tire &AC3Tire::Type(){
-    static const AC3Tire sAC3Tire("AC3Tire",true);
-    return sAC3Tire;
+AC3Tier::~AC3Tier(){}
+double AC3Tier::sLoadfactor = 1.75;
+bool AC3Tier::sisLuxury = false; 
+AC3Tier *AC3Tier::sAC3Tier=NULL;
+AC3Tier *AC3Tier::Type(){
+    if(!sAC3Tier)
+        sAC3Tier = new AC3Tier("AC3Tier",true);
+    return sAC3Tier;
 }
 
-AC2Tire::AC2Tire(const string &name,const bool &isAc):Tire2(name,isAc){
+AC2Tier::AC2Tier(const string &name,const bool &isAc):Tire2(name,isAc){
 }
-AC2Tire::~AC2Tire(){}
-const double &AC2Tire::sLoadfactor = 2;
-const bool &AC2Tire::sisLuxury = false; 
-const AC2Tire &AC2Tire::Type(){
-    static const AC2Tire sAC2Tire("AC2Tire",true);
-    return sAC2Tire;
+AC2Tier::~AC2Tier(){}
+double AC2Tier::sLoadfactor = 2;
+bool AC2Tier::sisLuxury = false;
+AC2Tier *AC2Tier::sAC2Tier=NULL; 
+AC2Tier *AC2Tier::Type(){
+    if(!sAC2Tier)
+        sAC2Tier = new AC2Tier("AC2Tier",true);
+    return sAC2Tier;
 }
 
 
 ACFirstClass::ACFirstClass(const string &name,const bool &isAc):Tire1(name,isAc){
 }
 ACFirstClass::~ACFirstClass(){}
-const double &ACFirstClass::sLoadfactor = 3;
-const bool &ACFirstClass::sisLuxury = true; 
-const ACFirstClass &ACFirstClass::Type(){
-    static const ACFirstClass sACFirstClass("ACFirstClass",true);
-    return sACFirstClass;
+double ACFirstClass::sLoadfactor = 3;
+bool ACFirstClass::sisLuxury = true;
+ACFirstClass *ACFirstClass::sACfirstClass=NULL; 
+ACFirstClass *ACFirstClass::Type(){
+    if(!sACfirstClass){
+        sACfirstClass = new ACFirstClass("ACFirstClass",true);
+    }
+    return sACfirstClass;
 }
 
 
 FirstClass::FirstClass(const string &name,const bool &isAc):Tire2(name,isAc){
 }
 FirstClass::~FirstClass(){}
-const double &FirstClass::sLoadfactor = 2;
-const bool &FirstClass::sisLuxury = true; 
-const FirstClass &FirstClass::Type(){
-    static const FirstClass sFirstClass("FirstClass",true);
+double FirstClass::sLoadfactor = 2;
+bool FirstClass::sisLuxury = true; 
+FirstClass *FirstClass::sFirstClass=NULL;
+FirstClass *FirstClass::Type(){
+    if(!sFirstClass)
+        sFirstClass = new FirstClass("FirstClass",true);
     return sFirstClass;
 }
 
@@ -94,23 +105,23 @@ const FirstClass &FirstClass::Type(){
 SecondSitting::SecondSitting(const string &name,const bool &isAc):SittingClass(name,isAc){
 }
 SecondSitting::~SecondSitting(){}
-const double &SecondSitting::sLoadfactor = 0.5;
-const bool &SecondSitting::sisLuxury = false; 
-const SecondSitting &SecondSitting::Type(){
-    static const SecondSitting sSecondSitting("SecondSitting",false);
+double SecondSitting::sLoadfactor = 0.5;
+bool SecondSitting::sisLuxury = false;
+SecondSitting *SecondSitting::sSecondSitting=NULL; 
+SecondSitting *SecondSitting::Type(){
+    if(!sSecondSitting)
+        sSecondSitting = new SecondSitting("SecondSitting",false);
     return sSecondSitting;
 }
 
 ACChairCar::ACChairCar(const string &name,const bool &isAc):SittingClass(name,isAc){
 }
 ACChairCar::~ACChairCar(){}
-const double &ACChairCar::sLoadfactor = 1.25;
-const bool &ACChairCar::sisLuxury = false; 
-const ACChairCar &ACChairCar::Type(){
-    static const ACChairCar sACChairCar("ACChairCar",true);
+double ACChairCar::sLoadfactor = 1.25;
+bool ACChairCar::sisLuxury = false;
+ACChairCar *ACChairCar::sACChairCar=NULL; 
+ACChairCar *ACChairCar::Type(){
+    if(!sACChairCar)
+        sACChairCar = new ACChairCar("ACChairCar",true);
     return sACChairCar;
-}
-
-int main(){
-    return 1;
 }

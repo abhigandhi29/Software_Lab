@@ -2,7 +2,7 @@
 #include <cstddef>
 #include <iostream> 
 #include <iterator> 
-#include <map> 
+#include <unordered_map> 
 #include <vector>
 #include "Station.h"
 using namespace std;
@@ -12,9 +12,9 @@ using namespace std;
 class Railway{
     private:
         string name = "Indian Railway";
-        static const vector<Station> sStations;
+        static vector<Station> sStations;
         static Railway *sIndianRailways;
-        static const map<pair<Station,Station>,int> sDistStation;
+        static vector<pair<pair<Station,Station>,int>> sDistStation;
     protected:
         Railway();
         ~Railway();

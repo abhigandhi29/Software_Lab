@@ -9,8 +9,8 @@ using namespace std;
 class Date
 {
 private:
-    static const vector<string> sMonthNames;
-    static const vector<string> sDayNames;
+    static vector<string> sMonthNames;
+    static vector<string> sDayNames;
     const uint32_t date_;
     const uint32_t month_;
     const uint32_t year_;

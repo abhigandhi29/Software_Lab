@@ -1,10 +1,14 @@
 #include "Station.h"
+#include "Railway.h"
 
-int Station::GetDistance(string other) const{
-    return -1;
+int Station::GetDistance(Station other) const{
+    return Railway::GetDistance(*this,other);
 }
+Station::Station(string name):name_(name){}
+Station::Station(const Station &s):name_(s.GetName()){}
 ostream &operator<<(ostream &out, const Station &s){
-    out<<s.name_;
+    //cout<<s.name_<<endl;
+    out<<s.GetName();
     return out;
 }
 bool operator==(const Station &s1, const Station &s2){

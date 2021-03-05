@@ -1,12 +1,14 @@
 #include "Booking.h"
 #include "Railway.h"
 
-Booking::Booking(Station &from,Station &to, Date &date,BookingClasses *bcl,Passenger *p=NULL)
+Booking::Booking(Station from,Station to, Date date,BookingClasses *bcl,Passenger *p)
     :fromStation_(from),toStation_(to),data_(date),bookinClass_(bcl),passenger_(p){
         sPNRNumber++;
         pnr_ = sPNRNumber;
         ComputeFair();
+        sBookings.push_back(this);
     }
+vector<Booking *> Booking::sBookings;
 Booking::~Booking(){}
 double Booking::sBaseFairPerKM = 0.5;
 double Booking::sACSurpass = 50;
