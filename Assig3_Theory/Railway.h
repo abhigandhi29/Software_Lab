@@ -13,13 +13,14 @@ class Railway{
     private:
         string name = "Indian Railway";
         static const vector<Station> sStations;
-        static const map<pair<Station,Station>, int> data;
+        static Railway *sIndianRailways;
+        static const map<pair<Station,Station>,int> sDistStation;
     protected:
         Railway();
         ~Railway();
     public:
         static const Railway &IndianRailways();
-        static int GetDistance(Station a,Station b);
+        static int GetDistance(const Station &a,const Station &b);
 };
 
 #endif

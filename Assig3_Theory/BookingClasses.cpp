@@ -110,3 +110,7 @@ const ACChairCar &ACChairCar::Type(){
     static const ACChairCar sACChairCar("ACChairCar",true);
     return sACChairCar;
 }
+
+int main(){
+    return 1;
+}

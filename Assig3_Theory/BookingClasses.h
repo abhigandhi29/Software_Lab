@@ -52,8 +52,6 @@ class SittingClass : public BookingClasses{
         inline int GetNumberOfTires() const{
             return 0;
         }
-        virtual inline bool IsLuxury() const=0;
-        virtual inline double LoadFactor() const =0;
 };
 
 class Tire2 : public BerthClass{
