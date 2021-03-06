@@ -23,6 +23,9 @@ class Passenger{
             return number_;
         }
         virtual inline string GetCategory() const = 0;
+        inline Date GetBOD() const{
+            return dob_;
+        }
 
 };
 class General : public Passenger{

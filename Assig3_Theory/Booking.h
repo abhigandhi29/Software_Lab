@@ -29,6 +29,12 @@ class Booking{
         Booking(Station to,Station from, Date date,BookingClasses *bcl,Passenger *p = NULL);
         ~Booking();
         void ComputeFair() const;
+        inline int GetFair() const{
+            return fairComputed_;
+        }
+        inline int GetPNR() const{
+            return pnr_;
+        }
         friend ostream &operator<<(ostream &, const Booking &);
 };
 

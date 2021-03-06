@@ -22,11 +22,11 @@ vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
 Railway *Railway::sIndianRailways = NULL;
 Railway::Railway(){}
 Railway::~Railway(){}
-const Railway &Railway::IndianRailways(){
+const Railway *Railway::IndianRailways(){
     if(!sIndianRailways){
         sIndianRailways = new Railway();
     }
-    return *sIndianRailways;
+    return sIndianRailways;
 }
 int Railway::GetDistance(const Station &a,const Station &b){
     vector<pair<pair<Station,Station>,int>>::const_iterator itr;

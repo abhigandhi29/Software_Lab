@@ -17,9 +17,9 @@ class Railway{
         static vector<pair<pair<Station,Station>,int>> sDistStation;
     protected:
         Railway();
-        ~Railway();
     public:
-        static const Railway &IndianRailways();
+        ~Railway();
+        static const Railway *IndianRailways();
         static int GetDistance(const Station &a,const Station &b);
 };
 

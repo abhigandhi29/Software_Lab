@@ -55,6 +55,50 @@ void UnitTesting(){
     if(p6->GetName()!="prem" || p6->GetGender()!="male" || p6->GetNumber()!="" || p6->GetCategory()!="Premium Tatkal" || !(p6->GetBOD()==Date(4,1,1991)))
         cout<<"Passenger: Error in construction of Premium Tatkaal"<<endl;
 
+    BookingClasses *b11 = Sleeper::Type();
+    BookingClasses *b12 = Sleeper::Type();
+    BookingClasses *b21 = AC3Tier::Type();
+    BookingClasses *b22 = AC3Tier::Type();
+    BookingClasses *b31 = AC2Tier::Type();
+    BookingClasses *b32 = AC2Tier::Type();
+    BookingClasses *b41 = ACFirstClass::Type();
+    BookingClasses *b42 = ACFirstClass::Type();
+    BookingClasses *b51 = FirstClass::Type();
+    BookingClasses *b52 = FirstClass::Type();
+    BookingClasses *b61 = SecondSitting::Type();
+    BookingClasses *b62 = SecondSitting::Type();
+    BookingClasses *b71 = ACChairCar::Type();
+    BookingClasses *b72 = ACChairCar::Type();
+    if(b11!=b12)
+        cout<<"BookingClasses: Not a Singleton, Check Sleeper Type Function"<<endl;
+    if(b21!=b22)
+        cout<<"BookingClasses: Not a Singleton, Check AC3Tier Type Function"<<endl;
+    if(b31!=b32)
+        cout<<"BookingClasses: Not a Singleton, Check AC2Tier Type Function"<<endl;
+    if(b41!=b42)
+        cout<<"BookingClasses: Not a Singleton, Check ACFirstClass Type Function"<<endl;
+    if(b51!=b52)
+        cout<<"BookingClasses: Not a Singleton, Check FirstClass Type Function"<<endl;
+    if(b61!=b62)
+        cout<<"BookingClasses: Not a Singleton, Check ACChairCar Type Function"<<endl;
+    if(b71!=b72)
+        cout<<"BookingClasses: Not a Singleton, Check Sleeper Type Function"<<endl;
+    if(b11->GetName()!="Sleeper" || b11->GetNumberOfTires()!=3 || b11->IsAC()!=false || b11->LoadFactor()!=1 || b11->IsSitting()!=false)
+        cout<<"BookingClasses: Constructor error in sleeper"<<endl;
+    if(b21->GetName()!="AC3Tier" || b21->GetNumberOfTires()!=3 || b21->IsAC()!=true || b21->LoadFactor()!=1.75 || b21->IsSitting()!=false)
+        cout<<"BookingClasses: Constructor error in AC3Tier"<<endl;
+    if(b31->GetName()!="AC2Tier" || b31->GetNumberOfTires()!=2 || b31->IsAC()!=true || b31->LoadFactor()!=2 || b31->IsSitting()!=false)
+        cout<<"BookingClasses: Constructor error in AC2Tier"<<endl;
+    if(b41->GetName()!="ACFirstClass" || b41->GetNumberOfTires()!=1 || b41->IsAC()!=true || b41->LoadFactor()!=3 || b41->IsSitting()!=false)
+        cout<<"BookingClasses: Constructor error in ACFirstClass"<<endl;
+    if(b51->GetName()!="FirstClass" || b51->GetNumberOfTires()!=2 || b51->IsAC()!=false || b51->LoadFactor()!=2 || b51->IsSitting()!=false)
+        cout<<"BookingClasses: Constructor error in FirstClass"<<endl;
+    if(b61->GetName()!="SecondSitting" || b61->GetNumberOfTires()!=0 || b11->IsAC()!=false || b61->LoadFactor()!=0.5 || b61->IsSitting()!=true)
+        cout<<"BookingClasses: Constructor error in SecondSitting"<<endl;
+    if(b71->GetName()!="ACChairCar" || b71->GetNumberOfTires()!=0 || b71->IsAC()!=true || b71->LoadFactor()!=1.25 || b71->IsSitting()!=true)
+        cout<<"BookingClasses: Constructor error in ACChairCar"<<endl;
+    
+
 }
 
 int main(){
