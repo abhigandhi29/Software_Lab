@@ -3,20 +3,20 @@
 vector<Station> Railway::sStations{
     Station("Mumbai"),
     Station("Delhi"),
-    Station("Banglore"),
+    Station("Bangalore"),
     Station("Kolkata"),
     Station("Chennai")
 };
 vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
     {{Station("Mumbai"),Station("Delhi")},1447},
-    {{Station("Mumbai"),Station("Banglore")},981},
+    {{Station("Mumbai"),Station("Bangalore")},981},
     {{Station("Mumbai"),Station("Kolkata")},2014},
     {{Station("Mumbai"),Station("Chennai")},1338},
-    {{Station("Banglore"),Station("Delhi")},2150},
+    {{Station("Bangalore"),Station("Delhi")},2150},
     {{Station("Kolkata"),Station("Delhi")},1472},
     {{Station("Chennai"),Station("Delhi")},2180},
-    {{Station("Banglore"),Station("Kolkata")},1871},
-    {{Station("Banglore"),Station("Chennai")},350},
+    {{Station("Bangalore"),Station("Kolkata")},1871},
+    {{Station("Bangalore"),Station("Chennai")},350},
     {{Station("Kolkata"),Station("Chennai")},1659}
 };
 Railway *Railway::sIndianRailways = NULL;
@@ -38,4 +38,14 @@ int Railway::GetDistance(const Station &a,const Station &b){
     }
     return 0;
 }
-
+ostream &operator<<(ostream &out,const Railway &r){
+    out<<r.name<<endl;
+    out<<"Name of Stations: "<<endl;
+    for(int i=0;i<r.sStations.size();i++)
+        out<<"\t-"<<r.sStations[i]<<endl;
+    out<<endl;
+    out<<"Distances: ";
+    for(int i=0;i<r.sDistStation.size();i++)
+        out<<endl<<"\t-"<<r.sDistStation[i].first.first<<"<--->"<<r.sDistStation[i].first.second<<"-->"<<r.sDistStation[i].second;
+    return out;
+}

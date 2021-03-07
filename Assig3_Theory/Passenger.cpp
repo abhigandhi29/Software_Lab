@@ -8,13 +8,15 @@ ostream &operator<<(ostream &out, const Passenger &p){
     out<<"Passenger: "<<p.name_<<endl;
     out<<"Aadhar: "<<p.aadhar_<<endl;
     out<<"Gender: "<<p.gender_<<endl;
-    out<<"DOB: "<<p.dob_;
-    out<<"Category: "<<p.GetCategory()<<endl;
+    out<<"DOB: "<<p.dob_<<endl;;
+    out<<"Category: "<<p.GetCategory();
     if(!p.number_.empty()){
-        out<<"Phone Number: "<<p.number_;
+        out<<endl<<"Phone Number: "<<p.number_;
        
     }
     return out;
+}
+Passenger::Passenger(const Passenger &p):name_(p.GetName()),aadhar_(p.aadhar_),gender_(p.GetGender()),dob_(p.GetBOD()),number_(p.GetNumber()){
 }
 General::General(string name, string aadhar, string gender, Date dob, string number):Passenger(name,aadhar,gender,dob,number){
 }

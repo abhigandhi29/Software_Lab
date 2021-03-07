@@ -21,6 +21,7 @@ class Railway{
         ~Railway();
         static const Railway *IndianRailways();
         static int GetDistance(const Station &a,const Station &b);
+        friend ostream &operator<<(ostream &,const Railway &);
 };
 
 #endif

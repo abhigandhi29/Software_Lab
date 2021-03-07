@@ -1,0 +1,106 @@
+--------------------Given Application Test Part-3----------------------------
+BOOKING SUCCEEDED:
+PNR Number = 143
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 15/Feb/2021
+Travel Class: ACFirstClass
+        -Load Factor: 3
+        -Confort: AC
+        -Mode: Sleeping
+        -Bunks: 1
+        -Is Luxury: Yes
+fair = 2776
+
+BOOKING SUCCEEDED:
+PNR Number = 144
+From Station = Kolkata
+To Station = Delhi
+Travel Date = 5/Mar/2021
+Travel Class: AC2Tier
+        -Load Factor: 2
+        -Confort: AC
+        -Mode: Sleeping
+        -Bunks: 2
+        -Is Luxury: No
+fair = 1522
+
+BOOKING SUCCEEDED:
+PNR Number = 145
+From Station = Mumbai
+To Station = Kolkata
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+        -Load Factor: 2
+        -Confort: Non-AC
+        -Mode: Sleeping
+        -Bunks: 2
+        -Is Luxury: Yes
+fair = 2518
+
+BOOKING SUCCEEDED:
+PNR Number = 146
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 23/Mar/2021
+Travel Class: AC3Tier
+        -Load Factor: 1.75
+        -Confort: AC
+        -Mode: Sleeping
+        -Bunks: 3
+        -Is Luxury: No
+fair = 1316
+
+BOOKING SUCCEEDED:
+PNR Number = 147
+From Station = Chennai
+To Station = Delhi
+Travel Date = 25/Apr/2021
+Travel Class: ACChairCar
+        -Load Factor: 1.25
+        -Confort: AC
+        -Mode: Sitting
+        -Bunks: 0
+        -Is Luxury: No
+fair = 1413
+
+BOOKING SUCCEEDED:
+PNR Number = 148
+From Station = Chennai
+To Station = Kolkata
+Travel Date = 7/May/2021
+Travel Class: Sleeper
+        -Load Factor: 1
+        -Confort: Non-AC
+        -Mode: Sleeping
+        -Bunks: 3
+        -Is Luxury: No
+fair = 830
+
+BOOKING SUCCEEDED:
+PNR Number = 149
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 19/May/2021
+Travel Class: SecondSitting
+        -Load Factor: 0.5
+        -Confort: Non-AC
+        -Mode: Sitting
+        -Bunks: 0
+        -Is Luxury: No
+fair = 362
+
+BOOKING SUCCEEDED:
+PNR Number = 150
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 22/May/2021
+Travel Class: SecondSitting
+        -Load Factor: 0.5
+        -Confort: Non-AC
+        -Mode: Sitting
+        -Bunks: 0
+        -Is Luxury: No
+fair = 362
+
+---------------------------------------------------------------------------

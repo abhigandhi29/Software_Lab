@@ -8,7 +8,8 @@ using namespace std;
 class Passenger{
     private:
         const string name_,aadhar_,gender_,number_;
-        const Date dob_; 
+        const Date dob_;
+        Passenger(const Passenger &); 
     public:
         Passenger(string name, string aadhar, string gender, Date dob, string number="");
         ~Passenger();
