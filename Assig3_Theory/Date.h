@@ -21,13 +21,13 @@ public:
     friend ostream &operator<<(ostream &, const Date &);
     friend bool operator==(const Date &, const Date &);
     ~Date();
-    inline uint32_t getDay() const{
+    inline uint32_t GetDay() const{
         return day_;
     }
-    inline uint32_t getMonth() const{
+    inline uint32_t GetMonth() const{
         return month_;
     }
-    inline uint32_t getYear() const{
+    inline uint32_t GetYear() const{
         return year_;
     }
 };

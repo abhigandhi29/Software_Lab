@@ -11,15 +11,14 @@ using namespace std;
 #define _RAILWAY_H
 class Railway{
     private:
-        string name = "Indian Railway";
+        string name_ = "Indian Railway";
         static vector<Station> sStations;
-        static Railway *sIndianRailways;
         static vector<pair<pair<Station,Station>,int>> sDistStation;
     protected:
         Railway();
     public:
         ~Railway();
-        static const Railway *IndianRailways();
+        static const Railway &IndianRailways();
         static int GetDistance(const Station &a,const Station &b);
         friend ostream &operator<<(ostream &,const Railway &);
 };

@@ -19,13 +19,10 @@ vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
     {{Station("Bangalore"),Station("Chennai")},350},
     {{Station("Kolkata"),Station("Chennai")},1659}
 };
-Railway *Railway::sIndianRailways = NULL;
 Railway::Railway(){}
 Railway::~Railway(){}
-const Railway *Railway::IndianRailways(){
-    if(!sIndianRailways){
-        sIndianRailways = new Railway();
-    }
+const Railway &Railway::IndianRailways(){
+    static Railway sIndianRailways;
     return sIndianRailways;
 }
 int Railway::GetDistance(const Station &a,const Station &b){
@@ -39,7 +36,7 @@ int Railway::GetDistance(const Station &a,const Station &b){
     return 0;
 }
 ostream &operator<<(ostream &out,const Railway &r){
-    out<<r.name<<endl;
+    out<<r.name_<<endl;
     out<<"Name of Stations: "<<endl;
     for(int i=0;i<r.sStations.size();i++)
         out<<"\t-"<<r.sStations[i]<<endl;

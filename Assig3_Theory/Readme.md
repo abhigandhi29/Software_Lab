@@ -11,19 +11,19 @@ Raiway class contains two static vectors sStations and sDistStation and It can c
 It Contains 4 abstract classes BookingClasses, Tire1, Tire2, Tire3  and rest are Singleton classes representing options given by Indian Railway because for all instance of any oone type all factors must be same.
 
 ```mermaid
-stateDiagram
-	BookingClasses --> BerthClass
-	BookingClasses --> SittingClass
-	BerthClass --> Tire1
-	BerthClass --> Tire2
-	BerthClass --> Tire3
-	Tire3 --> Sleeper
-    Tire3 --> AC3Tire
-    Tire2 --> AC2Tire
-    Tire1 --> ACFirstClass
-    Tire2 --> FirstClass
-    SittingClass --> SecondSitting
-    SittingClass --> ACChairCar
+classDiagram
+	BookingClasses <|-- BerthClass
+	BookingClasses <|-- SittingClass
+	BerthClass <|-- Tire1
+	BerthClass <|-- Tire2
+	BerthClass <|-- Tire3
+	Tire3 <|-- Sleeper
+    Tire3 <|-- AC3Tire
+    Tire2 <|-- AC2Tire
+    Tire1 <|-- ACFirstClass
+    Tire2 <|-- FirstClass
+    SittingClass <|-- SecondSitting
+    SittingClass <|-- ACChairCar
 ```
 
 ​																																Diagram 1
@@ -33,13 +33,13 @@ stateDiagram
 IT contains one abstract class Passenger and hierarchy is formed based on category of passenger as represented in Diagram 2
 
 ```mermaid
-stateDiagram
-	Passenger --> General
-	Passenger --> Ladies
-	Passenger --> Senior_Citizen
-	Passenger --> Divyaang
-	Passenger --> Tatkal
-	Passenger --> Premium_Tatkal
+classDiagram
+	Passenger <|-- General
+	Passenger <|-- Ladies
+	Passenger <|-- Senior_Citizen
+	Passenger <|-- Divyaang
+	Passenger <|-- Tatkal
+	Passenger <|-- Premium_Tatkal
 ```
 
 ​																														    Diagram 2

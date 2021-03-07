@@ -1,7 +1,7 @@
 #include "Station.h"
 #include "Railway.h"
 
-int Station::GetDistance(Station other) const{
+int Station::GetDistance(Station &other) const{
     return Railway::GetDistance(*this,other);
 }
 Station::Station(string name):name_(name){}

@@ -14,7 +14,7 @@ class Booking{
         Station fromStation_,toStation_;
         Date data_;
         BookingClasses *bookinClass_;
-        bool bookingStatus =  true;
+        bool bookingStatus_ =  true;
         string bookingMessage_ = "BOOKING SUCCEEDED";
         Passenger *passenger_;
         int fairComputed_,pnr_;
@@ -24,12 +24,11 @@ class Booking{
         static double sACSurpass;
         static double sLuxuryTaxPercent;
         static int sPNRNumber;
-        Booking(const Booking &);
+        void ComputeFair() const;
     public:
         static vector<Booking *> sBookings;
         Booking(Station to,Station from, Date date,BookingClasses *bcl,Passenger *p = NULL);
         ~Booking();
-        void ComputeFair() const;
         inline int GetFair() const{
             return fairComputed_;
         }

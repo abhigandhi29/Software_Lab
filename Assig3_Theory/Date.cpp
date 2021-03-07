@@ -12,7 +12,7 @@ ostream &operator<<(ostream &out, const Date &d){
     return out;
 }
 bool operator==(const Date&d1, const Date &d2){
-    if(d1.getDay()==d2.getDay() && d1.getMonth()==d2.getMonth() && d1.getYear()==d2.getYear())
+    if(d1.GetDay()==d2.GetDay() && d1.GetMonth()==d2.GetMonth() && d1.GetYear()==d2.GetYear())
         return true;
     return false;
 }

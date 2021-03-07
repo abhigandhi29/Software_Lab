@@ -22,23 +22,23 @@ void UnitTesting(){
     cout<<"-----------------------------------------------------------------------"<<endl;
 
     cout<<"-----------------Unit Testing For Railway Class------------------------"<<endl;
-    const Railway *r1 = Railway::IndianRailways();
-    const Railway *r2 = Railway::IndianRailways();
-    if(r1 != r2)
+    const Railway r1 = Railway::IndianRailways();
+    const Railway r2 = Railway::IndianRailways();
+    if(&r1 != &r2)
         cout<<"Railway: Error IndianRailways function, failed to create a singleton class"<<endl;
-    if(r1->GetDistance(s1,s2)!=1447)
+    if(r1.GetDistance(s1,s2)!=1447)
         cout<<"Railway: Error in GetDistance function"<<endl;
-    cout<<*r1<<endl;
+    cout<<r1<<endl;
     cout<<"-----------------------------------------------------------------------"<<endl;
     
     cout<<"--------------------Unit Testing For Date Class------------------------"<<endl;
     Date d1 = Date(29,01,2001),d2 = Date(7,03,2021);
-    if(d1.getDay()!=29 || d1.getMonth()!=01 || d1.getYear()!=2001)
+    if(d1.GetDay()!=29 || d1.GetMonth()!=01 || d1.GetYear()!=2001)
         cout<<"Date: Error during construction of 29/Jan/2001"<<endl;
-    if(d2.getDay()!=7 || d2.getMonth()!=03 || d2.getYear()!=2021)
+    if(d2.GetDay()!=7 || d2.GetMonth()!=03 || d2.GetYear()!=2021)
         cout<<"Date: Error during construction of 7/Mar/2021"<<endl;
     Date d3 = Date(d1);
-    if(d3.getDay()!=29 || d3.getMonth()!=01 || d3.getYear()!=2001)
+    if(d3.GetDay()!=29 || d3.GetMonth()!=01 || d3.GetYear()!=2001)
         cout<<"Date: Error in copy constructor"<<endl;
     if(d1==d2 || !(d1==d3))  
         cout<<"Date: Error in comparison"<<endl;
