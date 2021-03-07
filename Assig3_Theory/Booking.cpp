@@ -8,6 +8,8 @@ Booking::Booking(Station from,Station to, Date date,BookingClasses *bcl,Passenge
         ComputeFair();
         sBookings.push_back(this);
     }
+Booking::Booking(const Booking &b):fromStation_(b.fromStation_),toStation_(b.toStation_),data_(b.data_),bookinClass_(b.bookinClass_),passenger_(b.passenger_){
+}
 vector<Booking *> Booking::sBookings;
 Booking::~Booking(){}
 double Booking::sBaseFairPerKM = 0.5;
@@ -39,3 +41,4 @@ ostream &operator<<(ostream &out, const Booking &b){
     out<<"fair = "<<b.fairComputed_;
     return out;
 }
+

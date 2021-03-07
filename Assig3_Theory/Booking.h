@@ -24,6 +24,7 @@ class Booking{
         static double sACSurpass;
         static double sLuxuryTaxPercent;
         static int sPNRNumber;
+        Booking(const Booking &);
     public:
         static vector<Booking *> sBookings;
         Booking(Station to,Station from, Date date,BookingClasses *bcl,Passenger *p = NULL);
