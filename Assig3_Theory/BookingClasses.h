@@ -1,3 +1,5 @@
+//Abhishek Gandhi
+//19CS10031
 #include <iostream>
 using namespace std;
 
@@ -91,7 +93,6 @@ class Sleeper : public Tire3{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static Sleeper *sSleeper;
     protected:
         Sleeper(const string &, const bool &);
         ~Sleeper();
@@ -111,7 +112,6 @@ class AC3Tier : public Tire3{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static AC3Tier *sAC3Tier;
     protected:
         AC3Tier(const string &, const bool &);
         ~AC3Tier();
@@ -130,7 +130,6 @@ class AC2Tier : public Tire2{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static AC2Tier *sAC2Tier;
     protected:
         AC2Tier(const string &, const bool &);
         ~AC2Tier();
@@ -149,7 +148,6 @@ class ACFirstClass : public Tire1{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static ACFirstClass *sACfirstClass;
     protected:
         ACFirstClass(const string &, const bool &);
         ~ACFirstClass();
@@ -167,7 +165,6 @@ class FirstClass : public Tire2{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static FirstClass *sFirstClass;
     protected:
         FirstClass(const string &, const bool &);
         ~FirstClass();
@@ -186,7 +183,6 @@ class SecondSitting : public SittingClass{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static SecondSitting *sSecondSitting;
     protected:
         SecondSitting(const string &, const bool &);
         ~SecondSitting();
@@ -205,7 +201,6 @@ class ACChairCar : public SittingClass{
     private:
         static double sLoadfactor;
         static bool sisLuxury;
-        static ACChairCar *sACChairCar;
     protected:
         ACChairCar(const string &, const bool &);
         ~ACChairCar();

@@ -1,3 +1,6 @@
+//Abhishek Gandhi
+//19CS10031
+
 #include "BookingClasses.h"
 
 BookingClasses::BookingClasses(const string &name,const bool &isAc):name_(name),isAC_(isAc){
@@ -45,11 +48,9 @@ Sleeper::Sleeper(const string &name,const bool &isAc):Tire3(name,isAc){
 Sleeper::~Sleeper(){}
 double Sleeper::sLoadfactor = 1;
 bool Sleeper::sisLuxury = false; 
-Sleeper *Sleeper::sSleeper=NULL;
 Sleeper *Sleeper::Type(){
-    if(!sSleeper)
-        sSleeper = new Sleeper("Sleeper",false);
-    return sSleeper;
+    static Sleeper sSleeper("Sleeper",false);
+    return &sSleeper;
 }
 
 AC3Tier::AC3Tier(const string &name,const bool &isAc):Tire3(name,isAc){
@@ -57,11 +58,9 @@ AC3Tier::AC3Tier(const string &name,const bool &isAc):Tire3(name,isAc){
 AC3Tier::~AC3Tier(){}
 double AC3Tier::sLoadfactor = 1.75;
 bool AC3Tier::sisLuxury = false; 
-AC3Tier *AC3Tier::sAC3Tier=NULL;
 AC3Tier *AC3Tier::Type(){
-    if(!sAC3Tier)
-        sAC3Tier = new AC3Tier("AC3Tier",true);
-    return sAC3Tier;
+    static AC3Tier sAC3Tier("AC3Tier",true);
+    return &sAC3Tier;
 }
 
 AC2Tier::AC2Tier(const string &name,const bool &isAc):Tire2(name,isAc){
@@ -69,11 +68,9 @@ AC2Tier::AC2Tier(const string &name,const bool &isAc):Tire2(name,isAc){
 AC2Tier::~AC2Tier(){}
 double AC2Tier::sLoadfactor = 2;
 bool AC2Tier::sisLuxury = false;
-AC2Tier *AC2Tier::sAC2Tier=NULL; 
 AC2Tier *AC2Tier::Type(){
-    if(!sAC2Tier)
-        sAC2Tier = new AC2Tier("AC2Tier",true);
-    return sAC2Tier;
+    static AC2Tier sAC2Tier("AC2Tier",true);
+    return &sAC2Tier;
 }
 
 
@@ -82,12 +79,9 @@ ACFirstClass::ACFirstClass(const string &name,const bool &isAc):Tire1(name,isAc)
 ACFirstClass::~ACFirstClass(){}
 double ACFirstClass::sLoadfactor = 3;
 bool ACFirstClass::sisLuxury = true;
-ACFirstClass *ACFirstClass::sACfirstClass=NULL; 
 ACFirstClass *ACFirstClass::Type(){
-    if(!sACfirstClass){
-        sACfirstClass = new ACFirstClass("ACFirstClass",true);
-    }
-    return sACfirstClass;
+    static ACFirstClass sACfirstClass("ACFirstClass",true);
+    return &sACfirstClass;
 }
 
 
@@ -96,11 +90,9 @@ FirstClass::FirstClass(const string &name,const bool &isAc):Tire2(name,isAc){
 FirstClass::~FirstClass(){}
 double FirstClass::sLoadfactor = 2;
 bool FirstClass::sisLuxury = true; 
-FirstClass *FirstClass::sFirstClass=NULL;
 FirstClass *FirstClass::Type(){
-    if(!sFirstClass)
-        sFirstClass = new FirstClass("FirstClass",false);
-    return sFirstClass;
+    static FirstClass sFirstClass("FirstClass",false);
+    return &sFirstClass;
 }
 
 
@@ -109,11 +101,9 @@ SecondSitting::SecondSitting(const string &name,const bool &isAc):SittingClass(n
 SecondSitting::~SecondSitting(){}
 double SecondSitting::sLoadfactor = 0.5;
 bool SecondSitting::sisLuxury = false;
-SecondSitting *SecondSitting::sSecondSitting=NULL; 
 SecondSitting *SecondSitting::Type(){
-    if(!sSecondSitting)
-        sSecondSitting = new SecondSitting("SecondSitting",false);
-    return sSecondSitting;
+    static SecondSitting sSecondSitting("SecondSitting",false);
+    return &sSecondSitting;
 }
 
 ACChairCar::ACChairCar(const string &name,const bool &isAc):SittingClass(name,isAc){
@@ -121,9 +111,7 @@ ACChairCar::ACChairCar(const string &name,const bool &isAc):SittingClass(name,is
 ACChairCar::~ACChairCar(){}
 double ACChairCar::sLoadfactor = 1.25;
 bool ACChairCar::sisLuxury = false;
-ACChairCar *ACChairCar::sACChairCar=NULL; 
 ACChairCar *ACChairCar::Type(){
-    if(!sACChairCar)
-        sACChairCar = new ACChairCar("ACChairCar",true);
-    return sACChairCar;
+    static ACChairCar sACChairCar("ACChairCar",true);
+    return &sACChairCar;
 }
