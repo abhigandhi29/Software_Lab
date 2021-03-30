@@ -1,0 +1,286 @@
+//Abhishek Gandhi
+//19CS10031
+1.Booking Class
+
+Data Members
+    - SBaseFairPerKM, sACSurpass, sLuxuryTaxPercent : static const double with initialisation in Booking.cpp
+        to make it easy for changing the value.
+    - sPNRNumber : static non-const number it increases by one everytime a new object is intialized
+    - sBookings : static non-const Vector<Booking *> contains all booking objects created till date.
+        static because it must be shared in all objects.
+    - fromStation_, toStation_ : non-static const Station.
+    - data_ : non-static const Date object.
+    - bookinClass_ : non-static const pointer to respective singelton class typecasted to BookingClasses.
+    - fairComputed_ : non-static int
+        fair computed from current booking.
+    - pnr_ : non-static int, alloted pnr number.
+    - bookingStatus_ : non-static bool always true in our case.
+    - bookingMessage_ : non-static string 
+
+Member Functions    
+    - ComputeFair [non-static const]
+        returns - void
+        Params - None
+        Access - protected(if these class is expanded in future then child members must have access to this function)
+            and itt is only called during construction for calculating fair.
+    - GetFair, GetPNR [inline non-static const]
+        return - int(value of asked private parameter)
+        Params - None
+        Access - public
+    -Copy Constructor [Booking]
+        Params - const Booking &
+        Access - Private 
+    -Constructor
+        Params - string name
+    -Destructor
+        Params - None (destroyes the object)    
+
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const booking &
+
+
+
+2.Station
+Data Members
+    - name_ : non-static non-const string (private)
+Member Functions    
+    - GetDistance [non-static const]
+        returns - int
+        Params - Station &other
+        Access - public (we should be able to use this function from outside)
+    - GetName [inline non-static const]
+        return - string(value of asked private parameter)
+        Params - None
+        Access - public
+    -Copy Constructor [Station]
+        Params - const Station &
+        Access - Public (because it is required in Booking class)
+            If by reference is used then due to scope error grabage values are printed.
+    -Constructor
+        Params - string name
+    -Destructor
+        Params - None (destroyes the object)    
+
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const Station &
+    - operator==
+        return - bool
+        Params - const Station &, const Station & 
+            if name is equal then stations must be same to returns true else false
+
+
+3.Railway
+Data Members
+    - name_ : non-static non-const string (private)
+    - sStations : static non-const vector<Station>
+    - sDistStation : static non-const vector<pair<pair<Station,Station>,int>>
+Member Functions    
+    - GetDistance [static]
+        returns - int
+        Params - const Station &, const Station &
+        Access - public (we should be able to use this function from outside)
+            Serches for Distance in sDistStation and returns the int value.
+    - IndianRailways [static const &]
+        return - const Railway
+        Params - None
+        Access - public
+            Constructs a object if not construced yet or returns the same.
+    -Constructor
+        Params - None (protected) because it is a singleton class
+    -Destructor
+        Params - None (destroyes the object)    
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const Station &
+
+4.Date
+Data Members
+    - sMonthNames : static non-const vector<string> (private)
+        contains 12 strings representing every month
+    - sDayNames : static non-const vector<string> (private)
+        contains 7 strings representing 7 week days
+    - day_, month_, year_ : non-static const uint32_t (private)
+Member Functions    
+    - getDay,getMonth,getYear [inline const]
+        Params - None
+        return - Respective Values (i=uinit32)
+        Access - Public
+    -Copy Constructor [Date]
+        Params - const Date &
+        Access - Public (because it is required in Booking class)
+            If by reference is used then due to scope error grabage values are printed.
+    -Constructor
+        Params - uint32_t d, uint32_t m, uint32_t y
+    -Destructor
+        Params - None (destroyes the object)    
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const Station &
+    - operator==
+        return - bool
+        Params - const Station &, const Station & 
+            if name is equal then stations must be same to returns true else false
+
+
+5.Passenger(abstract class)
+Data members
+    - name_,aadhar_,gender_,number_ : non-static const string
+    - dob_ : non-static const Date class object
+Member Functions    
+    - GetName, GetGender, GetNumber, virtual GetCategory [inline const]
+        Params - None
+        return - Respective Values (string or Date)
+        Access - Public
+    -Copy Constructor [Passenger]
+        Params - const Passenger &
+        Access - Private (Blocked)
+    -Constructor
+        Params - string name, string aadhar, string gender, Date dob, string number
+    -Destructor
+        Params - None (destroyes the object)    
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const Station &    
+
+6.General, Ladies, Senior_Citizen, Divyaang, Tatkal, Premium_Tatkal : public Passenger
+Data members
+    - sCategory : static const string
+Member functions
+    -Constructor : Same as Parent
+    -Destructor : Same as Parent
+
+7.BookingClasses(abstract class)
+Data members
+    - name_ : const non-static string
+    - isAC_ : const non-static bool
+Member Functions    
+    - GetName [virtual inline const]
+        return - string
+        Params - None
+        Access - public
+    - IsAC, IsLuxury, IsSitting[virtual inline const]
+        return - bool
+        Params - None
+        Access - public
+    - GetNumberOfTires [virtual inline const]
+        return - int
+        Params - None
+        Access - public
+    - LoadFactor [virtual inline const]
+        return - double
+        Params - None
+        Access - public
+    -Copy Constructor [BookingClasses]
+        Params - const BookingClasses &
+        Access - Protected (Blocked) because copying is not needed anywhere since they are singleton classes
+    -Constructor
+        Params - const string &name,const bool &isAC
+    -Destructor [virtual]
+        Params - None (destroyes the object)
+            Virtual Destructor is needed to prevent slicing    
+Friend Functions
+    - &operator<<
+        return - ostream &
+        Params - ostream &, const Station & 
+
+8.BerthClass : public BookingClasses(abstract class)
+Member Functions    
+    - IsSitting[virtual inline const]
+        return - bool
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+8.SittingClass : public BookingClasses(abstract class)
+Member Functions    
+    - IsSitting[virtual inline const]
+        return - bool
+        Params - None
+        Access - public
+    - GetNumberOfTires[virtual inline const]
+        return - int
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+9.Tire1, Tire2, Tire3 : public BerthClass(abstract classes)
+Member Functions    
+    - GetNumberOfTires[virtual inline const]
+        return - int
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+10. Sleeper, AC3Tier : public Tire3
+Data Members:
+    -sLoadfactor : static non-const double
+    -sisLuxury : static non-const bool
+Member Functions
+    - IsLuxury[inline const]
+        return - bool
+        Params - None
+        Access - public
+    - LoadFactor[inline const]
+        return - double
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+11.AC2Tier, FirstClass : public Tire2
+Data Members:
+    -sLoadfactor : static non-const double
+    -sisLuxury : static non-const bool
+Member Functions
+    - IsLuxury[inline const]
+        return - bool
+        Params - None
+        Access - public
+    - LoadFactor[inline const]
+        return - double
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+12. ACFirstClass : public Tire1
+Data Members:
+    -sLoadfactor : static non-const double
+    -sisLuxury : static non-const bool
+Member Functions
+    - IsLuxury[inline const]
+        return - bool
+        Params - None
+        Access - public
+    - LoadFactor[inline const]
+        return - double
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
+
+13. SecondSitting, ACChairCar : public SittingClass
+Data Members:
+    -sLoadfactor : static non-const double
+    -sisLuxury : static non-const bool
+Member Functions
+    - IsLuxury[inline const]
+        return - bool
+        Params - None
+        Access - public
+    - LoadFactor[inline const]
+        return - double
+        Params - None
+        Access - public
+    -Constructor : same as parent
+    -Destructor : same as parent
