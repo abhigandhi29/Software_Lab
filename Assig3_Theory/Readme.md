@@ -2,13 +2,13 @@
 
 ## Railway.cpp, Railway.h
 
-Raiway class contains two static vectors sStations and sDistStation and It can calculate distance between any two given stations and Railway is a singleton class as there can be only one railway with name IndianRailway.
+Railway class contains two static vectors sStations and sDistStation and It can calculate distance between any two given stations and Railway is a singleton class as there can be only one railway with name IndianRailways.
 
  
 
 ## BookingClasses.cpp, BookingClasses.h
 
-It Contains 4 abstract classes BookingClasses, Tire1, Tire2, Tire3  and rest are Singleton classes representing options given by Indian Railway because for all instance of any oone type all factors must be same.
+It Contains 4 abstract classes BookingClasses, Tire1, Tire2, Tire3  and rest are Singleton classes representing options given by Indian Railway because for all instance of any one type all factors must be same.
 
 ```mermaid
 stateDiagram
@@ -26,7 +26,7 @@ stateDiagram
     SittingClass --> ACChairCar
 ```
 
-​																																Diagram 1
+​																								Diagram 1
 
 ## Passenger.cpp, Passenger.h
 
@@ -42,7 +42,7 @@ stateDiagram
 	Passenger --> Premium_Tatkal
 ```
 
-​																														    Diagram 2
+​																									Diagram 2
 
 ## Date.cpp, Date.h
 
