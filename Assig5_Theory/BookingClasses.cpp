@@ -3,115 +3,109 @@
 
 #include "BookingClasses.h"
 
-BookingClasses::BookingClasses(const string &name,const bool &isAc):name_(name),isAC_(isAc){
-}
-BookingClasses::BookingClasses(const BookingClasses &B):name_(B.name_),isAC_(B.isAC_){
-}
 BookingClasses::~BookingClasses(){}
-BookingClasses &BookingClasses::operator=(const BookingClasses &a){
-    return *this;
-}
+BookingClasses::BookingClasses(){}
+BookingClasses::BookingClasses(const BookingClasses &b){}
+
 ostream &operator<<(ostream &out, const BookingClasses &B){
-    out<<"Travel Class: "<<B.name_<<endl;
+    out<<"Travel Class: "<<B.GetName()<<endl;
     out<<"\t-Load Factor: "<<B.LoadFactor()<<endl;
     out<<"\t-Confort: "<<(B.IsAC() ? "AC" : "Non-AC")<<endl;
     out<<"\t-Mode: "<<(B.IsSitting() ? "Sitting" : "Sleeping")<<endl;
     out<<"\t-Bunks: "<<B.GetNumberOfTires()<<endl;
     out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No");
-    
-    
     return out;
 }
+template<typename T>
+const BookingClassesTypes<T> & BookingClassesTypes<T>::Type(){
+    static const BookingClassesTypes<T> obj;
+    return obj;
+}
+template<> const string BookingClasses::AC2Tier::sName = "AC2Tier";
+template<> const bool BookingClasses::AC2Tier::sIsAC = true;
+template<> const int BookingClasses::AC2Tier::sNumberOfTires = 2;
+template<> bool BookingClasses::AC2Tier::sIsLuxury = false;
+template<> double BookingClasses::AC2Tier::sLoadFactor = 4.0;
+template<> double BookingClasses::AC2Tier::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::AC2Tier::sMaxTatkaalCharge = 500;
+template<> double BookingClasses::AC2Tier::sMinTatkaalCharge = 400;
+template<> double BookingClasses::AC2Tier::sMinTatkaalDistance = 500;
+template<> double BookingClasses::AC2Tier::sReservationCharge = 50;
 
-BerthClass::BerthClass(const string &name,const bool &isAc):BookingClasses(name,isAc){
-}
-BerthClass::~BerthClass(){}
+template<> const string BookingClasses::ACFirstClass::sName = "ACFirstClass";
+template<> const bool BookingClasses::ACFirstClass::sIsAC = true;
+template<> const int BookingClasses::ACFirstClass::sNumberOfTires = 1;
+template<> bool BookingClasses::ACFirstClass::sIsLuxury = true;
+template<> double BookingClasses::ACFirstClass::sLoadFactor = 6.50;
+template<> double BookingClasses::ACFirstClass::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::ACFirstClass::sMaxTatkaalCharge = 500;
+template<> double BookingClasses::ACFirstClass::sMinTatkaalCharge = 400;
+template<> double BookingClasses::ACFirstClass::sMinTatkaalDistance = 500;
+template<> double BookingClasses::ACFirstClass::sReservationCharge = 60;
 
-SittingClass::SittingClass(const string &name,const bool &isAc):BookingClasses(name,isAc){
-}
-SittingClass::~SittingClass(){}
+template<> const string BookingClasses::ExecutiveChairCar::sName = "ExecutiveChairCar";
+template<> const bool BookingClasses::ExecutiveChairCar::sIsAC = true;
+template<> const int BookingClasses::ExecutiveChairCar::sNumberOfTires = 0;
+template<> bool BookingClasses::ExecutiveChairCar::sIsLuxury = true;
+template<> double BookingClasses::ExecutiveChairCar::sLoadFactor = 5.0;
+template<> double BookingClasses::ExecutiveChairCar::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::ExecutiveChairCar::sMaxTatkaalCharge = 500;
+template<> double BookingClasses::ExecutiveChairCar::sMinTatkaalCharge = 400;
+template<> double BookingClasses::ExecutiveChairCar::sMinTatkaalDistance = 250;
+template<> double BookingClasses::ExecutiveChairCar::sReservationCharge = 60;
 
-Tire3::Tire3(const string &name,const bool &isAc):BerthClass(name,isAc){
-}
-Tire3::~Tire3(){}
+template<> const string BookingClasses::AC3Tier::sName = "AC3Tier";
+template<> const bool BookingClasses::AC3Tier::sIsAC = true;
+template<> const int BookingClasses::AC3Tier::sNumberOfTires = 3;
+template<> bool BookingClasses::AC3Tier::sIsLuxury = false;
+template<> double BookingClasses::AC3Tier::sLoadFactor = 2.5;
+template<> double BookingClasses::AC3Tier::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::AC3Tier::sMaxTatkaalCharge = 400;
+template<> double BookingClasses::AC3Tier::sMinTatkaalCharge = 300;
+template<> double BookingClasses::AC3Tier::sMinTatkaalDistance = 500;
+template<> double BookingClasses::AC3Tier::sReservationCharge = 40;
 
-Tire2::Tire2(const string &name,const bool &isAc):BerthClass(name,isAc){
-}
-Tire2::~Tire2(){}
+template<> const string BookingClasses::Sleeper::sName = "Sleeper";
+template<> const bool BookingClasses::Sleeper::sIsAC = false;
+template<> const int BookingClasses::Sleeper::sNumberOfTires = 3;
+template<> bool BookingClasses::Sleeper::sIsLuxury = false;
+template<> double BookingClasses::Sleeper::sLoadFactor = 1.0;
+template<> double BookingClasses::Sleeper::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::Sleeper::sMaxTatkaalCharge = 200;
+template<> double BookingClasses::Sleeper::sMinTatkaalCharge = 100;
+template<> double BookingClasses::Sleeper::sMinTatkaalDistance = 500;
+template<> double BookingClasses::Sleeper::sReservationCharge = 20;
 
-Tire1::Tire1(const string &name,const bool &isAc):BerthClass(name,isAc){
-}
-Tire1::~Tire1(){}
+template<> const string BookingClasses::SecondSitting::sName = "SecondSitting";
+template<> const bool BookingClasses::SecondSitting::sIsAC = false;
+template<> const int BookingClasses::SecondSitting::sNumberOfTires = 0;
+template<> bool BookingClasses::SecondSitting::sIsLuxury = false;
+template<> double BookingClasses::SecondSitting::sLoadFactor = 0.6;
+template<> double BookingClasses::SecondSitting::sTatkalLoadFactor = 0.1;
+template<> double BookingClasses::SecondSitting::sMaxTatkaalCharge = 15;
+template<> double BookingClasses::SecondSitting::sMinTatkaalCharge = 10;
+template<> double BookingClasses::SecondSitting::sMinTatkaalDistance = 100;
+template<> double BookingClasses::SecondSitting::sReservationCharge = 15;
 
-Sleeper::Sleeper(const string &name,const bool &isAc):Tire3(name,isAc){
-}
-Sleeper::~Sleeper(){}
-double Sleeper::sLoadfactor = 1;
-bool Sleeper::sisLuxury = false; 
-Sleeper *Sleeper::Type(){
-    static Sleeper sSleeper("Sleeper",false);
-    return &sSleeper;
-}
+template<> const string BookingClasses::ACChairCar::sName = "ACChairCar";
+template<> const bool BookingClasses::ACChairCar::sIsAC = true;
+template<> const int BookingClasses::ACChairCar::sNumberOfTires = 0;
+template<> bool BookingClasses::ACChairCar::sIsLuxury = false;
+template<> double BookingClasses::ACChairCar::sLoadFactor = 2.0;
+template<> double BookingClasses::ACChairCar::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::ACChairCar::sMaxTatkaalCharge = 225;
+template<> double BookingClasses::ACChairCar::sMinTatkaalCharge = 125;
+template<> double BookingClasses::ACChairCar::sMinTatkaalDistance = 250;
+template<> double BookingClasses::ACChairCar::sReservationCharge = 40;
 
-AC3Tier::AC3Tier(const string &name,const bool &isAc):Tire3(name,isAc){
-}
-AC3Tier::~AC3Tier(){}
-double AC3Tier::sLoadfactor = 1.75;
-bool AC3Tier::sisLuxury = false; 
-AC3Tier *AC3Tier::Type(){
-    static AC3Tier sAC3Tier("AC3Tier",true);
-    return &sAC3Tier;
-}
+template<> const string BookingClasses::FirstClass::sName = "FirstClass";
+template<> const bool BookingClasses::FirstClass::sIsAC = true;
+template<> const int BookingClasses::FirstClass::sNumberOfTires = 2;
+template<> bool BookingClasses::FirstClass::sIsLuxury = true;
+template<> double BookingClasses::FirstClass::sLoadFactor = 3.0;
+template<> double BookingClasses::FirstClass::sTatkalLoadFactor = 0.3;
+template<> double BookingClasses::FirstClass::sMaxTatkaalCharge = 500;
+template<> double BookingClasses::FirstClass::sMinTatkaalCharge = 400;
+template<> double BookingClasses::FirstClass::sMinTatkaalDistance = 500;
+template<> double BookingClasses::FirstClass::sReservationCharge = 50;
 
-AC2Tier::AC2Tier(const string &name,const bool &isAc):Tire2(name,isAc){
-}
-AC2Tier::~AC2Tier(){}
-double AC2Tier::sLoadfactor = 2;
-bool AC2Tier::sisLuxury = false;
-AC2Tier *AC2Tier::Type(){
-    static AC2Tier sAC2Tier("AC2Tier",true);
-    return &sAC2Tier;
-}
-
-
-ACFirstClass::ACFirstClass(const string &name,const bool &isAc):Tire1(name,isAc){
-}
-ACFirstClass::~ACFirstClass(){}
-double ACFirstClass::sLoadfactor = 3;
-bool ACFirstClass::sisLuxury = true;
-ACFirstClass *ACFirstClass::Type(){
-    static ACFirstClass sACfirstClass("ACFirstClass",true);
-    return &sACfirstClass;
-}
-
-
-FirstClass::FirstClass(const string &name,const bool &isAc):Tire2(name,isAc){
-}
-FirstClass::~FirstClass(){}
-double FirstClass::sLoadfactor = 2;
-bool FirstClass::sisLuxury = true; 
-FirstClass *FirstClass::Type(){
-    static FirstClass sFirstClass("FirstClass",false);
-    return &sFirstClass;
-}
-
-
-SecondSitting::SecondSitting(const string &name,const bool &isAc):SittingClass(name,isAc){
-}
-SecondSitting::~SecondSitting(){}
-double SecondSitting::sLoadfactor = 0.5;
-bool SecondSitting::sisLuxury = false;
-SecondSitting *SecondSitting::Type(){
-    static SecondSitting sSecondSitting("SecondSitting",false);
-    return &sSecondSitting;
-}
-
-ACChairCar::ACChairCar(const string &name,const bool &isAc):SittingClass(name,isAc){
-}
-ACChairCar::~ACChairCar(){}
-double ACChairCar::sLoadfactor = 1.25;
-bool ACChairCar::sisLuxury = false;
-ACChairCar *ACChairCar::Type(){
-    static ACChairCar sACChairCar("ACChairCar",true);
-    return &sACChairCar;
-}
