@@ -13,7 +13,7 @@ class Station{
         inline string GetName() const{
             return name_;
         }
-        int GetDistance(Station other) const;
+        int GetDistance(Station &other) const;
         friend ostream &operator<<(ostream &, const Station &);
         friend bool operator==(const Station &, const Station &);
 
