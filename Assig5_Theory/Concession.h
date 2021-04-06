@@ -8,12 +8,49 @@
 #include <vector>
 #include "BookingClasses.h"
 #include "Passenger.h"
+#include "Divyaang.h"
 using namespace std;
-
 #ifndef _CONCESSION_H
 #define _CONCESSION_H
 
 class Concession{
+protected:
+    Concession();
+public:
+    ~Concession();
+    virtual inline double GetConcessionFactor(Passenger &p,BookingClasses &b) const{
+        return 0;
+    }
+};
+
+class DivyaangConcession : public Concession{
+    DivyaangConcession();
+public:
+    ~DivyaangConcession();
+    double GetConcessionFactor(Passenger &p,BookingClasses &b) const;
+    static const DivyaangConcession &Type();
+};
+class LadiesConcession : public Concession{
+    LadiesConcession();
+    static double sConcessioFactor;
+public:
+    ~LadiesConcession();
+    double GetConcessionFactor(Passenger &p,BookingClasses &b) const;
+    static const LadiesConcession &Type();
+};
+
+class SeniorCitizenConcession : public Concession{
+    SeniorCitizenConcession();
+public:
+    ~SeniorCitizenConcession();
+    double GetConcessionFactor(Passenger &p, BookingClasses &b) const;
+    static const SeniorCitizenConcession &Type();
+};
+
+class GenralConcession : public Concession{
+    GenralConcession();
+public:
+    ~GenralConcession();
 
 };
 

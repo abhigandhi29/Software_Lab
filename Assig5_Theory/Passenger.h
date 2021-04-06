@@ -13,8 +13,9 @@ class Passenger{
         const string name_,aadhar_,gender_,number_,disabiltyID_;
         const Divyaang *disabiltyType_;
         const Date dob_;
-        Passenger(const Passenger &); 
+        
     public:
+        Passenger(const Passenger &); 
         Passenger(string name, string aadhar, string gender, Date dob, string number="",Divyaang *disabiltyType = NULL,string disabiltyID = "");
         ~Passenger();
         friend ostream &operator<<(ostream &, const Passenger &);

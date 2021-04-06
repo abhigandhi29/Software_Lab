@@ -28,14 +28,14 @@ public:
     typedef DivyaangType<OrthopaedicallyHandicappedType> OrthopaedicallyHandicapped;
     typedef DivyaangType<CancerPatientsType> CancerPatients;
     typedef DivyaangType<TBPatientsType> TBPatients;
-    virtual double GetConcessionFactor(BookingClasses::FirstClass) const =0;
-    virtual double GetConcessionFactor(BookingClasses::ACFirstClass) const =0;
-    virtual double GetConcessionFactor(BookingClasses::ACChairCar) const =0;
-    virtual double GetConcessionFactor(BookingClasses::AC2Tier) const =0;
-    virtual double GetConcessionFactor(BookingClasses::AC3Tier) const =0;
-    virtual double GetConcessionFactor(BookingClasses::SecondSitting) const =0;
-    virtual double GetConcessionFactor(BookingClasses::Sleeper) const =0;
-    virtual double GetConcessionFactor(BookingClasses::ExecutiveChairCar) const =0;
+    virtual double GetConcessionFactor(const BookingClasses &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::ACFirstClass &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::ACChairCar &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::AC2Tier &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::AC3Tier &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::SecondSitting &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::Sleeper &) const =0;
+    //virtual double GetConcessionFactor(const BookingClasses::ExecutiveChairCar &) const =0;
     
 };
 
@@ -53,28 +53,28 @@ class DivyaangType{
     DivyaangType(){}
     ~DivyaangType(){}
 public:
-    inline double GetConcessionFactor(BookingClasses::FirstClass) const{
+    inline double GetConcessionFactor(const BookingClasses::FirstClass &) const{
         return sFirstClassConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::ACFirstClass) const{
+    inline double GetConcessionFactor(const BookingClasses::ACFirstClass &) const{
         return sACFirstClassConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::ACChairCar) const{
+    inline double GetConcessionFactor(const BookingClasses::ACChairCar &) const{
         return sACChairCarConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::AC2Tier) const{
+    inline double GetConcessionFactor(const BookingClasses::AC2Tier &) const{
         return sAC2TierConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::AC3Tier) const{
+    inline double GetConcessionFactor(const BookingClasses::AC3Tier &) const{
         return sAC3TierConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::SecondSitting) const{
+    inline double GetConcessionFactor(const BookingClasses::SecondSitting &) const{
         return sSecondSittingConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::Sleeper) const{
+    inline double GetConcessionFactor(const BookingClasses::Sleeper &) const{
         return sSleeperConcession;
     }
-    inline double GetConcessionFactor(BookingClasses::ExecutiveChairCar) const{
+    inline double GetConcessionFactor(const BookingClasses::ExecutiveChairCar &) const{
         return sExecutiveChairCarConcession;
     }  
     static const DivyaangType<T>& Type(){

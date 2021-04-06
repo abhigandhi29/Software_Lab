@@ -2,7 +2,6 @@
 //19CS10031
 #include <iostream>
 using namespace std;
-
 #ifndef _BOOKINGCLASSES_H
 #define _BOOKINGCLASSES_H
 
@@ -45,6 +44,7 @@ class BookingClasses{
         typedef BookingClassesTypes<ACChairCarType> ACChairCar;
         typedef BookingClassesTypes<SecondSittingType> SecondSitting;
         typedef BookingClassesTypes<FirstClassType> FirstClass;
+        virtual const BookingClasses &Type() = 0;
 };
 
 template<typename T>
@@ -63,8 +63,8 @@ class BookingClassesTypes : public BookingClasses{
     static double sReservationCharge;
 public:
     ~BookingClassesTypes(){}
-    static const BookingClassesTypes<T> &Type();
-     inline string GetName() const{
+    const BookingClassesTypes<T> &Type();
+    inline string GetName() const{
         return sName;
     }
     inline bool IsAC() const{

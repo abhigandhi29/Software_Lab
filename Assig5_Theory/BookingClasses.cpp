@@ -109,3 +109,6 @@ template<> double BookingClasses::FirstClass::sMinTatkaalCharge = 400;
 template<> double BookingClasses::FirstClass::sMinTatkaalDistance = 500;
 template<> double BookingClasses::FirstClass::sReservationCharge = 50;
 
+int main(){
+    return 1;
+}
