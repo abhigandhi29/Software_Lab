@@ -16,11 +16,11 @@ ostream &operator<<(ostream &out, const BookingClasses &B){
     out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No");
     return out;
 }
-template<typename T>
-const BookingClassesTypes<T> & BookingClassesTypes<T>::Type(){
-    static const BookingClassesTypes<T> obj;
-    return obj;
-}
+//template<typename T>
+//const BookingClassesTypes<T> & BookingClassesTypes<T>::Type(){
+//    static const BookingClassesTypes<T> obj;
+//    return obj;
+//}
 template<> const string BookingClasses::AC2Tier::sName = "AC2Tier";
 template<> const bool BookingClasses::AC2Tier::sIsAC = true;
 template<> const int BookingClasses::AC2Tier::sNumberOfTires = 2;
@@ -31,6 +31,7 @@ template<> double BookingClasses::AC2Tier::sMaxTatkaalCharge = 500;
 template<> double BookingClasses::AC2Tier::sMinTatkaalCharge = 400;
 template<> double BookingClasses::AC2Tier::sMinTatkaalDistance = 500;
 template<> double BookingClasses::AC2Tier::sReservationCharge = 50;
+template<> const bool BookingClasses::AC2Tier::sIsSitting = false;
 
 template<> const string BookingClasses::ACFirstClass::sName = "ACFirstClass";
 template<> const bool BookingClasses::ACFirstClass::sIsAC = true;
@@ -42,6 +43,7 @@ template<> double BookingClasses::ACFirstClass::sMaxTatkaalCharge = 500;
 template<> double BookingClasses::ACFirstClass::sMinTatkaalCharge = 400;
 template<> double BookingClasses::ACFirstClass::sMinTatkaalDistance = 500;
 template<> double BookingClasses::ACFirstClass::sReservationCharge = 60;
+template<> const bool BookingClasses::ACFirstClass::sIsSitting = false;
 
 template<> const string BookingClasses::ExecutiveChairCar::sName = "ExecutiveChairCar";
 template<> const bool BookingClasses::ExecutiveChairCar::sIsAC = true;
@@ -53,6 +55,7 @@ template<> double BookingClasses::ExecutiveChairCar::sMaxTatkaalCharge = 500;
 template<> double BookingClasses::ExecutiveChairCar::sMinTatkaalCharge = 400;
 template<> double BookingClasses::ExecutiveChairCar::sMinTatkaalDistance = 250;
 template<> double BookingClasses::ExecutiveChairCar::sReservationCharge = 60;
+template<> const bool BookingClasses::ExecutiveChairCar::sIsSitting = false;
 
 template<> const string BookingClasses::AC3Tier::sName = "AC3Tier";
 template<> const bool BookingClasses::AC3Tier::sIsAC = true;
@@ -64,6 +67,7 @@ template<> double BookingClasses::AC3Tier::sMaxTatkaalCharge = 400;
 template<> double BookingClasses::AC3Tier::sMinTatkaalCharge = 300;
 template<> double BookingClasses::AC3Tier::sMinTatkaalDistance = 500;
 template<> double BookingClasses::AC3Tier::sReservationCharge = 40;
+template<> const bool BookingClasses::AC3Tier::sIsSitting = false;
 
 template<> const string BookingClasses::Sleeper::sName = "Sleeper";
 template<> const bool BookingClasses::Sleeper::sIsAC = false;
@@ -75,6 +79,7 @@ template<> double BookingClasses::Sleeper::sMaxTatkaalCharge = 200;
 template<> double BookingClasses::Sleeper::sMinTatkaalCharge = 100;
 template<> double BookingClasses::Sleeper::sMinTatkaalDistance = 500;
 template<> double BookingClasses::Sleeper::sReservationCharge = 20;
+template<> const bool BookingClasses::Sleeper::sIsSitting = false;
 
 template<> const string BookingClasses::SecondSitting::sName = "SecondSitting";
 template<> const bool BookingClasses::SecondSitting::sIsAC = false;
@@ -86,6 +91,7 @@ template<> double BookingClasses::SecondSitting::sMaxTatkaalCharge = 15;
 template<> double BookingClasses::SecondSitting::sMinTatkaalCharge = 10;
 template<> double BookingClasses::SecondSitting::sMinTatkaalDistance = 100;
 template<> double BookingClasses::SecondSitting::sReservationCharge = 15;
+template<> const bool BookingClasses::SecondSitting::sIsSitting = false;
 
 template<> const string BookingClasses::ACChairCar::sName = "ACChairCar";
 template<> const bool BookingClasses::ACChairCar::sIsAC = true;
@@ -97,6 +103,7 @@ template<> double BookingClasses::ACChairCar::sMaxTatkaalCharge = 225;
 template<> double BookingClasses::ACChairCar::sMinTatkaalCharge = 125;
 template<> double BookingClasses::ACChairCar::sMinTatkaalDistance = 250;
 template<> double BookingClasses::ACChairCar::sReservationCharge = 40;
+template<> const bool BookingClasses::ACChairCar::sIsSitting = false;
 
 template<> const string BookingClasses::FirstClass::sName = "FirstClass";
 template<> const bool BookingClasses::FirstClass::sIsAC = true;
@@ -108,7 +115,5 @@ template<> double BookingClasses::FirstClass::sMaxTatkaalCharge = 500;
 template<> double BookingClasses::FirstClass::sMinTatkaalCharge = 400;
 template<> double BookingClasses::FirstClass::sMinTatkaalDistance = 500;
 template<> double BookingClasses::FirstClass::sReservationCharge = 50;
+template<> const bool BookingClasses::FirstClass::sIsSitting = false;
 
-int main(){
-    return 1;
-}
