@@ -18,7 +18,7 @@ protected:
     Concession();
 public:
     ~Concession();
-    virtual inline double GetConcessionFactor(Passenger &p,BookingClasses &b) const{
+    virtual inline double GetConcessionFactor() const{
         return 0;
     }
 };
@@ -35,7 +35,7 @@ class LadiesConcession : public Concession{
     static double sConcessioFactor;
 public:
     ~LadiesConcession();
-    double GetConcessionFactor(Passenger &p,BookingClasses &b) const;
+    double GetConcessionFactor(Passenger &p) const;
     static const LadiesConcession &Type();
 };
 
@@ -43,14 +43,14 @@ class SeniorCitizenConcession : public Concession{
     SeniorCitizenConcession();
 public:
     ~SeniorCitizenConcession();
-    double GetConcessionFactor(Passenger &p, BookingClasses &b) const;
+    double GetConcessionFactor(Passenger &p) const;
     static const SeniorCitizenConcession &Type();
 };
 
-class GenralConcession : public Concession{
-    GenralConcession();
+class GeneralConcession : public Concession{
+    GeneralConcession();
 public:
-    ~GenralConcession();
+    ~GeneralConcession();
 
 };
 

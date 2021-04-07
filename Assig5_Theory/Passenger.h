@@ -3,6 +3,7 @@
 #include<iostream>
 #include "Date.h"
 #include "Divyaang.h"
+#include "Gender.h"
 using namespace std;
 
 #ifndef _PASSENGER_H
@@ -10,19 +11,20 @@ using namespace std;
 
 class Passenger{
     private:
-        const string name_,aadhar_,gender_,number_,disabiltyID_;
+        const string name_,aadhar_,number_,disabiltyID_;
+        const Gender &gender_;
         const Divyaang *disabiltyType_;
         const Date dob_;
         
     public:
         Passenger(const Passenger &); 
-        Passenger(string name, string aadhar, string gender, Date dob, string number="",Divyaang *disabiltyType = NULL,string disabiltyID = "");
+        Passenger(string name, string aadhar,const Gender &gender, Date dob, string number="",Divyaang *disabiltyType = NULL,string disabiltyID = "");
         ~Passenger();
         friend ostream &operator<<(ostream &, const Passenger &);
         inline string GetName() const{
             return name_;
         }
-        inline string GetGender() const{
+        inline const Gender &GetGender() const{
             return gender_;
         }
         inline string GetNumber() const{
@@ -37,6 +39,7 @@ class Passenger{
         inline string GetDisabilityID() const{
             return disabiltyID_;
         }
+        int ComputeAge() const;
 
 };
 #endif

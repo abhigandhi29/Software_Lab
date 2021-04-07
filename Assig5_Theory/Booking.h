@@ -17,33 +17,30 @@ class BookingTypes;
 
 class Booking{
     private:
-        struct ACFirstClassType{};
-        struct ExecuticeChairCarType{};
-        struct AC2TireType{};
-        struct SleeperType{};
-        struct SecondSittingType{};
-        struct FirstClassType{};
-        struct AC3TireType{};
-        struct ACChairCarType{};
+        struct GeneralBookingType{};
+        struct LadiesBookingType{};
+        struct SeniorCitizenBOokingType{};
+        struct TatkalBookingType{};
+        struct PremiumTatkalBookingType{};
+        struct DivyaangBookingType{};
+        struct SeniorCitizenBookingType{};      
+    protected:
+        
+        static double sBaseFairPerKM;
+        static int sPNRNumber;
         Station fromStation_,toStation_;
         Date data_;
-        BookingClasses *bookinClass_;
-        Concession category_;
+        const BookingClasses *bookinClass_;
+        //Concession category_;
         bool bookingStatus_ =  true;
         string bookingMessage_ = "BOOKING SUCCEEDED";
         Passenger passenger_;
         int fairComputed_,pnr_;
-
-        Booking(const Booking &b);
-        static double sBaseFairPerKM;
-        //static double sACSurpass;
-        //static double sLuxuryTaxPercent;
-        static int sPNRNumber;
-    protected:
-        Booking(Station to,Station from, Date date,BookingClasses *bcl,Passenger p,Concession c);
-        ~Booking();
+        Booking(Station to,Station from, Date date,const BookingClasses *bcl,Passenger p);
     public:
-        void ComputeFair() const;
+        Booking(const Booking &b);
+        virtual ~Booking();
+        virtual void ComputeFair() const;
         static vector<Booking *> sBookings;
         
         inline int GetFair() const{
@@ -53,23 +50,25 @@ class Booking{
             return pnr_;
         }
         friend ostream &operator<<(ostream &, const Booking &);
-        virtual const Booking &MakeReservation(Station to,Station from, Date date,Passenger p);
-        typedef BookingTypes<ACFirstClassType> ACFirstClass; 
-        typedef BookingTypes<ExecuticeChairCarType> ExecutiveChairCar;
-        typedef BookingTypes<AC2TireType> AC2Tier;
-        typedef BookingTypes<SleeperType> Sleeper;
-        typedef BookingTypes<AC3TireType> AC3Tier;
-        typedef BookingTypes<ACChairCarType> ACChairCar;
-        typedef BookingTypes<SecondSittingType> SecondSitting;
-        typedef BookingTypes<FirstClassType> FirstClass;
+        const Booking &MakeReservation(Station to,Station from, Date date,Passenger p);
+        typedef BookingTypes<GeneralBookingType> GeneralBooking;
+        typedef BookingTypes<LadiesBookingType> LadiesBooking;
+        typedef BookingTypes<TatkalBookingType> TatkalBooking;
+        typedef BookingTypes<PremiumTatkalBookingType> PremiumTatkalBooking;
+        typedef BookingTypes<DivyaangBookingType> DivyaangBooking;
+        typedef BookingTypes<SeniorCitizenBookingType> SeniorCitizenBooking;
 };
 
 template<typename T>
 class BookingTypes : public  Booking{
-    BookingTypes(Station to,Station from, Date date,BookingClasses *bcl,Passenger &p,Concession c):Booking(to,from,date,bcl,p,c){}
-    ~BookingTypes(){}
+    BookingTypes(Station to,Station from, Date date,const BookingClasses *bcl,Passenger &p):Booking(to,from,date,bcl,p){}
 public:
-    const BookingTypes<T> &MakeReservation(Station to,Station from, Date date,Passenger p,Concession c);    
+    ~BookingTypes(){}
+void ComputeFair() const;
+    static BookingTypes *MakeReservation(Station to,Station from, Date date,const BookingClasses *bcl,Passenger p){
+        BookingTypes *b1 = new BookingTypes(to,from, date,bcl,p);
+        return b1;
+    }
 };
 
 

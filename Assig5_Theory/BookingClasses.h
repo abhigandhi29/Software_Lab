@@ -44,7 +44,7 @@ class BookingClasses{
         typedef BookingClassesTypes<ACChairCarType> ACChairCar;
         typedef BookingClassesTypes<SecondSittingType> SecondSitting;
         typedef BookingClassesTypes<FirstClassType> FirstClass;
-        virtual const BookingClasses &Type() = 0;
+        //virtual const BookingClasses &Type() = 0;
 };
 
 template<typename T>
@@ -63,7 +63,10 @@ class BookingClassesTypes : public BookingClasses{
     static double sReservationCharge;
 public:
     ~BookingClassesTypes(){}
-    const BookingClassesTypes<T> &Type();
+    static const BookingClassesTypes &Type(){
+        static const BookingClassesTypes obj;
+        return obj;
+    }
     inline string GetName() const{
         return sName;
     }
