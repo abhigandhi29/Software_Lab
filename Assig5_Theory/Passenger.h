@@ -3,6 +3,7 @@
 #include<iostream>
 #include "Date.h"
 #include "Divyaang.h"
+#include "Exception.h"
 #include "Gender.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ class Passenger{
         
     public:
         Passenger(const Passenger &); 
-        Passenger(string name, string aadhar,const Gender &gender, Date dob, string number="",Divyaang *disabiltyType = NULL,string disabiltyID = "");
+        Passenger(string name, string aadhar,const Gender &gender, Date dob, string number="",const Divyaang *disabiltyType = NULL,string disabiltyID = "");
         ~Passenger();
         friend ostream &operator<<(ostream &, const Passenger &);
         inline string GetName() const{
@@ -33,8 +34,8 @@ class Passenger{
         inline Date GetBOD() const{
             return dob_;
         }
-        inline const Divyaang *GetDisabilityType() const{
-            return disabiltyType_;
+        inline Divyaang *GetDisabilityType() const{
+            return const_cast<Divyaang *>(disabiltyType_);
         }
         inline string GetDisabilityID() const{
             return disabiltyID_;

@@ -9,6 +9,7 @@
 #include "BookingClasses.h"
 #include "Passenger.h"
 #include "Divyaang.h"
+#include "Exception.h"
 using namespace std;
 #ifndef _CONCESSION_H
 #define _CONCESSION_H

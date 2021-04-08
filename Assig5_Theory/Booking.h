@@ -5,6 +5,7 @@
 #include "Passenger.h"
 #include "BookingClasses.h"
 #include "Station.h"
+#include "Exception.h"
 #include<vector>
 #include "Concession.h"
 using namespace std;
@@ -40,7 +41,7 @@ class Booking{
     public:
         Booking(const Booking &b);
         virtual ~Booking();
-        virtual void ComputeFair() const;
+        virtual void ComputeFair() const = 0;
         static vector<Booking *> sBookings;
         
         inline int GetFair() const{
@@ -61,7 +62,9 @@ class Booking{
 
 template<typename T>
 class BookingTypes : public  Booking{
-    BookingTypes(Station to,Station from, Date date,const BookingClasses *bcl,Passenger &p):Booking(to,from,date,bcl,p){}
+    BookingTypes(Station to,Station from, Date date,const BookingClasses *bcl,Passenger &p):Booking(to,from,date,bcl,p){
+        ComputeFair();
+    }
 public:
     ~BookingTypes(){}
 void ComputeFair() const;

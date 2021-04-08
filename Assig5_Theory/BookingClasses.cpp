@@ -117,3 +117,27 @@ template<> double BookingClasses::FirstClass::sMinTatkaalDistance = 500;
 template<> double BookingClasses::FirstClass::sReservationCharge = 50;
 template<> const bool BookingClasses::FirstClass::sIsSitting = false;
 
+template<> double BookingClasses::FirstClass::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorFirstClass();
+}
+template<> double BookingClasses::ACFirstClass::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorACFirstClass();
+}
+template<> double BookingClasses::AC3Tier::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorAC3Tier();
+}
+template<> double BookingClasses::AC2Tier::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorAC2Tire();
+}
+template<> double BookingClasses::SecondSitting::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorSecondSitting();
+}
+template<> double BookingClasses::Sleeper::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorSleeper();
+}
+template<> double BookingClasses::ExecutiveChairCar::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorExecutiveChairCar();
+}
+template<> double BookingClasses::ACChairCar::GetDivyaangConcession(Divyaang &d) const{
+    return d.GetConcessionFactorACChairCar(); 
+}

@@ -1,9 +1,13 @@
 ///Abhishek Gandhi
 //19CS10031
 #include <iostream>
+#include "Exception.h"
 using namespace std;
 #ifndef _BOOKINGCLASSES_H
 #define _BOOKINGCLASSES_H
+#include "Divyaang.h"
+
+//class Divyaang;
 
 template<typename T>
 class BookingClassesTypes;
@@ -35,6 +39,7 @@ class BookingClasses{
         virtual double MinTatkaalChange() const = 0;
         virtual double MaxTatkaalCharge() const = 0;
         virtual double TatkaalLoadFactor() const = 0;
+        virtual double ReservationCharge() const = 0;
         friend ostream &operator<<(ostream &, const BookingClasses &);
         typedef BookingClassesTypes<ACFirstClassType> ACFirstClass; 
         typedef BookingClassesTypes<ExecuticeChairCarType> ExecutiveChairCar;
@@ -44,7 +49,11 @@ class BookingClasses{
         typedef BookingClassesTypes<ACChairCarType> ACChairCar;
         typedef BookingClassesTypes<SecondSittingType> SecondSitting;
         typedef BookingClassesTypes<FirstClassType> FirstClass;
-        //virtual const BookingClasses &Type() = 0;
+        //template<> virtual const BookingClassesTypes<> &GetType() = 0;
+        //virtual double getConcessionDivyaang(Divyaang &c) const = 0;
+        //template<typename T> 
+        //BookingClassesTypes<T> temp; 
+        virtual double GetDivyaangConcession(Divyaang &) const = 0;
 };
 
 template<typename T>
@@ -63,10 +72,17 @@ class BookingClassesTypes : public BookingClasses{
     static double sReservationCharge;
 public:
     ~BookingClassesTypes(){}
+    double GetDivyaangConcession(Divyaang &) const;
     static const BookingClassesTypes &Type(){
         static const BookingClassesTypes obj;
         return obj;
     }
+    //const BookingClassesTypes &GetType(){
+    //    return Type();
+    //}
+    //double GetConcessionDivyaang(Divyaang &c) const{
+    //    return c.GetConcessionFactor(*this);
+    //}
     inline string GetName() const{
         return sName;
     }
@@ -96,6 +112,9 @@ public:
     }
     inline double TatkaalLoadFactor() const{
         return sTatkalLoadFactor;
+    }
+    inline double ReservationCharge() const{
+        return sReservationCharge;
     }
 };
 

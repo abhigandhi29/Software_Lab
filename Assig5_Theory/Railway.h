@@ -7,6 +7,7 @@
 #include <unordered_map> 
 #include <vector>
 #include "Station.h"
+#include "Exception.h"
 using namespace std;
 
 #ifndef _RAILWAY_H

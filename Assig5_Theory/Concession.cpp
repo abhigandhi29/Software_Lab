@@ -12,7 +12,9 @@ const DivyaangConcession &DivyaangConcession::Type(){
 }
 
 double DivyaangConcession::GetConcessionFactor(Passenger &p,BookingClasses &b) const {
-    return p.GetDisabilityType()->GetConcessionFactor(b);
+    Divyaang *d = p.GetDisabilityType();
+    return b.GetDivyaangConcession(*d);
+    //return 1;
 }
 
 LadiesConcession::LadiesConcession(){}
