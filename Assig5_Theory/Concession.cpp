@@ -20,8 +20,6 @@ double DivyaangConcession::GetConcessionFactor(Passenger &p,BookingClasses &b) c
 LadiesConcession::LadiesConcession(){}
 LadiesConcession::~LadiesConcession(){}
 
-double LadiesConcession::sConcessioFactor = 0;
-
 const LadiesConcession &LadiesConcession::Type(){
     static const LadiesConcession temp;
     return temp;
