@@ -7,7 +7,9 @@
 #include "Station.h"
 #include "Exception.h"
 #include<vector>
+#include <algorithm>
 #include "Concession.h"
+#include "Railway.h"
 using namespace std;
 
 #ifndef _BOOKING_H
@@ -67,8 +69,30 @@ class BookingTypes : public  Booking{
     }
 public:
     ~BookingTypes(){}
-void ComputeFair() const;
+    void ComputeFair() const;
+    static bool CheckValidity(Passenger &p);
     static BookingTypes *MakeReservation(Station to,Station from, Date date,const BookingClasses *bcl,Passenger p){
+        Bad_Booking t;
+        if(find(Railway::sStations.begin(),Railway::sStations.end(),to)==Railway::sStations.end() ||
+            find(Railway::sStations.begin(),Railway::sStations.end(),from)==Railway::sStations.end())
+            throw t;
+        time_t now = time(0);
+        tm *ltm = gmtime(&now);
+        Date dnow(ltm->tm_mday,ltm->tm_mon,ltm->tm_year+1900);
+        //cout<<ltm->tm_year<<endl;
+        if(!(date>dnow)){
+            //cout<<"here"<<endl;
+            throw t;
+        }
+        Date afterYear(ltm->tm_mday,ltm->tm_mon,ltm->tm_year+1+1900);
+        if(date>afterYear){
+            //cout<<"here2"<<endl;
+            throw t;
+        }
+        if(!CheckValidity(p)){
+            //cout<<"here3"<<endl;
+            throw t;
+        }
         BookingTypes *b1 = new BookingTypes(to,from, date,bcl,p);
         return b1;
     }

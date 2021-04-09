@@ -114,3 +114,27 @@ template<> void Booking::SeniorCitizenBooking::ComputeFair() const{
     const_cast<Booking::SeniorCitizenBooking *>(this)->fairComputed_ = final_price;
 }
 
+template<> bool Booking::GeneralBooking::CheckValidity(Passenger &p){
+    return true;
+}
+template<> bool Booking::LadiesBooking::CheckValidity(Passenger &p){
+    if(p.GetGender().GetType()!="Female")
+        return false;
+    return true;
+}
+template<> bool Booking::DivyaangBooking::CheckValidity(Passenger &p) {
+    if(p.GetDisabilityType()==NULL)
+        return false;
+    return true;
+}
+template<> bool Booking::SeniorCitizenBooking::CheckValidity(Passenger &p){
+    if(p.ComputeAge()<p.GetGender().GetConcessionAge())
+        return false;
+    return true;
+}
+template<> bool Booking::TatkalBooking::CheckValidity(Passenger &p){
+    return true;
+}
+template<> bool Booking::PremiumTatkalBooking::CheckValidity(Passenger &p){
+    return true;
+}
