@@ -1,6 +1,7 @@
 //Abhishek Gandhi
 //19CS10031
 #include "Railway.h"
+#include <map>
 
 vector<Station> Railway::sStations{
     Station("Mumbai"),
@@ -24,10 +25,16 @@ vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
 Railway::Railway(){}
 Railway::~Railway(){}
 const Railway &Railway::IndianRailways(){
+    Bad_Railways t;
+    if(!VerifyData)
+        throw t;
     static Railway sIndianRailways;
     return sIndianRailways;
 }
 int Railway::GetDistance(const Station &a,const Station &b){
+    Bad_Railways t;
+    if(a==b)
+        throw t;
     vector<pair<pair<Station,Station>,int>>::const_iterator itr;
     for(itr=sDistStation.begin();itr!=sDistStation.end();++itr){
         if((itr->first.first==a &&  itr->first.second==b) ||
@@ -35,6 +42,7 @@ int Railway::GetDistance(const Station &a,const Station &b){
             return itr->second;
         }
     }
+    throw t;
     return 0;
 }
 ostream &operator<<(ostream &out,const Railway &r){
@@ -44,7 +52,32 @@ ostream &operator<<(ostream &out,const Railway &r){
         out<<"\t-"<<r.sStations[i]<<endl;
     out<<endl;
     out<<"Distances: ";
-    for(int i=0;i<r.sDistStation.size();i++)
-        out<<endl<<"\t-"<<r.sDistStation[i].first.first<<"<--->"<<r.sDistStation[i].first.second<<"-->"<<r.sDistStation[i].second;
+    vector<pair<pair<Station,Station>,int>>::const_iterator itr;
+    for(itr=r.sDistStation.begin();itr!=r.sDistStation.end();++itr)
+        out<<endl<<"\t-"<<itr->first.first<<"<--->"<<itr->first.second<<"-->"<<itr->second;
     return out;
+}
+
+bool Railway::VerifyData(){
+    map<string,int> m;
+    vector<Station>::const_iterator itr;
+    for(itr=sStations.begin();itr!=sStations.end();itr++){
+        if(m.count(itr->GetName())==1){
+            return false;
+        }
+        m[itr->GetName()] = 1;
+    }
+    map<pair<string,string>,int> m2;
+    vector<pair<pair<Station,Station>,int>>::const_iterator itr2;
+    for(itr2=sDistStation.begin();itr2!=sDistStation.end();++itr2){
+        if(m2.count(make_pair(itr2->first.first.GetName(),itr2->first.second.GetName()))==1){
+            return false;
+        }
+        if(m2.count(make_pair(itr2->first.second.GetName(),itr2->first.first.GetName()))==1){
+            return false;
+        }
+        m2[make_pair(itr2->first.first.GetName(),itr2->first.second.GetName())] = 1;
+        m2[make_pair(itr2->first.second.GetName(),itr2->first.first.GetName())] = 1;
+    }
+    return true;
 }

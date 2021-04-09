@@ -19,7 +19,7 @@ class Station{
         int GetDistance(Station &other) const;
         friend ostream &operator<<(ostream &, const Station &);
         friend bool operator==(const Station &, const Station &);
-
+        Station GetInstance(string name) const;
 };
 
 #endif

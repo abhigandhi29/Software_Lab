@@ -37,4 +37,13 @@ class Bad_Booking : public exception{
         }  
 };  
 
+class Bad_Station : public exception{  
+    public:  
+        const char * what() const throw()  
+        {  
+            return "Invalid Station Name!\n";  
+        }  
+};  
+
+
 #endif
