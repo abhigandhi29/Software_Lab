@@ -4,7 +4,7 @@
 Name::Name(string firstName, string middleName,string lastName):firstName_(firstName),lastName_(lastName),middleName_(middleName){}
 Name::~Name(){}
 Name Name::GetInstance(string firstName, string middleName,string lastName){
-    Bad_Passenger t;
+    BadPassengerName t;
     if(firstName=="" && lastName=="")
         throw t;
     return Name(firstName,middleName,lastName);
