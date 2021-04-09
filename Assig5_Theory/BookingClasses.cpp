@@ -13,7 +13,11 @@ ostream &operator<<(ostream &out, const BookingClasses &B){
     out<<"\t-Confort: "<<(B.IsAC() ? "AC" : "Non-AC")<<endl;
     out<<"\t-Mode: "<<(B.IsSitting() ? "Sitting" : "Sleeping")<<endl;
     out<<"\t-Bunks: "<<B.GetNumberOfTires()<<endl;
-    out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No");
+    out<<"\t-Is Luxury: "<<(B.IsLuxury() ? "Yes" : "No")<<endl;
+    out<<"\t-TatkaalFactor: "<<B.TatkaalLoadFactor()<<endl;
+    out<<"\t-MinTatkaalDistance: "<<B.MinTatkaalDistance()<<endl;
+    out<<"\t-MinTatkaalCharge: "<<B.MinTatkaalChange()<<endl;
+    out<<"\t-MaxTatkaalCharge: "<<B.MaxTatkaalCharge();
     return out;
 }
 //template<typename T>

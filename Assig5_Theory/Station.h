@@ -10,8 +10,8 @@ using namespace std;
 class Station{
     private:
         string name_;
-    public:
         Station(string name);
+    public:
         Station(const Station &s);
         inline string GetName() const{
             return name_;
@@ -19,7 +19,7 @@ class Station{
         int GetDistance(Station &other) const;
         friend ostream &operator<<(ostream &, const Station &);
         friend bool operator==(const Station &, const Station &);
-        Station GetInstance(string name) const;
+        static Station GetInstance(string name);
 };
 
 #endif

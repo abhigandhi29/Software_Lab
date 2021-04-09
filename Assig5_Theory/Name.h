@@ -22,6 +22,7 @@ public:
     ~Name();
     static Name GetInstance(string firstName, string middleName,string lastName);
     friend ostream &operator<<(ostream &, const Name &);
+    friend bool operator==(const Name &, const Name &);
 };
 
 #endif

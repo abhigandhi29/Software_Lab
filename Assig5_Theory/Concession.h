@@ -19,6 +19,8 @@ protected:
     Concession();
 public:
     ~Concession();
+    string type;
+    friend ostream &operator<<(ostream &, const Concession &);
     virtual inline double GetConcessionFactor() const{
         return 0;
     }

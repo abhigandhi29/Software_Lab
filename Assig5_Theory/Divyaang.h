@@ -31,7 +31,6 @@ public:
     typedef DivyaangType<OrthopaedicallyHandicappedType> OrthopaedicallyHandicapped;
     typedef DivyaangType<CancerPatientsType> CancerPatients;
     typedef DivyaangType<TBPatientsType> TBPatients;
-    //virtual double GetConcessionFactor(const BookingClasses &) const =0;
     virtual double GetConcessionFactorACFirstClass() const =0;
     virtual double GetConcessionFactorFirstClass() const = 0;
     virtual double GetConcessionFactorSecondSitting() const = 0;
@@ -40,6 +39,8 @@ public:
     virtual double GetConcessionFactorAC2Tire() const = 0;
     virtual double GetConcessionFactorAC3Tier() const = 0;
     virtual double GetConcessionFactorExecutiveChairCar() const = 0;
+    virtual string GetName() const =0;
+    friend ostream &operator<<(ostream &, const Divyaang &);
     
 };
 
@@ -54,6 +55,7 @@ class DivyaangType : public Divyaang{
     static double sSleeperConcession;
     static double sSecondSittingConcession;
     static double sFirstClassConcession;
+    //static string sName;
     DivyaangType(){}
     ~DivyaangType(){}
 public:
@@ -81,6 +83,9 @@ public:
     inline double GetConcessionFactorExecutiveChairCar() const{
         return sExecutiveChairCarConcession;
     }  
+    inline string GetName() const{
+        return sName;
+    }
     static const DivyaangType& Type(){
         static const DivyaangType obj;
         return obj;

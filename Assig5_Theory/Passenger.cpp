@@ -12,11 +12,15 @@ ostream &operator<<(ostream &out, const Passenger &p){
     out<<"Aadhar: "<<p.aadhar_<<endl;
     out<<"Gender: "<<p.gender_<<endl;
     out<<"Number: "<<p.number_<<endl;
-    out<<"DOB: "<<p.dob_;
-
     if(!p.number_.empty()){
         out<<endl<<"Phone Number: "<<p.number_;
     }
+    if(p.disabiltyType_!=NULL)
+        out<<"Disabilty Type: "<<p.disabiltyType_->GetName()<<endl;
+    if(p.disabiltyID_!="")
+        out<<"Disabilty ID: "<<p.disabiltyID_<<endl;
+    out<<"DOB: "<<p.dob_;
+    
     return out;
 }
 Passenger::Passenger(const Passenger &p):name_(p.GetName()),aadhar_(p.aadhar_),gender_(p.GetGender()),dob_(p.GetBOD()),number_(p.GetNumber()),disabiltyType_(p.disabiltyType_),disabiltyID_(p.disabiltyID_){

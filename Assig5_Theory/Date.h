@@ -17,7 +17,7 @@ private:
     const uint32_t day_;
     const uint32_t month_;
     const uint32_t year_;
-    bool IsLeap(int year) const;
+    static bool IsLeap(int year);
     static int sMaxYear;
     static int sMinyear;
 
@@ -38,8 +38,8 @@ public:
     inline uint32_t GetYear() const{
         return year_;
     }
-    bool IsValidDate(int day,int month,int year) const;
-    Date GetInstance(int day,int month,int year) const;
+    static bool IsValidDate(int day,int month,int year);
+    static Date GetInstance(int day,int month,int year);
 
 };
 #endif

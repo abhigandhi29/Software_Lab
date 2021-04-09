@@ -34,6 +34,7 @@ ostream &operator<<(ostream &out, const Booking &b){
     out<<"To Station = "<<b.toStation_<<endl;
     out<<"Travel Date = "<<b.data_<<endl;
     out<<*(b.bookinClass_)<<endl;
+    out<<"Passenger Details:\n"<<b.passenger_<<endl;
     out<<"fair = "<<b.fairComputed_;
     return out;
 }

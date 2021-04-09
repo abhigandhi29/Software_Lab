@@ -32,6 +32,7 @@ public:
     //virtual string sTitle = 0;
     //virtual string Typename = 0;
     friend ostream &operator<<(ostream &, const Gender &);
+    friend bool operator==(const Gender &, const Gender &);
 };
 
 template<typename T>

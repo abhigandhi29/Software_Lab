@@ -1,9 +1,13 @@
 #include "Concession.h"
 
-Concession::Concession(){}
+Concession::Concession(){
+    type="concession";
+}
 Concession::~Concession(){}
 
-DivyaangConcession::DivyaangConcession(){}
+DivyaangConcession::DivyaangConcession():Concession(){
+    type="Divyaang";
+}
 DivyaangConcession::~DivyaangConcession(){}
 
 const DivyaangConcession &DivyaangConcession::Type(){
@@ -17,7 +21,9 @@ double DivyaangConcession::GetConcessionFactor(Passenger &p,BookingClasses &b) c
     //return 1;
 }
 
-LadiesConcession::LadiesConcession(){}
+LadiesConcession::LadiesConcession():Concession(){
+    type="Ladies";
+}
 LadiesConcession::~LadiesConcession(){}
 
 const LadiesConcession &LadiesConcession::Type(){
@@ -29,7 +35,9 @@ double LadiesConcession::GetConcessionFactor(Passenger &p) const{
     return sConcessioFactor;
 }
 
-SeniorCitizenConcession::SeniorCitizenConcession(){};
+SeniorCitizenConcession::SeniorCitizenConcession():Concession(){
+    type="SeniorCitizen";
+};
 SeniorCitizenConcession::~SeniorCitizenConcession(){};
 
 const SeniorCitizenConcession &SeniorCitizenConcession::Type(){
@@ -44,5 +52,12 @@ double SeniorCitizenConcession::GetConcessionFactor(Passenger &p) const {
     return 0;
 }
 
-GeneralConcession::GeneralConcession(){}
+GeneralConcession::GeneralConcession():Concession(){
+    type="General";
+}
 GeneralConcession::~GeneralConcession(){}
+
+ostream &operator<<(ostream &out, const Concession &c){
+    out<<"Concession Type: "<<c.type;
+    return out;
+}

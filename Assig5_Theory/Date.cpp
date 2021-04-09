@@ -58,17 +58,15 @@ bool operator<(const Date &d1, const Date &d2){
 Date::~Date(){}
 
 
-bool Date::IsLeap(int year) const
-{
+bool Date::IsLeap(int year){
 // Return true if year
 // is a multiple pf 4 and
 // not multiple of 100.
 return (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0));
 }
  
-bool Date::IsValidDate(int d, int m, int y) const
-{
-    if (y > sMinyear || y < sMaxYear)
+bool Date::IsValidDate(int d, int m, int y){
+    if (y < sMinyear || y > sMaxYear)
     return false;
     if (m < 1 || m > 12)
     return false;
@@ -91,7 +89,7 @@ bool Date::IsValidDate(int d, int m, int y) const
     return true;
 }
 
-Date Date::GetInstance(int d,int m,int y) const{
+Date Date::GetInstance(int d,int m,int y){
     BadDate derror;
     if(!IsValidDate(d,m,y)){
         throw derror;

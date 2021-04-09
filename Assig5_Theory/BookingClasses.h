@@ -15,7 +15,7 @@ class BookingClassesTypes;
 class BookingClasses{
     private:
         struct ACFirstClassType{};
-        struct ExecuticeChairCarType{};
+        struct ExecutiveChairCarType{};
         struct AC2TireType{};
         struct SleeperType{};
         struct SecondSittingType{};
@@ -42,7 +42,7 @@ class BookingClasses{
         virtual double ReservationCharge() const = 0;
         friend ostream &operator<<(ostream &, const BookingClasses &);
         typedef BookingClassesTypes<ACFirstClassType> ACFirstClass; 
-        typedef BookingClassesTypes<ExecuticeChairCarType> ExecutiveChairCar;
+        typedef BookingClassesTypes<ExecutiveChairCarType> ExecutiveChairCar;
         typedef BookingClassesTypes<AC2TireType> AC2Tier;
         typedef BookingClassesTypes<SleeperType> Sleeper;
         typedef BookingClassesTypes<AC3TireType> AC3Tier;
