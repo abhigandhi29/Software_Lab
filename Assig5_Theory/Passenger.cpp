@@ -35,37 +35,48 @@ int Passenger::ComputeAge() const{
 };
 
 Passenger Passenger::GetInstance(string firstName,string middleName,string lastName,string aadhar,const Gender &gender, Date dob, string number,const Divyaang *disabiltyType ,string disabiltyID){
-    Bad_Passenger t;
     try{
        Name n = Name::GetInstance(firstName,middleName,lastName);
     } 
     catch(...){
         throw;
     }
-    if(aadhar.length()!=12)
+    if(aadhar.length()!=12){
+        BadPassengerAddhar t;
         throw t;
+    }
     else{
         for(auto i : aadhar){
-            if(int(i)<48 || int(i)>57)
+            if(int(i)<48 || int(i)>57){
+                BadPassengerAddhar t;
                 throw t;
+            }
         }
     }
-    if(number.length()!=10)
+    if(number.length()!=10){
+        BadPassengerMobile t;
         throw t;
+    }
     else{
         for(auto i : number){
-            if(int(i)<48 || int(i)>57)
+            if(int(i)<48 || int(i)>57){
+                BadPassengerMobile t;
                 throw t;
+            }
         }
     }
     time_t now = time(NULL);
     tm *ltm = localtime(&now);
     Date dnow(ltm->tm_mday,ltm->tm_mon,1900+ltm->tm_year);
-    if(dob>dnow)
+    if(dob>dnow){
+        BadPassengerDate t;
         throw t;
+    }
     if(disabiltyType!=NULL){
-        if(disabiltyID.length()!=18)
+        if(disabiltyID.length()!=18){
+            BadPassengerDisabilityID t;
             throw t;
+        }
     }
     Passenger p1(Name::GetInstance(firstName,middleName,lastName),aadhar,gender, dob, number,disabiltyType,disabiltyID);
     return p1;

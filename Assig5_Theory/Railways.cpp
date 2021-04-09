@@ -25,14 +25,18 @@ vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
 Railway::Railway(){}
 Railway::~Railway(){}
 const Railway &Railway::IndianRailways(){
-    Bad_Railways t;
-    if(!VerifyData)
-        throw t;
+    
+    try{
+        VerifyData();
+    }
+    catch(...){        
+        throw;
+    }
     static Railway sIndianRailways;
     return sIndianRailways;
 }
 int Railway::GetDistance(const Station &a,const Station &b){
-    Bad_Railways t;
+    BadBookingStation t;
     if(a==b)
         throw t;
     vector<pair<pair<Station,Station>,int>>::const_iterator itr;
@@ -63,7 +67,8 @@ bool Railway::VerifyData(){
     vector<Station>::const_iterator itr;
     for(itr=sStations.begin();itr!=sStations.end();itr++){
         if(m.count(itr->GetName())==1){
-            return false;
+            BadRailwaysDuplicate t;
+            throw t;
         }
         m[itr->GetName()] = 1;
     }
@@ -71,10 +76,12 @@ bool Railway::VerifyData(){
     vector<pair<pair<Station,Station>,int>>::const_iterator itr2;
     for(itr2=sDistStation.begin();itr2!=sDistStation.end();++itr2){
         if(m2.count(make_pair(itr2->first.first.GetName(),itr2->first.second.GetName()))==1){
-            return false;
+            BadRailwaysDuplicate t;
+            throw t;
         }
         if(m2.count(make_pair(itr2->first.second.GetName(),itr2->first.first.GetName()))==1){
-            return false;
+            BadRailwaysDuplicate t;
+            throw t;
         }
         m2[make_pair(itr2->first.first.GetName(),itr2->first.second.GetName())] = 1;
         m2[make_pair(itr2->first.second.GetName(),itr2->first.first.GetName())] = 1;

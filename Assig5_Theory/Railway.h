@@ -19,14 +19,15 @@ class Railway{
         
     protected:
         Railway();
+        static vector<pair<pair<Station,Station>,int>> sDistStation;
     public:
         ~Railway();
-        static vector<Station> sStations;
-        static vector<pair<pair<Station,Station>,int>> sDistStation;
         static const Railway &IndianRailways();
         static int GetDistance(const Station &a,const Station &b);
         friend ostream &operator<<(ostream &,const Railway &);
         static bool VerifyData();
-};
+        static vector<Station> sStations;
+        
+};        
 
 #endif

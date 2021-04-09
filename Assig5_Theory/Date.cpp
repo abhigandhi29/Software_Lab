@@ -92,7 +92,7 @@ bool Date::IsValidDate(int d, int m, int y) const
 }
 
 Date Date::GetInstance(int d,int m,int y) const{
-    Bad_Date derror;
+    BadDate derror;
     if(!IsValidDate(d,m,y)){
         throw derror;
     }
