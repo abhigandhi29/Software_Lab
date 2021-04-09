@@ -16,7 +16,6 @@ Booking::Booking(const Booking &b):fromStation_(b.fromStation_),toStation_(b.toS
 }
 vector<Booking *> Booking::sBookings;
 Booking::~Booking(){}
-double Booking::sBaseFairPerKM = 0.5;
 int Booking::sPNRNumber = 0;
 
 //void Booking::ComputeFair() const{

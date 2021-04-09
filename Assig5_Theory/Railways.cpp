@@ -3,25 +3,7 @@
 #include "Railway.h"
 #include <map>
 
-vector<Station> Railway::sStations{
-    Station("Mumbai"),
-    Station("Delhi"),
-    Station("Bangalore"),
-    Station("Kolkata"),
-    Station("Chennai")
-};
-vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
-    {{Station("Mumbai"),Station("Delhi")},1447},
-    {{Station("Mumbai"),Station("Bangalore")},981},
-    {{Station("Mumbai"),Station("Kolkata")},2014},
-    {{Station("Mumbai"),Station("Chennai")},1338},
-    {{Station("Bangalore"),Station("Delhi")},2150},
-    {{Station("Kolkata"),Station("Delhi")},1472},
-    {{Station("Chennai"),Station("Delhi")},2180},
-    {{Station("Bangalore"),Station("Kolkata")},1871},
-    {{Station("Bangalore"),Station("Chennai")},350},
-    {{Station("Kolkata"),Station("Chennai")},1659}
-};
+
 Railway::Railway(){}
 Railway::~Railway(){}
 const Railway &Railway::IndianRailways(){
