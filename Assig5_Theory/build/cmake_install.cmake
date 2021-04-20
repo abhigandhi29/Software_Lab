@@ -1,4 +1,4 @@
-# Install script for directory: /home/abhu/Software_Lab/Assig3_Theory
+# Install script for directory: /mnt/c/Users/ABHISHEK/Desktop/Software_Lab/Assig5_Theory
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/abhu/Software_Lab/Assig3_Theory/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/c/Users/ABHISHEK/Desktop/Software_Lab/Assig5_Theory/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

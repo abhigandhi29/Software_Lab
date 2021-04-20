@@ -1,0 +1,2182 @@
+
+-------------------Positive Applicaton Testing-----------------------
+500 1808.75
+500 2894
+500 2170.5
+500 4702.75
+250 3617.5
+500 723.5
+100 434.1
+250 1447
+BOOKING SUCCEEDED:
+PNR Number = 1
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 1849
+
+BOOKING SUCCEEDED:
+PNR Number = 2
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2944
+
+BOOKING SUCCEEDED:
+PNR Number = 3
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 4763
+
+BOOKING SUCCEEDED:
+PNR Number = 4
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2221
+
+BOOKING SUCCEEDED:
+PNR Number = 5
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 744
+
+BOOKING SUCCEEDED:
+PNR Number = 6
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 449
+
+BOOKING SUCCEEDED:
+PNR Number = 7
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 3678
+
+BOOKING SUCCEEDED:
+PNR Number = 8
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 1487
+
+BOOKING SUCCEEDED:
+PNR Number = 9
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 1849
+
+BOOKING SUCCEEDED:
+PNR Number = 10
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 2944
+
+BOOKING SUCCEEDED:
+PNR Number = 11
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 2221
+
+BOOKING SUCCEEDED:
+PNR Number = 12
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 4763
+
+BOOKING SUCCEEDED:
+PNR Number = 13
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 744
+
+BOOKING SUCCEEDED:
+PNR Number = 14
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 449
+
+BOOKING SUCCEEDED:
+PNR Number = 15
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 3678
+
+BOOKING SUCCEEDED:
+PNR Number = 16
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Gunjan  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 8/Oct/2001
+fair = 1487
+
+BOOKING SUCCEEDED:
+PNR Number = 17
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1125
+
+BOOKING SUCCEEDED:
+PNR Number = 18
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1786
+
+BOOKING SUCCEEDED:
+PNR Number = 19
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1352
+
+BOOKING SUCCEEDED:
+PNR Number = 20
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 908
+
+BOOKING SUCCEEDED:
+PNR Number = 21
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 2882
+
+BOOKING SUCCEEDED:
+PNR Number = 22
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 2231
+
+BOOKING SUCCEEDED:
+PNR Number = 23
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 454
+
+BOOKING SUCCEEDED:
+PNR Number = 24
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Sajal  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 275
+
+BOOKING SUCCEEDED:
+PNR Number = 25
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 944
+
+BOOKING SUCCEEDED:
+PNR Number = 26
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1497
+
+BOOKING SUCCEEDED:
+PNR Number = 27
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1135
+
+BOOKING SUCCEEDED:
+PNR Number = 28
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 764
+
+BOOKING SUCCEEDED:
+PNR Number = 29
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 1869
+
+BOOKING SUCCEEDED:
+PNR Number = 30
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 382
+
+BOOKING SUCCEEDED:
+PNR Number = 31
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 232
+
+BOOKING SUCCEEDED:
+PNR Number = 32
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Sajol  
+	Aadhar: 123456789111
+	Gender: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+	Phone Number: 1234567890
+	DOB: 17/Dec/1950
+fair = 2411
+
+BOOKING SUCCEEDED:
+PNR Number = 33
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2249
+
+BOOKING SUCCEEDED:
+PNR Number = 34
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 3444
+
+BOOKING SUCCEEDED:
+PNR Number = 35
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2721
+
+BOOKING SUCCEEDED:
+PNR Number = 36
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 5263
+
+BOOKING SUCCEEDED:
+PNR Number = 37
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 4178
+
+BOOKING SUCCEEDED:
+PNR Number = 38
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 944
+
+BOOKING SUCCEEDED:
+PNR Number = 39
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 464
+
+BOOKING SUCCEEDED:
+PNR Number = 40
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 1712
+
+BOOKING SUCCEEDED:
+PNR Number = 41
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2249
+
+BOOKING SUCCEEDED:
+PNR Number = 42
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 3444
+
+BOOKING SUCCEEDED:
+PNR Number = 43
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 944
+
+BOOKING SUCCEEDED:
+PNR Number = 44
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 464
+
+BOOKING SUCCEEDED:
+PNR Number = 45
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 1712
+
+BOOKING SUCCEEDED:
+PNR Number = 46
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 4178
+
+BOOKING SUCCEEDED:
+PNR Number = 47
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 2721
+
+BOOKING SUCCEEDED:
+PNR Number = 48
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Abhishek  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 5263
+
+BOOKING SUCCEEDED:
+PNR Number = 49
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 492
+
+BOOKING SUCCEEDED:
+PNR Number = 50
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 1497
+
+BOOKING SUCCEEDED:
+PNR Number = 51
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 201
+
+BOOKING SUCCEEDED:
+PNR Number = 52
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 124
+
+BOOKING SUCCEEDED:
+PNR Number = 53
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 402
+
+BOOKING SUCCEEDED:
+PNR Number = 54
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 964
+
+BOOKING SUCCEEDED:
+PNR Number = 55
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 593
+
+BOOKING SUCCEEDED:
+PNR Number = 56
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 2411
+
+BOOKING SUCCEEDED:
+PNR Number = 57
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 492
+
+BOOKING SUCCEEDED:
+PNR Number = 58
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 1497
+
+BOOKING SUCCEEDED:
+PNR Number = 59
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 964
+
+BOOKING SUCCEEDED:
+PNR Number = 60
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 593
+
+BOOKING SUCCEEDED:
+PNR Number = 61
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 2411
+
+BOOKING SUCCEEDED:
+PNR Number = 62
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 124
+
+BOOKING SUCCEEDED:
+PNR Number = 63
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 402
+
+BOOKING SUCCEEDED:
+PNR Number = 64
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Handicapped
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 201
+
+BOOKING SUCCEEDED:
+PNR Number = 65
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 40
+
+BOOKING SUCCEEDED:
+PNR Number = 66
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 1497
+
+BOOKING SUCCEEDED:
+PNR Number = 67
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 964
+
+BOOKING SUCCEEDED:
+PNR Number = 68
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 20
+
+BOOKING SUCCEEDED:
+PNR Number = 69
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 15
+
+BOOKING SUCCEEDED:
+PNR Number = 70
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 593
+
+BOOKING SUCCEEDED:
+PNR Number = 71
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 2411
+
+BOOKING SUCCEEDED:
+PNR Number = 72
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: CancerPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 40
+
+BOOKING SUCCEEDED:
+PNR Number = 73
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 1849
+
+BOOKING SUCCEEDED:
+PNR Number = 74
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 2944
+
+BOOKING SUCCEEDED:
+PNR Number = 75
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ExecutiveChairCar
+	-Load Factor: 5
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 3678
+
+BOOKING SUCCEEDED:
+PNR Number = 76
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 201
+
+BOOKING SUCCEEDED:
+PNR Number = 77
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 124
+
+BOOKING SUCCEEDED:
+PNR Number = 78
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 593
+
+BOOKING SUCCEEDED:
+PNR Number = 79
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 1487
+
+BOOKING SUCCEEDED:
+PNR Number = 80
+From Station = Delhi
+To Station = Mumbai
+Travel Date = 17/Mar/2021
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Passenger Details:
+	Passenger: Ramu  
+	Aadhar: 123456789111
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: TBPatients
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 17/Dec/2001
+fair = 4763
+
+
+-----------------------------------------------------------------------
+
+--------------------Negative Application Testing----------------------
+Invalid station name or Distance not found!
+Error! Successfully found
+Invalid Reservation Date!
+Error! Successfully found
+Invalid Reservation Date!
+Error! Successfully found
+Invalid Reservation Date!
+Error! Successfully found
+Invalid Reservation Date!
+Error! Successfully found
+Invalid Mobile Number Provided!
+Error! Successfully found
+Invalid Bod Provided! Birth date must be less than Todays date
+Error! Successfully found
+Invalid Aadhar number!
+Error! Successfully found
+Invalid Disability ID Provided!
+Error! Successfully found
+Invalid Category provided! Choose a valid category
+Error! Successfully found
+Invalid Disability ID Provided!
+Error! Successfully found
+
+-----------------------------------------------------------------------

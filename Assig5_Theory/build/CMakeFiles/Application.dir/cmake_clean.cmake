@@ -4,9 +4,14 @@ file(REMOVE_RECURSE
   "CMakeFiles/Application.dir/Application.cpp.o"
   "CMakeFiles/Application.dir/Booking.cpp.o"
   "CMakeFiles/Application.dir/BookingClasses.cpp.o"
+  "CMakeFiles/Application.dir/Concession.cpp.o"
   "CMakeFiles/Application.dir/Date.cpp.o"
+  "CMakeFiles/Application.dir/Divyaang.cpp.o"
+  "CMakeFiles/Application.dir/Exception.cpp.o"
+  "CMakeFiles/Application.dir/Gender.cpp.o"
+  "CMakeFiles/Application.dir/Name.cpp.o"
   "CMakeFiles/Application.dir/Passenger.cpp.o"
-  "CMakeFiles/Application.dir/Railways.cpp.o"
+  "CMakeFiles/Application.dir/Railway.cpp.o"
   "CMakeFiles/Application.dir/Station.cpp.o"
 )
 

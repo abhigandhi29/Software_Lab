@@ -1,59 +1,20 @@
+Name : Abhishek Gandhi
+Roll No: 19CS10031
+
+Output of unit Testing is in unitTestResult.txt and that of Application testing is in ApplicationTestResult.txt
+
 TESTING
 
-1. Given Tests
-    Ran the given tests. The output has been put to OutputGivenTests.txt file.
-
-2. Own Tests
-    
-    Exhaustive Test Plan split into two parts
-
-        a. Check all classes for a particular pair of stations [7 tests, All class bookings from Delhi to Chennai]
-            This ensures logic for fare computation for different classes is working fine
-        b. Check all ordered pairs of stations for a particular class [20 Tests, All possible ordered pairs of stations in Sleeper]
-            This ensures logic for fare computation between different pairs of stations is working fine
-    
-    The output has been put to OutputOwnTests.txt file.
-
 UNIT TESTS [If everything is running right then the Unit Tests will only print the 
-            output from the output streaming operator of the respective class and nothing else]
-
-1. Booking
-
-- Check next available PNR
-
-    STATIC              GOLDEN VALUE
-    --------------------------------
-    sBookingPNRSerial   one more than 
-                        total number of 
-                        bookings
-
-- Do a booking and check the different attributes
-
-    Booking from Delhi to Mumbai by AC 3 Tier for 16 March, 2021
-    
-    ATTRIBUTE       GOLDEN VALUE
-    ----------------------------
-    fromStation_    Delhi
-    toStation_      Mumbai
-    date_           16/Mar/2021
-    bookingClass_   AC3Tier
-    fare_           1316
-    pnr_            1
-    bookingStatus_  true
-    bookingMessage_ BOOKING SUCCEEDED
-
-- Check ComputeFare function separately matching its return value with the golden value of fare_
-- Check that the booking has been added to the static vector sBookings
-- Check that the next available PNR is now 2
-- Check the output streaming operator on the above booking
+            output from the output streaming operator of the respective class and exception error lines along with exception working correctly]
 
 
-2. Station
+1. Station
 
 Create a station Mumbai
 
-- Check the name_ attribute and GetName() method with the golden value "Mumbai"
-- Check the GetDistance() method with other stations
+- Check the name_ attribute and GetName() method with the golden value "Mumbai" and "Delhi"
+- Check the GetDistance() method between two
 
     GetDistance()   GOLDEN VALUE
     ----------------------------
@@ -63,9 +24,10 @@ Create a station Mumbai
     Chennai         1338
 
 - Check the output streaming operator on the above station
+- Check == operator in Station class
+- check exception handeling by giving a empty string in GetInstance()
 
-
-3. Railways
+2. Railways
 
 - Check for singleton property
 - Check GetDistance() method for a few pairs of stations specifically checking for symmetric property as well
@@ -80,175 +42,137 @@ Create a station Mumbai
 - Further checking of list of stations and dataset of the distances between them is done using the output streaming operator
 
 
-4. Date
+3. Date
 
 - Check for proper construction by comparing date_, month_, year_ with golden values
-- Check ToString() method with golden value "1/Jan/2000" Date(1, 1, 2000)
+- Check output streaming operator
+    GetDay(),GetMonth(),GetYear()       GOLDEN VALUE
+    -------------------------------------------------
+    Date(29,01,2001)                    29 | 01 | 2001
+    Date(7,03,2021)                     07 | 03 | 2001
+- Check Create Instance for 29/02/2000 and 29/02/2001 for checking error Handeling
+
+4. Name
+
+- Check for proper constructor and GetINstance with goldern value
+- Check output streaming operator
+- Check error handeling by creating a instance with empty firstname and lastname
+
+6. Passenger
+
+- Check Proper Allotment for passenger parameter after construction.
+- Check output streaming operator
+- Check error handeling by calling GetInstance with errored input
+- Check all throw statements one by one
+    - BadPassengerAddhar
+    - BadPassengerDate
+    - BadPassengerDisabilityID
+    - BadPassengerMobile
+
+7. Gender
+
+- Check that singelton property by creating two instance of Male and two of Female class
+- Check output streaming operator
+- Check ConcessionAge, ConcessionFactor
+    ConcessionFactor()  GOLDEN VALUE
+    --------------------------------
+       Male                0.4
+      Female               0.5
+    ConcessionAge()  GOLDEN VALUE
+    --------------------------------
+       Male                60
+      Female               58
+
+8. Divyaang
+
+- Check that singelton property by creating two instance of CancerPatients, TBPatients, Blind and of Handicapped class respectively
 - Check output streaming operator
 
-5. BookingClasses
+9. Concession
 
-- Check for singleton property for each of the 7 concrete booking classes
-- Check the methods GetName(), GetLoadFactor(), GetNumberOfTiers(), IsSitting(), IsAC(), IsLuxury() for each of the 7 concrete booking
-    classes
+- Check that singelton property by creating two instance of Male LadiesConcession,GeneralConcession, SeniorCitizenConcession and DivyaangConcession respectively
+- Check output streaming operator
+- Check GetConcessionFactor
+    GetConcessionFactor()           GOLDEN VALUE
+    --------------------------------------------
+       General                              0.
+       Ladies                               0.
+       Divyaang blind AC2Tier              0.5
+       Senior Male                         0.4
+
+10. BookingClasses
+
+- Check for singleton property for each of the 8 concrete booking classes
+- Check the methods GetName(), GetLoadFactor(), GetNumberOfTiers(), IsSitting(), IsAC(), IsLuxury(), MinTatkaalCharge(), MinTatkaalCharge(), MinTatkaalCharge(), MinTatkaalCharge()
+        ReservationCharge() for each of the 8 concrete booking classes
 
 - Check the output streaming operator on each concrete class
-- We check the polymorphic methods in the abstract base classes and the two non-polymorphic methods in BookingClasses
 
-    -BookingClasses
-        Check the GetName() and IsAC() methods for functionality. Golden values depend on the specialization used for testing.
+
+11. Booking
+
+- Check next available PNR
+
+    STATIC              GOLDEN VALUE
+    --------------------------------
+    sBookingPNRSerial   one more than 
+                        total number of 
+                        bookings
+
+- Do a booking and check the different attributes
+
+    Booking from Delhi to Mumbai by AC 3 Tier for 21 Dec, 2021 GeneralBooking
     
-    -SittingClasses
-        Check the IsSitting() method (golden value: true) and GetNumberOfTiers() method (golden value: 0)
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    fromStation_    Delhi
+    toStation_      Mumbai
+    date_           21/Dec/2021
+    bookingClass_   AC3Tier
+    fare_           1849
+    pnr_            1
+    bookingStatus_  true
+    bookingMessage_ BOOKING SUCCEEDED
+    Passenger       General
+
+    Booking from Delhi to Mumbai by AC 3 Tier for 21 Dec, 2021 Divyaang Blind
     
-    -SleepingClasses
-        Check the IsSitting() method (golden value: false)
-    
-    -Sleeping2Tier
-        Check the GetNumberOfTiers() method (golden value: 2)
-    
-    -Sleeping3Tier
-        Check the GetNumberOfTiers() method (golden value: 3)
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    fromStation_    Delhi
+    toStation_      Mumbai
+    date_           21/Dec/2021
+    bookingClass_   AC3Tier
+    fare_           492
+    pnr_            1
+    bookingStatus_  true
+    bookingMessage_ BOOKING SUCCEEDED
+    Passenger       Divyaang(Blind)
+
+- Check ComputeFare function separately matching its return value with the golden value of fare_
+- Check that the booking has been added to the static vector sBookings
+- Check that the next available PNR is now 2
+- Check the output streaming operator on the above booking
+- Check all throw statements one by one
+    - BadBookingStation
+    - BadBookingCategory
+    - BadBookingReservation
+    - BadBookingCategory
+
+
 
 For the Application testing:
 
-There are 7 types of classes of BookingClasses and 20 (5C2*2)pairs of different stations .So in total there are (20*7) types of application Scenarios.
-    Booking b1(Station("Mumbai"), Station("Delhi"), Date(1, 12, 2015), AC2Tier::Type());
-    Booking b2(Station("Mumbai"), Station("Delhi"), Date(2, 12, 2022), AC3Tier::Type());
-    Booking b3(Station("Mumbai"), Station("Delhi"), Date(3, 8, 2017), ACChairCar::Type());
-    Booking b4(Station("Mumbai"), Station("Delhi"), Date(4, 6, 2021), ACFirstClass::Type());
-    Booking b5(Station("Mumbai"), Station("Delhi"), Date(5, 4, 2021), FirstClass::Type());
-    Booking b6(Station("Mumbai"), Station("Delhi"), Date(6, 1, 2022), SecondSitting::Type());
-    Booking b7(Station("Mumbai"), Station("Delhi"), Date(7, 12, 2020), Sleeper::Type());
-    Booking b8(Station("Mumbai"), Station("Bangalore"), Date(8, 5, 2017), AC2Tier::Type());
-    Booking b9(Station("Mumbai"), Station("Bangalore"), Date(9, 1, 2022), AC3Tier::Type());
-    Booking b10(Station("Mumbai"), Station("Bangalore"), Date(10, 9, 2018), ACChairCar::Type());
-    Booking b11(Station("Mumbai"), Station("Bangalore"), Date(11, 1, 2015), ACFirstClass::Type());
-    Booking b12(Station("Mumbai"), Station("Bangalore"), Date(12, 3, 2020), FirstClass::Type());
-    Booking b13(Station("Mumbai"), Station("Bangalore"), Date(13, 9, 2020), SecondSitting::Type());
-    Booking b14(Station("Mumbai"), Station("Bangalore"), Date(14, 9, 2018), Sleeper::Type());
-    Booking b15(Station("Mumbai"), Station("Kolkata"), Date(15, 12, 2021), AC2Tier::Type());
-    Booking b16(Station("Mumbai"), Station("Kolkata"), Date(16, 6, 2016), AC3Tier::Type());
-    Booking b17(Station("Mumbai"), Station("Kolkata"), Date(17, 3, 2020), ACChairCar::Type());
-    Booking b18(Station("Mumbai"), Station("Kolkata"), Date(18, 1, 2021), ACFirstClass::Type());
-    Booking b19(Station("Mumbai"), Station("Kolkata"), Date(19, 12, 2015), FirstClass::Type());
-    Booking b20(Station("Mumbai"), Station("Kolkata"), Date(20, 1, 2022), SecondSitting::Type());
-    Booking b21(Station("Mumbai"), Station("Kolkata"), Date(21, 5, 2020), Sleeper::Type());
-    Booking b22(Station("Mumbai"), Station("Chennai"), Date(22, 8, 2021), AC2Tier::Type());
-    Booking b23(Station("Mumbai"), Station("Chennai"), Date(23, 2, 2021), AC3Tier::Type());
-    Booking b24(Station("Mumbai"), Station("Chennai"), Date(24, 12, 2020), ACChairCar::Type());
-    Booking b25(Station("Mumbai"), Station("Chennai"), Date(25, 3, 2020), ACFirstClass::Type());
-    Booking b26(Station("Mumbai"), Station("Chennai"), Date(26, 9, 2022), FirstClass::Type());
-    Booking b27(Station("Mumbai"), Station("Chennai"), Date(27, 5, 2022), SecondSitting::Type());
-    Booking b28(Station("Mumbai"), Station("Chennai"), Date(28, 9, 2018), Sleeper::Type());
-    Booking b29(Station("Delhi"), Station("Mumbai"), Date(29, 1, 2017), AC2Tier::Type());
-    Booking b30(Station("Delhi"), Station("Mumbai"), Date(30, 4, 2021), AC3Tier::Type());
-    Booking b31(Station("Delhi"), Station("Mumbai"), Date(31, 3, 2016), ACChairCar::Type());
-    Booking b32(Station("Delhi"), Station("Mumbai"), Date(1, 3, 2019), ACFirstClass::Type());
-    Booking b33(Station("Delhi"), Station("Mumbai"), Date(2, 2, 2016), FirstClass::Type());
-    Booking b34(Station("Delhi"), Station("Mumbai"), Date(3, 3, 2021), SecondSitting::Type());
-    Booking b35(Station("Delhi"), Station("Mumbai"), Date(4, 5, 2016), Sleeper::Type());
-    Booking b36(Station("Delhi"), Station("Bangalore"), Date(5, 8, 2017), AC2Tier::Type());
-    Booking b37(Station("Delhi"), Station("Bangalore"), Date(6, 3, 2015), AC3Tier::Type());
-    Booking b38(Station("Delhi"), Station("Bangalore"), Date(7, 4, 2022), ACChairCar::Type());
-    Booking b39(Station("Delhi"), Station("Bangalore"), Date(8, 6, 2018), ACFirstClass::Type());
-    Booking b40(Station("Delhi"), Station("Bangalore"), Date(9, 2, 2020), FirstClass::Type());
-    Booking b41(Station("Delhi"), Station("Bangalore"), Date(10, 2, 2015), SecondSitting::Type());
-    Booking b42(Station("Delhi"), Station("Bangalore"), Date(11, 3, 2022), Sleeper::Type());
-    Booking b43(Station("Delhi"), Station("Kolkata"), Date(12, 12, 2017), AC2Tier::Type());
-    Booking b44(Station("Delhi"), Station("Kolkata"), Date(13, 8, 2019), AC3Tier::Type());
-    Booking b45(Station("Delhi"), Station("Kolkata"), Date(14, 10, 2015), ACChairCar::Type());
-    Booking b46(Station("Delhi"), Station("Kolkata"), Date(15, 10, 2022), ACFirstClass::Type());
-    Booking b47(Station("Delhi"), Station("Kolkata"), Date(16, 8, 2019), FirstClass::Type());
-    Booking b48(Station("Delhi"), Station("Kolkata"), Date(17, 10, 2018), SecondSitting::Type());
-    Booking b49(Station("Delhi"), Station("Kolkata"), Date(18, 8, 2022), Sleeper::Type());
-    Booking b50(Station("Delhi"), Station("Chennai"), Date(19, 7, 2020), AC2Tier::Type());
-    Booking b51(Station("Delhi"), Station("Chennai"), Date(20, 6, 2018), AC3Tier::Type());
-    Booking b52(Station("Delhi"), Station("Chennai"), Date(21, 7, 2015), ACChairCar::Type());
-    Booking b53(Station("Delhi"), Station("Chennai"), Date(22, 10, 2019), ACFirstClass::Type());
-    Booking b54(Station("Delhi"), Station("Chennai"), Date(23, 10, 2021), FirstClass::Type());
-    Booking b55(Station("Delhi"), Station("Chennai"), Date(24, 1, 2020), SecondSitting::Type());
-    Booking b56(Station("Delhi"), Station("Chennai"), Date(25, 1, 2020), Sleeper::Type());
-    Booking b57(Station("Bangalore"), Station("Mumbai"), Date(26, 3, 2022), AC2Tier::Type());
-    Booking b58(Station("Bangalore"), Station("Mumbai"), Date(27, 1, 2019), AC3Tier::Type());
-    Booking b59(Station("Bangalore"), Station("Mumbai"), Date(28, 11, 2019), ACChairCar::Type());
-    Booking b60(Station("Bangalore"), Station("Mumbai"), Date(29, 2, 2016), ACFirstClass::Type());
-    Booking b61(Station("Bangalore"), Station("Mumbai"), Date(30, 11, 2020), FirstClass::Type());
-    Booking b62(Station("Bangalore"), Station("Mumbai"), Date(1, 7, 2017), SecondSitting::Type());
-    Booking b63(Station("Bangalore"), Station("Mumbai"), Date(2, 9, 2015), Sleeper::Type());
-    Booking b64(Station("Bangalore"), Station("Delhi"), Date(3, 9, 2018), AC2Tier::Type());
-    Booking b65(Station("Bangalore"), Station("Delhi"), Date(4, 6, 2017), AC3Tier::Type());
-    Booking b66(Station("Bangalore"), Station("Delhi"), Date(5, 11, 2021), ACChairCar::Type());
-    Booking b67(Station("Bangalore"), Station("Delhi"), Date(6, 7, 2019), ACFirstClass::Type());
-    Booking b68(Station("Bangalore"), Station("Delhi"), Date(7, 11, 2022), FirstClass::Type());
-    Booking b69(Station("Bangalore"), Station("Delhi"), Date(8, 12, 2018), SecondSitting::Type());
-    Booking b70(Station("Bangalore"), Station("Delhi"), Date(9, 12, 2022), Sleeper::Type());
-    Booking b71(Station("Bangalore"), Station("Kolkata"), Date(10, 5, 2017), AC2Tier::Type());
-    Booking b72(Station("Bangalore"), Station("Kolkata"), Date(11, 6, 2020), AC3Tier::Type());
-    Booking b73(Station("Bangalore"), Station("Kolkata"), Date(12, 1, 2017), ACChairCar::Type());
-    Booking b74(Station("Bangalore"), Station("Kolkata"), Date(13, 3, 2018), ACFirstClass::Type());
-    Booking b75(Station("Bangalore"), Station("Kolkata"), Date(14, 11, 2018), FirstClass::Type());
-    Booking b76(Station("Bangalore"), Station("Kolkata"), Date(15, 12, 2021), SecondSitting::Type());
-    Booking b77(Station("Bangalore"), Station("Kolkata"), Date(16, 4, 2017), Sleeper::Type());
-    Booking b78(Station("Bangalore"), Station("Chennai"), Date(17, 12, 2021), AC2Tier::Type());
-    Booking b79(Station("Bangalore"), Station("Chennai"), Date(18, 9, 2021), AC3Tier::Type());
-    Booking b80(Station("Bangalore"), Station("Chennai"), Date(19, 3, 2016), ACChairCar::Type());
-    Booking b81(Station("Bangalore"), Station("Chennai"), Date(20, 3, 2015), ACFirstClass::Type());
-    Booking b82(Station("Bangalore"), Station("Chennai"), Date(21, 12, 2015), FirstClass::Type());
-    Booking b83(Station("Bangalore"), Station("Chennai"), Date(22, 9, 2020), SecondSitting::Type());
-    Booking b84(Station("Bangalore"), Station("Chennai"), Date(23, 1, 2020), Sleeper::Type());
-    Booking b85(Station("Kolkata"), Station("Mumbai"), Date(24, 4, 2019), AC2Tier::Type());
-    Booking b86(Station("Kolkata"), Station("Mumbai"), Date(25, 9, 2016), AC3Tier::Type());
-    Booking b87(Station("Kolkata"), Station("Mumbai"), Date(26, 6, 2021), ACChairCar::Type());
-    Booking b88(Station("Kolkata"), Station("Mumbai"), Date(27, 3, 2016), ACFirstClass::Type());
-    Booking b89(Station("Kolkata"), Station("Mumbai"), Date(28, 4, 2019), FirstClass::Type());
-    Booking b90(Station("Kolkata"), Station("Mumbai"), Date(29, 3, 2016), SecondSitting::Type());
-    Booking b91(Station("Kolkata"), Station("Mumbai"), Date(30, 9, 2018), Sleeper::Type());
-    Booking b92(Station("Kolkata"), Station("Delhi"), Date(31, 1, 2019), AC2Tier::Type());
-    Booking b93(Station("Kolkata"), Station("Delhi"), Date(1, 7, 2019), AC3Tier::Type());
-    Booking b94(Station("Kolkata"), Station("Delhi"), Date(2, 5, 2020), ACChairCar::Type());
-    Booking b95(Station("Kolkata"), Station("Delhi"), Date(3, 4, 2020), ACFirstClass::Type());
-    Booking b96(Station("Kolkata"), Station("Delhi"), Date(4, 10, 2018), FirstClass::Type());
-    Booking b97(Station("Kolkata"), Station("Delhi"), Date(5, 4, 2016), SecondSitting::Type());
-    Booking b98(Station("Kolkata"), Station("Delhi"), Date(6, 8, 2015), Sleeper::Type());
-    Booking b99(Station("Kolkata"), Station("Bangalore"), Date(7, 11, 2015), AC2Tier::Type());
-    Booking b100(Station("Kolkata"), Station("Bangalore"), Date(8, 10, 2021), AC3Tier::Type());
-    Booking b101(Station("Kolkata"), Station("Bangalore"), Date(9, 4, 2015), ACChairCar::Type());
-    Booking b102(Station("Kolkata"), Station("Bangalore"), Date(10, 6, 2016), ACFirstClass::Type());
-    Booking b103(Station("Kolkata"), Station("Bangalore"), Date(11, 10, 2017), FirstClass::Type());
-    Booking b104(Station("Kolkata"), Station("Bangalore"), Date(12, 1, 2015), SecondSitting::Type());
-    Booking b105(Station("Kolkata"), Station("Bangalore"), Date(13, 3, 2016), Sleeper::Type());
-    Booking b106(Station("Kolkata"), Station("Chennai"), Date(14, 8, 2021), AC2Tier::Type());
-    Booking b107(Station("Kolkata"), Station("Chennai"), Date(15, 5, 2017), AC3Tier::Type());
-    Booking b108(Station("Kolkata"), Station("Chennai"), Date(16, 3, 2016), ACChairCar::Type());
-    Booking b109(Station("Kolkata"), Station("Chennai"), Date(17, 4, 2017), ACFirstClass::Type());
-    Booking b110(Station("Kolkata"), Station("Chennai"), Date(18, 12, 2017), FirstClass::Type());
-    Booking b111(Station("Kolkata"), Station("Chennai"), Date(19, 2, 2020), SecondSitting::Type());
-    Booking b112(Station("Kolkata"), Station("Chennai"), Date(20, 9, 2020), Sleeper::Type());
-    Booking b113(Station("Chennai"), Station("Mumbai"), Date(21, 7, 2021), AC2Tier::Type());
-    Booking b114(Station("Chennai"), Station("Mumbai"), Date(22, 5, 2019), AC3Tier::Type());
-    Booking b115(Station("Chennai"), Station("Mumbai"), Date(23, 6, 2021), ACChairCar::Type());
-    Booking b116(Station("Chennai"), Station("Mumbai"), Date(24, 7, 2016), ACFirstClass::Type());
-    Booking b117(Station("Chennai"), Station("Mumbai"), Date(25, 5, 2017), FirstClass::Type());
-    Booking b118(Station("Chennai"), Station("Mumbai"), Date(26, 9, 2016), SecondSitting::Type());
-    Booking b119(Station("Chennai"), Station("Mumbai"), Date(27, 5, 2018), Sleeper::Type());
-    Booking b120(Station("Chennai"), Station("Delhi"), Date(28, 12, 2018), AC2Tier::Type());
-    Booking b121(Station("Chennai"), Station("Delhi"), Date(29, 7, 2016), AC3Tier::Type());
-    Booking b122(Station("Chennai"), Station("Delhi"), Date(30, 10, 2016), ACChairCar::Type());
-    Booking b123(Station("Chennai"), Station("Delhi"), Date(31, 5, 2020), ACFirstClass::Type());
-    Booking b124(Station("Chennai"), Station("Delhi"), Date(1, 8, 2021), FirstClass::Type());
-    Booking b125(Station("Chennai"), Station("Delhi"), Date(2, 4, 2022), SecondSitting::Type());
-    Booking b126(Station("Chennai"), Station("Delhi"), Date(3, 5, 2020), Sleeper::Type());
-    Booking b127(Station("Chennai"), Station("Bangalore"), Date(4, 6, 2022), AC2Tier::Type());
-    Booking b128(Station("Chennai"), Station("Bangalore"), Date(5, 2, 2019), AC3Tier::Type());
-    Booking b129(Station("Chennai"), Station("Bangalore"), Date(6, 4, 2017), ACChairCar::Type());
-    Booking b130(Station("Chennai"), Station("Bangalore"), Date(7, 8, 2022), ACFirstClass::Type());
-    Booking b131(Station("Chennai"), Station("Bangalore"), Date(8, 6, 2019), FirstClass::Type());
-    Booking b132(Station("Chennai"), Station("Bangalore"), Date(9, 1, 2020), SecondSitting::Type());
-    Booking b133(Station("Chennai"), Station("Bangalore"), Date(10, 3, 2020), Sleeper::Type());
-    Booking b134(Station("Chennai"), Station("Kolkata"), Date(11, 12, 2020), AC2Tier::Type());
-    Booking b135(Station("Chennai"), Station("Kolkata"), Date(12, 3, 2019), AC3Tier::Type());
-    Booking b136(Station("Chennai"), Station("Kolkata"), Date(13, 1, 2016), ACChairCar::Type());
-    Booking b137(Station("Chennai"), Station("Kolkata"), Date(14, 9, 2019), ACFirstClass::Type());
-    Booking b138(Station("Chennai"), Station("Kolkata"), Date(15, 11, 2015), FirstClass::Type());
-    Booking b139(Station("Chennai"), Station("Kolkata"), Date(16, 4, 2017), SecondSitting::Type());
+POSITIVE CHECKING:
+    - Check all four divyaang category in divyaang category
+    - Check both seniorCitizen 
+    - Check General
+    - check Tatkal
+    - check Premium_Tatkal
+    - check Ladies
+    - for all the above check all 8 bookingClasses
+    in total : 88 cases are checked
+
+Negative CHECKING:
+    - check all error messages once by creating that specific error and print error messages
+    in total : 11 cases are checked

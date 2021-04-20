@@ -1,0 +1,278 @@
+Abhishek Gandhi
+19CS10031
+
+-----------------Unit Testing For Station Class------------------------
+Mumbai
+Invalid Station Name!
+Exception handling working properly
+
+-----------------------------------------------------------------------
+-----------------Unit Testing For Railway Class------------------------
+Indian Railway
+Name of Stations: 
+	-Mumbai
+	-Delhi
+	-Bangalore
+	-Kolkata
+	-Chennai
+
+Distances: 
+	-Mumbai<--->Delhi-->1447
+	-Mumbai<--->Bangalore-->981
+	-Mumbai<--->Kolkata-->2014
+	-Mumbai<--->Chennai-->1338
+	-Bangalore<--->Delhi-->2150
+	-Kolkata<--->Delhi-->1472
+	-Chennai<--->Delhi-->2180
+	-Bangalore<--->Kolkata-->1871
+	-Bangalore<--->Chennai-->350
+	-Kolkata<--->Chennai-->1659
+-----------------------------------------------------------------------
+
+--------------------Unit Testing For Date Class------------------------
+d1 = 29/Jan/2001
+d2 = 7/Mar/2021
+d3 = 29/Jan/2001
+Prime year check working
+Invalid Date Provided
+Date: Verify Date working Correctly
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Name Classes--------------------
+Name: Abhishek Rajesh Gandhi
+Invalid Name provided! Both surname and firstname cannot be empty
+Error Catching Working Correctly
+-----------------------------------------------------------------------
+
+-----------------Unit Testing For Passenger Classes--------------------
+p1= 	Passenger: Abhishek  Gandhi
+	Aadhar: 123456789012
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+p2= 	Passenger: someguy  shit
+	Aadhar: 123456789012
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 11/Apr/1996
+Invalid Aadhar number!
+Exception handling working correctly
+Invalid Aadhar number!
+Exception handling working correctly
+Invalid Mobile Number Provided!
+Exception handling working correctly
+Invalid Mobile Number Provided!
+Exception handling working correctly
+Invalid Bod Provided! Birth date must be less than Todays date
+Exception handling working correctly
+Invalid Disability ID Provided!
+Exception handling working correctly
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Gender Classes--------------------
+Male: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+
+Female: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Divyaang Classes--------------------
+Blind: Divyaang Type:Blind
+	 AC2Tier: 0.5
+	 AC3Tier: 0.75
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0.75
+	 ExecutiveChairCar: 0.75
+
+CancerPatients: Divyaang Type:CancerPatients
+	 AC2Tier: 0.5
+	 AC3Tier: 1
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 1
+	 SecondSitting: 1
+	 ACChairCar: 1
+	 ExecutiveChairCar: 0.75
+
+Handicapped: Divyaang Type:Handicapped
+	 AC2Tier: 0.5
+	 AC3Tier: 0.75
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0.75
+	 ExecutiveChairCar: 0.75
+
+TBPatients: Divyaang Type:TBPatients
+	 AC2Tier: 0
+	 AC3Tier: 0
+	 ACFirstClass: 0
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0
+	 ExecutiveChairCar: 0
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Concession Classes--------------------
+GeneralConcession: Concession Type: General
+
+LadiesConcession: Concession Type: Ladies
+
+SeniorCitizenConcession: Concession Type: SeniorCitizen
+
+DivyaangConcession: Concession Type: Divyaang
+-----------------------------------------------------------------------
+
+------------Unit Testing For BookingClasses Classes--------------------
+Travel Class: Sleeper
+	-Load Factor: 1
+	-Confort: Non-AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 100
+	-MaxTatkaalCharge: 200
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Travel Class: AC2Tier
+	-Load Factor: 4
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Travel Class: ACFirstClass
+	-Load Factor: 6.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 1
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Travel Class: FirstClass
+	-Load Factor: 3
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 2
+	-Is Luxury: Yes
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 400
+	-MaxTatkaalCharge: 500
+Travel Class: SecondSitting
+	-Load Factor: 0.6
+	-Confort: Non-AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.1
+	-MinTatkaalDistance: 100
+	-MinTatkaalCharge: 10
+	-MaxTatkaalCharge: 15
+Travel Class: ACChairCar
+	-Load Factor: 2
+	-Confort: AC
+	-Mode: Sitting
+	-Bunks: 0
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 250
+	-MinTatkaalCharge: 125
+	-MaxTatkaalCharge: 225
+-----------------------------------------------------------------------
+
+---------------------Unit testing for Booking Class--------------------
+BOOKING SUCCEEDED:
+PNR Number = 1
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 21/Dec/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: Abhishek  Gandhi
+	Aadhar: 123456789012
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+fair = 1849
+BOOKING SUCCEEDED:
+PNR Number = 2
+From Station = Mumbai
+To Station = Delhi
+Travel Date = 21/Dec/2021
+Travel Class: AC3Tier
+	-Load Factor: 2.5
+	-Confort: AC
+	-Mode: Sleeping
+	-Bunks: 3
+	-Is Luxury: No
+	-TatkaalFactor: 0.3
+	-MinTatkaalDistance: 500
+	-MinTatkaalCharge: 300
+	-MaxTatkaalCharge: 400
+Passenger Details:
+	Passenger: someguy  shit
+	Aadhar: 123456789012
+	Gender: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 11/Apr/1996
+fair = 492
+Invalid station name or Distance not found!
+Error handeling working correctly
+Invalid Reservation Date!
+Error handeling working correctly
+Invalid Category provided! Choose a valid category
+Error handeling working correctly
+Invalid Category provided! Choose a valid category
+Error handeling working correctly
+-----------------------------------------------------------------------

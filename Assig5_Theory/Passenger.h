@@ -3,6 +3,9 @@
 #include<iostream>
 #include "Date.h"
 #include "Divyaang.h"
+#include "Exception.h"
+#include "Gender.h"
+#include "Name.h"
 using namespace std;
 
 #ifndef _PASSENGER_H
@@ -10,19 +13,21 @@ using namespace std;
 
 class Passenger{
     private:
-        const string name_,aadhar_,gender_,number_,disabiltyID_;
+        const Name name_;
+        const string aadhar_,number_,disabiltyID_;
+        const Gender &gender_;
         const Divyaang *disabiltyType_;
         const Date dob_;
         
     public:
         Passenger(const Passenger &); 
-        Passenger(string name, string aadhar, string gender, Date dob, string number="",Divyaang *disabiltyType = NULL,string disabiltyID = "");
+        Passenger(Name name, string aadhar,const Gender &gender, Date dob, string number,const Divyaang *disabiltyType = NULL,string disabiltyID = "");
         ~Passenger();
         friend ostream &operator<<(ostream &, const Passenger &);
-        inline string GetName() const{
+        inline Name GetName() const{
             return name_;
         }
-        inline string GetGender() const{
+        inline const Gender &GetGender() const{
             return gender_;
         }
         inline string GetNumber() const{
@@ -31,12 +36,14 @@ class Passenger{
         inline Date GetBOD() const{
             return dob_;
         }
-        inline const Divyaang *GetDisabilityType() const{
-            return disabiltyType_;
+        inline Divyaang *GetDisabilityType() const{
+            return const_cast<Divyaang *>(disabiltyType_);
         }
         inline string GetDisabilityID() const{
             return disabiltyID_;
         }
+        int ComputeAge() const;
+        static Passenger GetInstance(string firstName, string middleName,string lastName,string aadhar,const Gender &gender, Date dob, string number,const Divyaang *disabiltyType = NULL,string disabiltyID = "");
 
 };
 #endif

@@ -6,7 +6,8 @@
 #include <iterator> 
 #include <unordered_map> 
 #include <vector>
-#include "Station.h"
+#include "Exception.h"
+//#include "Station.h"
 using namespace std;
 
 #ifndef _GENDER_H
@@ -20,12 +21,18 @@ class Gender{
     struct FemaleType{};
 protected:
     Gender();
-    virtual ~Gender();
 public:
+    virtual ~Gender();
     typedef GenderType<MaleType> Male;
     typedef GenderType<FemaleType> Female;
     virtual double GetSeniorCitizenCon() const = 0;
-    virtual  int getConcessionAge() const = 0;
+    virtual int GetConcessionAge() const = 0;
+    virtual string GetTitle() const = 0;
+    virtual string GetType() const = 0;
+    //virtual string sTitle = 0;
+    //virtual string Typename = 0;
+    friend ostream &operator<<(ostream &, const Gender &);
+    friend bool operator==(const Gender &, const Gender &);
 };
 
 template<typename T>
@@ -33,22 +40,28 @@ class GenderType : public Gender{
     static double sSeniorCitizenConsessionFactor;
     static int sConcessionAge;
     static string sTitle;
+    static string Typename;
     GenderType(){}
-    ~GenderType(){}
+    
 public:
-    inline double getSeniorCitizenCon() const{
+    ~GenderType(){}
+    inline double GetSeniorCitizenCon() const{
         return sSeniorCitizenConsessionFactor;
     }
-    inline double getConcessionAge()  const{
+    inline int GetConcessionAge()  const{
         return sConcessionAge;
     }
     inline string GetTitle() const{
         return sTitle;
     }
-    static const GenderType<T>& Type(){
-        static const GenderType<T> obj;
+    inline string GetType() const{
+        return Typename;
+    }
+    static const GenderType& Type(){
+        static const GenderType obj;
         return obj;
     }
+    
 
 };
 

@@ -19,4 +19,11 @@ bool operator==(const Station &s1, const Station &s2){
     }
     return false;
 }
+Station Station::GetInstance(string name){
+    BadStation t;
+    if(name=="")
+        throw t;
+    return Station(name);
+
+}
 

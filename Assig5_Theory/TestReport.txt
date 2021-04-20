@@ -1,0 +1,174 @@
+Name : Abhishek Gandhi
+Roll No: 19CS10031
+
+Unit Test Report: 
+
+1. Station
+
+Create a station Mumbai
+
+- name_ attribute and GetName() method with the golden value "Mumbai" and "Delhi" :[PASS]
+- GetDistance() method between two : [PASS]
+- output streaming operator on the above station : [Pass]
+- == operator in Station class : [PASS]
+- exception handeling by giving a empty string in GetInstance() : Station("") : [PASS]
+
+2. Railways
+
+- singleton property : [PASS]
+- GetDistance() method for a few pairs of stations specifically checking for symmetric property as well : [PASS]
+- Further checking of list of stations and dataset of the distances between them is done using the output streaming operator : [PASS]
+
+
+3. Date
+
+- proper construction by comparing date_, month_, year_ with golden values : [PASS]
+- output streaming operator : [PASS]
+- Create Instance for 29/02/2000 and 29/02/2001 for checking error Handeling : [PASS]
+
+4. Name
+
+- proper constructor and GetINstance with goldern value : [PASS]
+- output streaming operator : [PASS]
+- error handeling by creating a instance with empty firstname and  : [PASS]
+
+6. Passenger
+
+- Proper Allotment for passenger parameter after construction. : [PASS]
+- output streaming operator : [PASS]
+- error handeling by calling GetInstance with errored input : [PASS]
+- Check all throw statements one by one
+    - BadPassengerAddhar [PASS]
+    - BadPassengerDate [PASS]
+    - BadPassengerDisabilityID [PASS]
+    - BadPassengerMobile [PASS]
+
+7. Gender
+
+- singelton property by creating two instance of Male and two of Female class : [PASS]
+- Coutput streaming operator : [PASS]
+- ConcessionAge, ConcessionFactor : [PASS]
+
+
+8. Divyaang
+
+- singelton property by creating two instance of CancerPatients, TBPatients, Blind and of Handicapped class respectively : [PASS]
+- output streaming operator : [PASS]
+
+9. Concession
+
+- singelton property by creating two instance of Male LadiesConcession,GeneralConcession, SeniorCitizenConcession and DivyaangConcession respectively : [PASS]
+- output streaming operator : [PASS]
+- GetConcessionFactor : [PASS]
+
+10. BookingClasses
+
+- singleton property for each of the 8 concrete booking classes : [PASS]
+- methods GetName(), GetLoadFactor(), GetNumberOfTiers(), IsSitting(), IsAC(), IsLuxury(), MinTatkaalCharge(), MinTatkaalCharge(), MinTatkaalCharge(), MinTatkaalCharge()
+        ReservationCharge() for each of the 8 concrete booking classes are checked with goldern value : [PASS]
+
+- output streaming operator on each concrete class : [PASS]
+
+
+11. Booking
+
+- next available PNR : [PASS]
+- Do a booking and check the different attributes : [PASS]
+
+    Booking from Delhi to Mumbai by AC 3 Tier for 21 Dec, 2021 GeneralBooking [PASS]
+    
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    fromStation_    Delhi
+    toStation_      Mumbai
+    date_           21/Dec/2021
+    bookingClass_   AC3Tier
+    fare_           1849
+    pnr_            1
+    bookingStatus_  true
+    bookingMessage_ BOOKING SUCCEEDED
+    Passenger       General
+
+    OutPut Recieved : 
+        BOOKING SUCCEEDED:
+        PNR Number = 1
+        From Station = Mumbai
+        To Station = Delhi
+        Travel Date = 21/Dec/2021
+        Travel Class: AC3Tier
+            -Load Factor: 2.5
+            -Confort: AC
+            -Mode: Sleeping
+            -Bunks: 3
+            -Is Luxury: No
+            -TatkaalFactor: 0.3
+            -MinTatkaalDistance: 500
+            -MinTatkaalCharge: 300
+            -MaxTatkaalCharge: 400
+        Passenger Details:
+            Passenger: Abhishek  Gandhi
+            Aadhar: 123456789012
+            Gender: Type: Male
+        Title: Mr
+        ConcessionAge: 60
+        Concession Factor: 0.4
+            Phone Number: 1234567890
+            DOB: 29/Jan/2001
+        fair = 1849
+
+    Booking from Delhi to Mumbai by AC 3 Tier for 21 Dec, 2021 Divyaang Blind [PASS]
+    
+    ATTRIBUTE       GOLDEN VALUE
+    ----------------------------
+    fromStation_    Delhi
+    toStation_      Mumbai
+    date_           21/Dec/2021
+    bookingClass_   AC3Tier
+    fare_           492
+    pnr_            1
+    bookingStatus_  true
+    bookingMessage_ BOOKING SUCCEEDED
+    Passenger       Divyaang(Blind)
+
+    OutPut Recieved:
+        BOOKING SUCCEEDED:
+        PNR Number = 2
+        From Station = Mumbai
+        To Station = Delhi
+        Travel Date = 21/Dec/2021
+        Travel Class: AC3Tier
+            -Load Factor: 2.5
+            -Confort: AC
+            -Mode: Sleeping
+            -Bunks: 3
+            -Is Luxury: No
+            -TatkaalFactor: 0.3
+            -MinTatkaalDistance: 500
+            -MinTatkaalCharge: 300
+            -MaxTatkaalCharge: 400
+        Passenger Details:
+            Passenger: someguy  shit
+            Aadhar: 123456789012
+            Gender: Type: Male
+        Title: Mr
+        ConcessionAge: 60
+        Concession Factor: 0.4
+            Phone Number: 1234567890
+            Disabilty Type: Blind
+            Disabilty ID: eff1234567890sdfgh
+            DOB: 11/Apr/1996
+        fair = 492
+
+- Check ComputeFare function separately matching its return value with the golden value of fare_ : [PASS]
+- Check that the booking has been added to the static vector sBookings : [PASS]
+- Check that the next available PNR is now 2 : [PASS]
+- Check the output streaming operator on the above booking : [PASS]
+- Check all throw statements one by one
+    - BadBookingStation [PASS]
+    - BadBookingCategory [PASS]
+    - BadBookingReservation [PASS]
+    - BadBookingCategory [PASS]
+
+Application Test Report:
+    All 88+11 test cases successfully passed 
+    Goldern output is in ApplicationTestResult.txt

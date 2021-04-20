@@ -6,8 +6,11 @@
 #include <iterator> 
 #include <unordered_map> 
 #include <vector>
-#include "BookingClasses.h"
+#include "Exception.h"
+//#include "BookingClasses.h"
 using namespace std;
+
+//class BookingClasses;
 
 #ifndef _DIVYAANG_H
 #define _DIVYAANG_H
@@ -28,19 +31,21 @@ public:
     typedef DivyaangType<OrthopaedicallyHandicappedType> OrthopaedicallyHandicapped;
     typedef DivyaangType<CancerPatientsType> CancerPatients;
     typedef DivyaangType<TBPatientsType> TBPatients;
-    virtual double GetConcessionFactor(const BookingClasses &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::ACFirstClass &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::ACChairCar &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::AC2Tier &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::AC3Tier &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::SecondSitting &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::Sleeper &) const =0;
-    //virtual double GetConcessionFactor(const BookingClasses::ExecutiveChairCar &) const =0;
+    virtual double GetConcessionFactorACFirstClass() const =0;
+    virtual double GetConcessionFactorFirstClass() const = 0;
+    virtual double GetConcessionFactorSecondSitting() const = 0;
+    virtual double GetConcessionFactorSleeper() const = 0;
+    virtual double GetConcessionFactorACChairCar() const = 0;
+    virtual double GetConcessionFactorAC2Tire() const = 0;
+    virtual double GetConcessionFactorAC3Tier() const = 0;
+    virtual double GetConcessionFactorExecutiveChairCar() const = 0;
+    virtual string GetName() const =0;
+    friend ostream &operator<<(ostream &, const Divyaang &);
     
 };
 
 template<typename T>
-class DivyaangType{
+class DivyaangType : public Divyaang{
     static const string sName;
     static double sACFirstClassConcession;
     static double sExecutiveChairCarConcession;
@@ -50,35 +55,39 @@ class DivyaangType{
     static double sSleeperConcession;
     static double sSecondSittingConcession;
     static double sFirstClassConcession;
+    //static string sName;
     DivyaangType(){}
     ~DivyaangType(){}
 public:
-    inline double GetConcessionFactor(const BookingClasses::FirstClass &) const{
+    inline double GetConcessionFactorFirstClass() const{
         return sFirstClassConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::ACFirstClass &) const{
+    inline double GetConcessionFactorACFirstClass() const{
         return sACFirstClassConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::ACChairCar &) const{
+    inline double GetConcessionFactorACChairCar() const{
         return sACChairCarConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::AC2Tier &) const{
+    inline double GetConcessionFactorAC2Tire() const{
         return sAC2TierConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::AC3Tier &) const{
+    inline double GetConcessionFactorAC3Tier() const{
         return sAC3TierConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::SecondSitting &) const{
+    inline double GetConcessionFactorSecondSitting() const{
         return sSecondSittingConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::Sleeper &) const{
+    inline double GetConcessionFactorSleeper() const{
         return sSleeperConcession;
     }
-    inline double GetConcessionFactor(const BookingClasses::ExecutiveChairCar &) const{
+    inline double GetConcessionFactorExecutiveChairCar() const{
         return sExecutiveChairCarConcession;
     }  
-    static const DivyaangType<T>& Type(){
-        static const DivyaangType<T> obj;
+    inline string GetName() const{
+        return sName;
+    }
+    static const DivyaangType& Type(){
+        static const DivyaangType obj;
         return obj;
     }
 };

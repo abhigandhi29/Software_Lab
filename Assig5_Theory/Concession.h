@@ -9,6 +9,7 @@
 #include "BookingClasses.h"
 #include "Passenger.h"
 #include "Divyaang.h"
+#include "Exception.h"
 using namespace std;
 #ifndef _CONCESSION_H
 #define _CONCESSION_H
@@ -18,7 +19,9 @@ protected:
     Concession();
 public:
     ~Concession();
-    virtual inline double GetConcessionFactor(Passenger &p,BookingClasses &b) const{
+    string type;
+    friend ostream &operator<<(ostream &, const Concession &);
+    virtual inline double GetConcessionFactor() const{
         return 0;
     }
 };
@@ -35,7 +38,7 @@ class LadiesConcession : public Concession{
     static double sConcessioFactor;
 public:
     ~LadiesConcession();
-    double GetConcessionFactor(Passenger &p,BookingClasses &b) const;
+    double GetConcessionFactor(Passenger &p) const;
     static const LadiesConcession &Type();
 };
 
@@ -43,14 +46,15 @@ class SeniorCitizenConcession : public Concession{
     SeniorCitizenConcession();
 public:
     ~SeniorCitizenConcession();
-    double GetConcessionFactor(Passenger &p, BookingClasses &b) const;
+    double GetConcessionFactor(Passenger &p) const;
     static const SeniorCitizenConcession &Type();
 };
 
-class GenralConcession : public Concession{
-    GenralConcession();
+class GeneralConcession : public Concession{
+    GeneralConcession();
 public:
-    ~GenralConcession();
+    ~GeneralConcession();
+    static const GeneralConcession &Type();
 
 };
 

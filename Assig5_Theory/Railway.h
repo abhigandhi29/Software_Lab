@@ -6,7 +6,9 @@
 #include <iterator> 
 #include <unordered_map> 
 #include <vector>
+#include <set>
 #include "Station.h"
+#include "Exception.h"
 using namespace std;
 
 #ifndef _RAILWAY_H
@@ -14,15 +16,18 @@ using namespace std;
 class Railway{
     private:
         string name_ = "Indian Railway";
-        static vector<Station> sStations;
-        static vector<pair<pair<Station,Station>,int>> sDistStation;
+        
     protected:
         Railway();
+        static vector<pair<pair<Station,Station>,int>> sDistStation;
     public:
         ~Railway();
         static const Railway &IndianRailways();
         static int GetDistance(const Station &a,const Station &b);
         friend ostream &operator<<(ostream &,const Railway &);
-};
+        static bool VerifyData();
+        static vector<Station> sStations;
+        
+};        
 
 #endif
