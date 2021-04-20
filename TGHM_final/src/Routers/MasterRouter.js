@@ -8,7 +8,7 @@ import {TransitionGroup, CSSTransition} from "react-transition-group";
 import {Database} from "../Logic/Database";
 import {Management} from "../Logic/Management";
 
-export default function MasterRouter(){
+export default function MasterRouter({manageHook}){
     const { token, setToken } = useToken();
 
     const restrictedPage = (restrictedComponent, redirectComponent) => {
@@ -23,13 +23,13 @@ export default function MasterRouter(){
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/">
-                        {!token ? <Login setToken={setToken} /> : <Redirect to="/dashboard" />}
+                        {!token ? <Login setToken={setToken} manageHook={manageHook} /> : <Redirect to="/dashboard" />}
                     </Route>
                     <Route path="/registration">
-                        <Registration />
+                        <Registration manageHook={manageHook}/>
                     </Route>
                     <Route path="/dashboard">
-                        {restrictedPage(<Dashboard />, <Login setToken={setToken}/> )}
+                        {restrictedPage(<Dashboard manageHook={manageHook} />, <Login setToken={setToken} manageHook={manageHook} /> )}
                     </Route>
                 </Switch>
             </BrowserRouter>

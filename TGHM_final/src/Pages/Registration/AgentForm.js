@@ -1,31 +1,17 @@
 import React from 'react';
 import {DatePicker, Col, Form, Input, Row, Button, message} from "antd";
 import styled from "styled-components";
-import {Customer} from "../../Logic/Customer";
-import {Database} from "../../Logic/Database";
-import {Management} from "../../Logic/Management";
+import {Agent} from "../../Logic/Agent";
 
-export default function PassengerForm({manageHook}){
+export default function AgentForm({restaurant}){
 
     const onFinishFailed = (errorInfo) => {
         console.log('Failed: ',errorInfo);
     }
 
     const handleSubmit = (values) => {
-        let l = manageHook.management;
-        let c = new Customer(values.firstName + " " + values.lastName, values.username, values.password, values.phoneNo, -1,  l);
-        // l.loginC.add(c);
-        // manageHook.management.loginC.set(this._username, this);
-        // let m = Management.getInstance();
-        // m.Customers.set(this.getID(),(this));
-        // Management.CustomersForStoring.push(this);
-        console.log(manageHook.management.Customers);
-        manageHook.setManagement(l);
-        // Management.Customers.set(c.getUsername(), c);
-        // console.log(manageHook.management.Customers);
-        // console.log(c);
-        // console.log(Management.Customers);
-        message.success("User Created");
+        let a = new Agent(values.firstname + " " + values.lastname, values.username, values.password, restaurant, null, null);
+        message.success("Agent Created");
     }
 
     const HeadingStyled = styled.h2`
@@ -36,7 +22,7 @@ export default function PassengerForm({manageHook}){
 
     return (
         <div>
-            <HeadingStyled>Fill in the form to sign up</HeadingStyled>
+            <HeadingStyled>Fill in the form to sign up as Agent</HeadingStyled>
             <Form
                 name="basic"
                 onFinish={handleSubmit}

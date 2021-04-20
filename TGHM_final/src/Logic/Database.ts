@@ -19,8 +19,8 @@ import TrainsData from "./data/Trains.json";
 import AgentData from "./data/Agents.json";
 
 
-const fs = require("fs");
-const CircularJSON = require('circular-json');
+// const fs = require("fs");
+// const CircularJSON = require('circular-json');
 
 
 export class Database{
@@ -36,20 +36,19 @@ export class Database{
         return this.instance;
     }
 
-    static async writeState() {
-        try {
-            //var FileSaver = require('file-saver');
-            //FileSaver.saveFile("./data/Customers.json", JSON.stringify(Management.Customers), function (){})
-            //FileSaver.writeFile("./data/Restaurants.json", JSON.stringify(Management.Application), function (){})
-            //FileSaver.writeFile("./data/Stations.json", JSON.stringify(Management.stationList), function (){})
-            //FileSaver.writeFile("./data/Trains.json", JSON.stringify(Management.trainList), function (){})
-            //FileSaver.writeFile('./data/Customers.json', JSON.stringify(Management.Customers));
-            //console.log(Management.Customers);
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
+    // static async writeState() {
+    //     try {
+    //         var FileSaver = require('file-saver');
+    //         FileSaver.saveFile("./data/Customers.json", JSON.stringify(Management.getInstance().Customers), function (){})
+    //         FileSaver.writeFile("./data/Restaurants.json", JSON.stringify(Management.getInstance().Application), function (){})
+    //         FileSaver.writeFile("./data/Stations.json", JSON.stringify(Management.stationList), function (){})
+    //         FileSaver.writeFile("./data/Trains.json", JSON.stringify(Management.trainList), function (){})
+    //         FileSaver.writeFile('./data/Customers.json', JSON.stringify(Management.Customers));
+    //         console.log(Management.Customers);
+    //     } catch (err) {
+    //         console.error(err)
+    //     }
+    // }
 
     static readState(){
         try {
@@ -59,7 +58,7 @@ export class Database{
                 //Station.
             }
             for(let k of Object.keys(m["trainList"])){
-                Train.readTrain(m["trainList"][k]);
+                //Train.readTrain(m["trainList"][k]);
             }
             for(let k of Object.keys(m["ApprovedRestaurants"])){
 
@@ -125,19 +124,19 @@ export class Database{
         }
     }
 */
-    static AuthenticateUser(username:string, password:string): string|null{
-        let l = Management.loginC.get(username);
+    static AuthenticateUser(username:string, password:string, management:Management): string|null{
+        let l = management.loginC.get(username);
         console.log(l);
         if (l !== undefined){
             if (l.checkPassword(password)) return l.getUsername();
         }
-        let r = Management.loginR.get(username);
-        console.log(Management.loginR);
+        let r = management.loginR.get(username);
+        console.log(management.loginR);
         console.log(r);
         if (r !== undefined){
             if (r.checkPassword(password)) return r.getUsername();
         }
-        let a = Management.loginA.get(username);
+        let a = management.loginA.get(username);
         if (a !== undefined){
             if (a.checkPassword(password)) return a.getUsername();
         }
@@ -149,7 +148,7 @@ export class Database{
         return null;
     }
 
-    static getMenu(train : Train,  timemax : Time=new Time(23,59)) : [Map<string,Array<Item>>,Map<string,Array<Time>>]{
+    static getMenu(train : Train,  timemax : Time=new Time(23,59),m:Management) : [Map<string,Array<Item>>,Map<string,Array<Time>>]{
         let timemin = new Time();
         timemin.updateTime();
         const rStation=train.Return_RouteStation();
@@ -180,8 +179,7 @@ export class Database{
             let rs=rStation.get(stat);
             // console.log(rs);
             if(rs){
-                let m = Management.getInstance();
-                let ms = m.stationList.get(rs);
+                let ms=m.stationList.get(rs);
                 console.log(typeof ms);
                 if(ms){
                     console.log(ms.getID());
@@ -217,7 +215,7 @@ export class Database{
             i++;
         }
         console.log(items);
-        console.log(final);
+        // console.log(final);
         return [final,final2];
     }
     getRestaurant(username:string) : Restaurant|null{
