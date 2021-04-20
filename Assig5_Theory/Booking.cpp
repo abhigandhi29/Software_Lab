@@ -68,12 +68,14 @@ template<> void Booking::TatkalBooking::ComputeFair() const{
     float price = sBaseFairPerKM*dist;
     price = price*(bookinClass_->LoadFactor());
     double tatkaalcharge = 0;
+    cout<<bookinClass_->MinTatkaalDistance()<<" "<<price<<endl;
     if(bookinClass_->MinTatkaalDistance()<=dist){
         tatkaalcharge = bookinClass_->TatkaalLoadFactor()*price;
         tatkaalcharge = min(tatkaalcharge, bookinClass_->MaxTatkaalCharge());
         tatkaalcharge = max(tatkaalcharge, bookinClass_->MinTatkaalChange());
     }
     price += tatkaalcharge;
+    price = price+bookinClass_->ReservationCharge();
     int final_price = static_cast<int>(price+0.5);
     const_cast<Booking::TatkalBooking *>(this)->fairComputed_ = final_price;
 }
@@ -89,6 +91,7 @@ template<> void Booking::PremiumTatkalBooking::ComputeFair() const{
         tatkaalcharge = max(tatkaalcharge, bookinClass_->MinTatkaalChange());
     }
     price += tatkaalcharge;
+    price = price+bookinClass_->ReservationCharge();
     int final_price = static_cast<int>(price+0.5);
     const_cast<Booking::PremiumTatkalBooking *>(this)->fairComputed_ = final_price;
 }

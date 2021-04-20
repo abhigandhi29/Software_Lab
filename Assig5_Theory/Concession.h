@@ -54,6 +54,7 @@ class GeneralConcession : public Concession{
     GeneralConcession();
 public:
     ~GeneralConcession();
+    static const GeneralConcession &Type();
 
 };
 

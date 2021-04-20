@@ -21,8 +21,8 @@ class Gender{
     struct FemaleType{};
 protected:
     Gender();
-    virtual ~Gender();
 public:
+    virtual ~Gender();
     typedef GenderType<MaleType> Male;
     typedef GenderType<FemaleType> Female;
     virtual double GetSeniorCitizenCon() const = 0;

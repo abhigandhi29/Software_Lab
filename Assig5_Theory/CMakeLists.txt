@@ -7,10 +7,16 @@ set(src
     BookingClasses.cpp
     Application.cpp
     Passenger.cpp
-    Railways.cpp
+    Railway.cpp
     Station.cpp
     Passenger.cpp
     Date.cpp
+    Concession.cpp
+    Date.cpp
+    Gender.cpp
+    Divyaang.cpp
+    Name.cpp
+    Exception.cpp
 )
 
 add_executable(Application

@@ -143,6 +143,8 @@ vector<pair<pair<Station,Station>,int>> Railway::sDistStation{
 };
 
 void UnitTesting(){
+    cout<<"Abhishek Gandhi"<<endl;
+    cout<<"19CS10031"<<endl;
     cout<<"\n-----------------Unit Testing For Station Class------------------------"<<endl;
     Station s1 = Station::GetInstance("Mumbai"),s2=Station::GetInstance("Delhi"),s3=Station::GetInstance("Mumbai");
     if(s1.GetName()!="Mumbai" || s2.GetName()!="Delhi" || s3.GetName()!="Mumbai")
@@ -165,8 +167,8 @@ void UnitTesting(){
     cout<<"\n-----------------------------------------------------------------------"<<endl;
 
     cout<<"-----------------Unit Testing For Railway Class------------------------"<<endl;
-    Railway r1 = Railway::IndianRailways();
-    Railway r2 = Railway::IndianRailways();
+    const Railway &r1 = Railway::IndianRailways();
+    const Railway &r2 = Railway::IndianRailways();
     //cout<<&r1<<" "<<&r2<<endl;
     if(&r1 != &r2)
         cout<<"Railway: Error IndianRailways function, failed to create a singleton class"<<endl;
@@ -178,12 +180,12 @@ void UnitTesting(){
     cout<<"\n--------------------Unit Testing For Date Class------------------------"<<endl;
     Date d1 = Date::GetInstance(29,01,2001),d2 = Date::GetInstance(7,03,2021);
     if(d1.GetDay()!=29 || d1.GetMonth()!=01 || d1.GetYear()!=2001)
-        cout<<"Date: Error during construction of 29/Jan/2001"<<endl;
+        cout<<"Date: Error during GetInstanceion of 29/Jan/2001"<<endl;
     if(d2.GetDay()!=7 || d2.GetMonth()!=03 || d2.GetYear()!=2021)
-        cout<<"Date: Error during construction of 7/Mar/2021"<<endl;
+        cout<<"Date: Error during GetInstanceion of 7/Mar/2021"<<endl;
     Date d3 = Date(d1);
     if(d3.GetDay()!=29 || d3.GetMonth()!=01 || d3.GetYear()!=2001)
-        cout<<"Date: Error in copy constructor"<<endl;
+        cout<<"Date: Error in copy GetInstanceor"<<endl;
     if(d1==d2 || !(d1==d3))  
         cout<<"Date: Error in comparison"<<endl;
     cout<<"d1 = "<<d1<<endl;
@@ -213,7 +215,6 @@ void UnitTesting(){
         cout<<e.what();
         cout<<"Error Catching Working Correctly"<<endl;
     }
-    
     cout<<"-----------------------------------------------------------------------"<<endl;
     
     cout<<"\n-----------------Unit Testing For Passenger Classes--------------------"<<endl;
@@ -274,6 +275,70 @@ void UnitTesting(){
     }
     cout<<"-----------------------------------------------------------------------"<<endl;
 
+    cout<<"\n----------------------Unit Testing For Gender Classes--------------------"<<endl;
+    const Gender *m11 = &Gender::Male::Type();
+    const Gender *m12 = &Gender::Male::Type();
+    const Gender *f11 = &Gender::Female::Type();
+    const Gender *f12 = &Gender::Female::Type();
+    if(m11!=m12 || f11!=f12)
+        cout<<"Gender: Error Type function, failed to create a singleton class"<<endl;
+    if(m11->GetConcessionAge()!=60 || m11->GetSeniorCitizenCon()!=0.4 || m11->GetType()!="Male")
+        cout<<"Gender: Error in male class data allotment"<<endl;
+    if(f11->GetConcessionAge()!=58 || f11->GetSeniorCitizenCon()!=0.5|| f11->GetType()!="Female")
+        cout<<"Gender: Error in female class data allotment"<<endl;
+    cout<<"Male: "<<*m11<<endl<<endl;
+    cout<<"Female: "<<*f11<<endl;
+    cout<<"-----------------------------------------------------------------------"<<endl;
+
+    cout<<"\n----------------------Unit Testing For Divyaang Classes--------------------"<<endl;
+    const Divyaang *d11 = &Divyaang::CancerPatients::Type();
+    const Divyaang *d12 = &Divyaang::CancerPatients::Type();
+    const Divyaang *d21 = &Divyaang::TBPatients::Type();
+    const Divyaang *d22 = &Divyaang::TBPatients::Type();
+    const Divyaang *d31 = &Divyaang::Blind::Type();
+    const Divyaang *d32 = &Divyaang::Blind::Type();
+    const Divyaang *d41 = &Divyaang::OrthopaedicallyHandicapped::Type();
+    const Divyaang *d42 = &Divyaang::OrthopaedicallyHandicapped::Type();
+    if(d11!=d12 || d21!=d22 || d31!=d32 || d41!=d42)
+        cout<<"Divyaang! Error in creating singleton class"<<endl;
+    cout<<"Blind: "<<*d31<<endl<<endl;
+    cout<<"CancerPatients: "<<*d11<<endl<<endl;
+    cout<<"Handicapped: "<<*d41<<endl<<endl;
+    cout<<"TBPatients: "<<*d21<<endl;
+
+    cout<<"-----------------------------------------------------------------------"<<endl;
+
+
+    cout<<"\n----------------------Unit Testing For Concession Classes--------------------"<<endl;
+    LadiesConcession ladies = LadiesConcession::Type();
+    DivyaangConcession divyaang = DivyaangConcession::Type();
+    GeneralConcession general = GeneralConcession::Type();
+    SeniorCitizenConcession senior = SeniorCitizenConcession::Type();
+    LadiesConcession ladies1 = LadiesConcession::Type();
+    DivyaangConcession divyaang1 = DivyaangConcession::Type();
+    GeneralConcession general1 = GeneralConcession::Type();
+    SeniorCitizenConcession senior1 = SeniorCitizenConcession::Type();
+    Passenger temp = Passenger::GetInstance("Varsha","","Gandhi","123456789098",Gender::Female::Type(),Date(10,9,1950),"1234567890");
+    Passenger temp1 = Passenger::GetInstance("","","Gandhi","123456789098",Gender::Male::Type(),Date(10,9,1950),"1234567890");
+    if(!(&ladies != &ladies1 || &divyaang1!=&divyaang || &senior1!=&senior1 || &general1!=&general))
+        cout<<"Error in singelton creation"<<endl;
+    if(ladies.GetConcessionFactor(temp)!=0)
+        cout<<"Error in ladies concession"<<endl;
+    const BookingClasses &temp2 = dynamic_cast<const BookingClasses &>(BookingClasses::AC2Tier::Type());
+    if(divyaang.GetConcessionFactor(p2,const_cast<BookingClasses &>(temp2))!=0.5)
+        cout<<"Error in Divyaang concession"<<endl;
+    if(general.GetConcessionFactor()!=0)
+        cout<<"Error in General concession"<<endl;
+    if(senior.GetConcessionFactor(temp)!=0.5 || senior.GetConcessionFactor(temp1)!=0.4)
+        cout<<"Error in SeniorCitizen concession"<<endl;
+
+    cout<<"GeneralConcession: "<<general<<endl<<endl;
+    cout<<"LadiesConcession: "<<ladies<<endl<<endl;
+    cout<<"SeniorCitizenConcession: "<<senior<<endl<<endl;
+    cout<<"DivyaangConcession: "<<divyaang<<endl;
+    
+    cout<<"-----------------------------------------------------------------------"<<endl;
+
     cout<<"\n------------Unit Testing For BookingClasses Classes--------------------"<<endl;
 
     const BookingClasses *b11 = &BookingClasses::Sleeper::Type();
@@ -309,21 +374,21 @@ void UnitTesting(){
     if(b81!=b82)
         cout<<"BookingClasses: Not a Singleton, Check ExecuitveChairCar Type Function"<<endl;
     if(b11->GetName()!="Sleeper" || b11->GetNumberOfTires()!=3 || b11->IsAC()!=false || b11->LoadFactor()!=1 || b11->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in sleeper"<<endl;
+        cout<<"BookingClasses: GetInstance error in sleeper"<<endl;
     if(b21->GetName()!="AC3Tier" || b21->GetNumberOfTires()!=3 || b21->IsAC()!=true || b21->LoadFactor()!=2.5 || b21->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in AC3Tier"<<endl;
+        cout<<"BookingClasses: GetInstance error in AC3Tier"<<endl;
     if(b31->GetName()!="AC2Tier" || b31->GetNumberOfTires()!=2 || b31->IsAC()!=true || b31->LoadFactor()!=4.0 || b31->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in AC2Tier"<<endl;
+        cout<<"BookingClasses: GetInstance error in AC2Tier"<<endl;
     if(b41->GetName()!="ACFirstClass" || b41->GetNumberOfTires()!=1 || b41->IsAC()!=true || b41->LoadFactor()!=6.50 || b41->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in ACFirstClass"<<endl;
-    if(b51->GetName()!="FirstClass" || b51->GetNumberOfTires()!=2 || b51->IsAC()!=false || b51->LoadFactor()!=3.0 || b51->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in FirstClass"<<endl;
+        cout<<"BookingClasses: GetInstance error in ACFirstClass"<<endl;
+    if(b51->GetName()!="FirstClass" || b51->GetNumberOfTires()!=2 || b51->IsAC()!=true || b51->LoadFactor()!=3.0 || b51->IsSitting()!=false)
+        cout<<"BookingClasses: GetInstance error in FirstClass"<<endl;
     if(b61->GetName()!="SecondSitting" || b61->GetNumberOfTires()!=0 || b11->IsAC()!=false || b61->LoadFactor()!=0.6 || b61->IsSitting()!=true)
-        cout<<"BookingClasses: Constructor error in SecondSitting"<<endl;
+        cout<<"BookingClasses: GetInstance error in SecondSitting"<<endl;
     if(b71->GetName()!="ACChairCar" || b71->GetNumberOfTires()!=0 || b71->IsAC()!=true || b71->LoadFactor()!=2.0 || b71->IsSitting()!=true)
-        cout<<"BookingClasses: Constructor error in ACChairCar"<<endl;
-    if(b71->GetName()!="ExecutiveChairCar" || b71->GetNumberOfTires()!=0 || b71->IsAC()!=true || b71->LoadFactor()!=5.0 || b71->IsSitting()!=false)
-        cout<<"BookingClasses: Constructor error in ACChairCar"<<endl;
+        cout<<"BookingClasses: GetInstance error in ACChairCar"<<endl;
+    if(b81->GetName()!="ExecutiveChairCar" || b81->GetNumberOfTires()!=0 || b81->IsAC()!=true || b81->LoadFactor()!=5.0 || b81->IsSitting()!=true)
+        cout<<"BookingClasses: GetInstance error in ExecutiveChairCar"<<endl;
     cout<<*b11<<endl;
     cout<<*b21<<endl;
     cout<<*b31<<endl;
@@ -331,14 +396,13 @@ void UnitTesting(){
     cout<<*b51<<endl;
     cout<<*b61<<endl;
     cout<<*b71<<endl;
+    cout<<*b81<<endl;
     cout<<"-----------------------------------------------------------------------"<<endl;
     
     cout<<"\n---------------------Unit testing for Booking Class--------------------"<<endl;
     
     Booking *b1 = dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p1));
-    //cout<<b1->GetFair()<<endl;
     Booking *b2 = dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p2));
-    //cout<<b2->GetFair()<<endl;
     if(b1->GetFair()!=1849 || b1->GetPNR()!=1)
         cout<<"Error in Booking Class"<<endl;
     if(b2->GetPNR()!=2)
@@ -347,13 +411,239 @@ void UnitTesting(){
     for (it = Booking::sBookings.begin(); it < Booking::sBookings.end(); ++it)
         cout << *(*it)<<endl;
     Booking::sBookings.clear();
+    try{
+        Booking::GeneralBooking::MakeReservation(Station::GetInstance("Mumb"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p1);
+        cout<<"Error! Error detection not working"<<endl;
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error handeling working correctly"<<endl;
+    }
+    try{
+        Booking::GeneralBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2022),&BookingClasses::AC3Tier::Type(),p1);
+        cout<<"Error! Error detection not working"<<endl;
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error handeling working correctly"<<endl;
+    }
+    try{
+        Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p1);
+        cout<<"Error! Error detection not working"<<endl;
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error handeling working correctly"<<endl;
+    }
+    try{
+        Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p1);
+        cout<<"Error! Error detection not working"<<endl;
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error handeling working correctly"<<endl;
+    }
     cout<<"-----------------------------------------------------------------------"<<endl;
+
+}
+
+void ApplicationTestingPositive(){
+
+    cout<<"\n-------------------Positive Applicaton Testing-----------------------"<<endl;
+    try{
+        Booking *b11 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b12 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b13 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b14 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b15 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b16 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b17 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b18 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        
+        Booking *b21 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b22 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b23 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b24 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b25 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b26 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b27 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        Booking *b28 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+        
+        Booking *b31 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b32 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b33 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b34 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b35 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b36 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b37 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b38 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+
+        Booking *b41 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b42 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b43 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b44 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b45 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b46 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b47 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        Booking *b48 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+        
+        Booking *b51 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b52 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b53 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b54 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b55 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b56 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b57 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b58 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+
+
+        Booking *b61 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b62 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b63 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b64 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b65 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b66 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b67 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        Booking *b68 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+        
+        Booking *b71 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b72 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b73 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b74 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b75 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b76 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b77 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+        Booking *b78 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh")));
+
+        Booking *b81 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b82 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b83 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b84 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b85 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b86 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b87 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+        Booking *b88 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::OrthopaedicallyHandicapped::Type(),"eff1234567890sdfgh")));
+
+        Booking *b91 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b92 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b93 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b94 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b95 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b96 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b97 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        Booking *b98 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff1234567890sdfgh")));
+        
+        Booking *b101 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));  
+        Booking *b102 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC2Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+        Booking *b103 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ExecutiveChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));    
+        Booking *b104 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::Sleeper::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+        Booking *b105 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::SecondSitting::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+        Booking *b106 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::FirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+        Booking *b107 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACChairCar::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+        Booking *b108 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::ACFirstClass::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::TBPatients::Type(),"eff1234567890sdfgh")));   
+    }
+    catch(exception &e){
+        cout<<"Error: "<<e.what();
+        cout<<"Error in positive Case Preventing Tesmination and Moving on to Negative Case."<<endl;
+    }
+    vector<Booking*>::iterator it;
+    for (it = Booking::sBookings.begin(); it < Booking::sBookings.end(); ++it)
+        cout << *(*it)<<endl<<endl;
+    Booking::sBookings.clear();
+    cout<<"\n-----------------------------------------------------------------------"<<endl;
+}
+
+void ApplicationTestingNegative(){
+    cout<<"\n--------------------Negative Application Testing----------------------"<<endl;
+    try{
+        Booking *b1 =dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("D") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{
+        Booking *b1 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 5 , 2022) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Female::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }
+    try{
+        Booking *b1 =dynamic_cast<Booking *>(Booking::LadiesBooking::MakeReservation(Station::GetInstance("Mumbai") , Station::GetInstance("Delhi") , Date::GetInstance(17 , 5 , 2022) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Gunjan","","","123456789111",Gender::Male::Type() , Date::GetInstance(8,10,2001),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2020) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,1950),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2020) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Sajal","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::SeniorCitizenBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Sajol","","","123456789111",Gender::Female::Type() , Date::GetInstance(17,12,1950),"12367890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::TatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","123456789111",Gender::Male::Type() , Date::GetInstance(29,01,2031),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::PremiumTatkalBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Abhishek","","","1234567fdg89111",Gender::Male::Type() , Date::GetInstance(29,01,2001),"1234567890")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::Blind::Type(),"eff123490sdfgh")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",NULL,"eff1234567890sdfgh")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
+    try{    
+        Booking *b1 =dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Delhi") , Station::GetInstance("Mumbai")  , Date::GetInstance(17 , 3 , 2021) , &BookingClasses::AC3Tier::Type() , Passenger::GetInstance("Ramu","","","123456789111",Gender::Male::Type() , Date::GetInstance(17,12,2001),"1234567890",&Divyaang::CancerPatients::Type(),"eff123456dfh7890sdfgh")));
+    }
+    catch(exception &e){
+        cout<<e.what();
+        cout<<"Error! Successfully found"<<endl;
+    }    
     
+    if(Booking::sBookings.size()!=0)
+        cout<<"Booking formed Constructor called! Error in MakeReservation"<<endl;
+    
+    cout<<"\n-----------------------------------------------------------------------"<<endl;
 }
 
 int main(){
     try{
         UnitTesting();
+        ApplicationTestingPositive();
+        ApplicationTestingNegative();
     }
     catch(exception &e){
         cout<<e.what();
@@ -368,10 +658,8 @@ int main(){
     try{
         Passenger p1 = Passenger::GetInstance("Abhishek","","Gandhi","123456789012",Gender::Male::Type(),Date(29,1,2001),"1234567890");
         Booking *b1 = dynamic_cast<Booking *>(Booking::GeneralBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p1));
-        //cout<<b1->GetFair()<<endl;
         Passenger p2 = Passenger::GetInstance("someguy","","shit","123456789012",Gender::Male::Type(),Date(11,04,1996),"1234567890",&Divyaang::Blind::Type(),"eff1234567890sdfgh");
         Booking *b2 = dynamic_cast<Booking *>(Booking::DivyaangBooking::MakeReservation(Station::GetInstance("Mumbai"), Station::GetInstance("Delhi"),Date(21, 12, 2021),&BookingClasses::AC3Tier::Type(),p2));
-        //cout<<b2->GetFair()<<endl;
     }
     catch(exception &e){
         cout<<e.what()<<endl;

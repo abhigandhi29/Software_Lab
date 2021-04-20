@@ -8,18 +8,15 @@ Passenger::Passenger(Name name, string aadhar,const Gender &gender, Date dob, st
 
 Passenger::~Passenger(){}
 ostream &operator<<(ostream &out, const Passenger &p){
-    out<<"Passenger: "<<p.name_<<endl;
-    out<<"Aadhar: "<<p.aadhar_<<endl;
-    out<<"Gender: "<<p.gender_<<endl;
-    out<<"Number: "<<p.number_<<endl;
-    if(!p.number_.empty()){
-        out<<endl<<"Phone Number: "<<p.number_;
-    }
+    out<<"\tPassenger: "<<p.name_<<endl;
+    out<<"\tAadhar: "<<p.aadhar_<<endl;
+    out<<"\tGender: "<<p.gender_<<endl;
+    out<<"\tPhone Number: "<<p.number_<<endl;
     if(p.disabiltyType_!=NULL)
-        out<<"Disabilty Type: "<<p.disabiltyType_->GetName()<<endl;
+        out<<"\tDisabilty Type: "<<p.disabiltyType_->GetName()<<endl;
     if(p.disabiltyID_!="")
-        out<<"Disabilty ID: "<<p.disabiltyID_<<endl;
-    out<<"DOB: "<<p.dob_;
+        out<<"\tDisabilty ID: "<<p.disabiltyID_<<endl;
+    out<<"\tDOB: "<<p.dob_;
     
     return out;
 }

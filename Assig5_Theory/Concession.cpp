@@ -61,3 +61,8 @@ ostream &operator<<(ostream &out, const Concession &c){
     out<<"Concession Type: "<<c.type;
     return out;
 }
+const GeneralConcession &GeneralConcession::Type(){
+    static const GeneralConcession obj;
+    return obj;
+}
+

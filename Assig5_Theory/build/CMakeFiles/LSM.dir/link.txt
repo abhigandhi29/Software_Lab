@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/LSM.dir/Booking.cpp.o CMakeFiles/LSM.dir/BookingClasses.cpp.o CMakeFiles/LSM.dir/Application.cpp.o CMakeFiles/LSM.dir/Passenger.cpp.o CMakeFiles/LSM.dir/Railways.cpp.o CMakeFiles/LSM.dir/Station.cpp.o CMakeFiles/LSM.dir/Date.cpp.o  -o LSM 

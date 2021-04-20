@@ -1,3 +1,5 @@
+Abhishek Gandhi
+19CS10031
 
 -----------------Unit Testing For Station Class------------------------
 Mumbai
@@ -6,9 +8,6 @@ Exception handling working properly
 
 -----------------------------------------------------------------------
 -----------------Unit Testing For Railway Class------------------------
-here
-here
-Railway: Error IndianRailways function, failed to create a singleton class
 Indian Railway
 Name of Stations: 
 	-Mumbai
@@ -46,26 +45,24 @@ Error Catching Working Correctly
 -----------------------------------------------------------------------
 
 -----------------Unit Testing For Passenger Classes--------------------
-p1= Passenger: Abhishek  Gandhi
-Aadhar: 123456789012
-Gender: Type: Male
+p1= 	Passenger: Abhishek  Gandhi
+	Aadhar: 123456789012
+	Gender: Type: Male
 Title: Mr
 ConcessionAge: 60
 Concession Factor: 0.4
-Number: 1234567890
-
-Phone Number: 1234567890DOB: 29/Jan/2001
-p2= Passenger: someguy  shit
-Aadhar: 123456789012
-Gender: Type: Male
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
+p2= 	Passenger: someguy  shit
+	Aadhar: 123456789012
+	Gender: Type: Male
 Title: Mr
 ConcessionAge: 60
 Concession Factor: 0.4
-Number: 1234567890
-
-Phone Number: 1234567890Disabilty Type: Blind
-Disabilty ID: eff1234567890sdfgh
-DOB: 11/Apr/1996
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 11/Apr/1996
 Invalid Aadhar number!
 Exception handling working correctly
 Invalid Aadhar number!
@@ -80,11 +77,71 @@ Invalid Disability ID Provided!
 Exception handling working correctly
 -----------------------------------------------------------------------
 
+----------------------Unit Testing For Gender Classes--------------------
+Male: Type: Male
+Title: Mr
+ConcessionAge: 60
+Concession Factor: 0.4
+
+Female: Type: Female
+Title: Mrs
+ConcessionAge: 58
+Concession Factor: 0.5
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Divyaang Classes--------------------
+Blind: Divyaang Type:Blind
+	 AC2Tier: 0.5
+	 AC3Tier: 0.75
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0.75
+	 ExecutiveChairCar: 0.75
+
+CancerPatients: Divyaang Type:CancerPatients
+	 AC2Tier: 0.5
+	 AC3Tier: 1
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 1
+	 SecondSitting: 1
+	 ACChairCar: 1
+	 ExecutiveChairCar: 0.75
+
+Handicapped: Divyaang Type:Handicapped
+	 AC2Tier: 0.5
+	 AC3Tier: 0.75
+	 ACFirstClass: 0.5
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0.75
+	 ExecutiveChairCar: 0.75
+
+TBPatients: Divyaang Type:TBPatients
+	 AC2Tier: 0
+	 AC3Tier: 0
+	 ACFirstClass: 0
+	 FirstClass: 0.75
+	 Sleeper: 0.75
+	 SecondSitting: 0.75
+	 ACChairCar: 0
+	 ExecutiveChairCar: 0
+-----------------------------------------------------------------------
+
+----------------------Unit Testing For Concession Classes--------------------
+GeneralConcession: Concession Type: General
+
+LadiesConcession: Concession Type: Ladies
+
+SeniorCitizenConcession: Concession Type: SeniorCitizen
+
+DivyaangConcession: Concession Type: Divyaang
+-----------------------------------------------------------------------
+
 ------------Unit Testing For BookingClasses Classes--------------------
-BookingClasses: Constructor error in FirstClass
-BookingClasses: Constructor error in SecondSitting
-BookingClasses: Constructor error in ACChairCar
-BookingClasses: Constructor error in ACChairCar
 Travel Class: Sleeper
 	-Load Factor: 1
 	-Confort: Non-AC
@@ -138,7 +195,7 @@ Travel Class: FirstClass
 Travel Class: SecondSitting
 	-Load Factor: 0.6
 	-Confort: Non-AC
-	-Mode: Sleeping
+	-Mode: Sitting
 	-Bunks: 0
 	-Is Luxury: No
 	-TatkaalFactor: 0.1
@@ -148,7 +205,7 @@ Travel Class: SecondSitting
 Travel Class: ACChairCar
 	-Load Factor: 2
 	-Confort: AC
-	-Mode: Sleeping
+	-Mode: Sitting
 	-Bunks: 0
 	-Is Luxury: No
 	-TatkaalFactor: 0.3
@@ -174,15 +231,14 @@ Travel Class: AC3Tier
 	-MinTatkaalCharge: 300
 	-MaxTatkaalCharge: 400
 Passenger Details:
-Passenger: Abhishek  Gandhi
-Aadhar: 123456789012
-Gender: Type: Male
+	Passenger: Abhishek  Gandhi
+	Aadhar: 123456789012
+	Gender: Type: Male
 Title: Mr
 ConcessionAge: 60
 Concession Factor: 0.4
-Number: 1234567890
-
-Phone Number: 1234567890DOB: 29/Jan/2001
+	Phone Number: 1234567890
+	DOB: 29/Jan/2001
 fair = 1849
 BOOKING SUCCEEDED:
 PNR Number = 2
@@ -200,17 +256,23 @@ Travel Class: AC3Tier
 	-MinTatkaalCharge: 300
 	-MaxTatkaalCharge: 400
 Passenger Details:
-Passenger: someguy  shit
-Aadhar: 123456789012
-Gender: Type: Male
+	Passenger: someguy  shit
+	Aadhar: 123456789012
+	Gender: Type: Male
 Title: Mr
 ConcessionAge: 60
 Concession Factor: 0.4
-Number: 1234567890
-
-Phone Number: 1234567890Disabilty Type: Blind
-Disabilty ID: eff1234567890sdfgh
-DOB: 11/Apr/1996
+	Phone Number: 1234567890
+	Disabilty Type: Blind
+	Disabilty ID: eff1234567890sdfgh
+	DOB: 11/Apr/1996
 fair = 492
+Invalid station name or Distance not found!
+Error handeling working correctly
+Invalid Reservation Date!
+Error handeling working correctly
+Invalid Category provided! Choose a valid category
+Error handeling working correctly
+Invalid Category provided! Choose a valid category
+Error handeling working correctly
 -----------------------------------------------------------------------
-here

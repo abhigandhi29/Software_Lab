@@ -38,12 +38,12 @@ class BadPassengerName : public exception{
         }  
 };  
 
-class BadPassenger : public exception{  
-    public:  
-        const char * what() const throw()  {  
-            return "Invalid Data Provided\n";  
-        }  
-};  
+//class BadPassenger : public exception{  
+//    public:  
+//        const char * what() const throw()  {  
+//            return "Invalid Data Provided\n";  
+//        }  
+//};  
 
 class BadPassengerAddhar : public exception{  
     public:  
@@ -92,7 +92,8 @@ class BadBookingCategory : public exception{
         const char * what() const throw()  {  
             return "Invalid Category provided! Choose a valid category\n";  
         }  
-}; 
+};
+ 
 
 
 

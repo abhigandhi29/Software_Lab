@@ -38,7 +38,7 @@ template<> const bool BookingClasses::ACFirstClass::sIsSitting = false;
 template<> const string BookingClasses::ExecutiveChairCar::sName = "ExecutiveChairCar";
 template<> const bool BookingClasses::ExecutiveChairCar::sIsAC = true;
 template<> const int BookingClasses::ExecutiveChairCar::sNumberOfTires = 0;
-template<> const bool BookingClasses::ExecutiveChairCar::sIsSitting = false;
+template<> const bool BookingClasses::ExecutiveChairCar::sIsSitting = true;
 
 template<> const string BookingClasses::AC3Tier::sName = "AC3Tier";
 template<> const bool BookingClasses::AC3Tier::sIsAC = true;
@@ -53,12 +53,12 @@ template<> const bool BookingClasses::Sleeper::sIsSitting = false;
 template<> const string BookingClasses::SecondSitting::sName = "SecondSitting";
 template<> const bool BookingClasses::SecondSitting::sIsAC = false;
 template<> const int BookingClasses::SecondSitting::sNumberOfTires = 0;
-template<> const bool BookingClasses::SecondSitting::sIsSitting = false;
+template<> const bool BookingClasses::SecondSitting::sIsSitting = true;
 
 template<> const string BookingClasses::ACChairCar::sName = "ACChairCar";
 template<> const bool BookingClasses::ACChairCar::sIsAC = true;
 template<> const int BookingClasses::ACChairCar::sNumberOfTires = 0;
-template<> const bool BookingClasses::ACChairCar::sIsSitting = false;
+template<> const bool BookingClasses::ACChairCar::sIsSitting = true;
 
 template<> const string BookingClasses::FirstClass::sName = "FirstClass";
 template<> const bool BookingClasses::FirstClass::sIsAC = true;
